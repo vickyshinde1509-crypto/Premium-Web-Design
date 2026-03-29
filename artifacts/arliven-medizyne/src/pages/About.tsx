@@ -5,23 +5,23 @@ export default function About() {
   return (
     <main className="w-full pt-20">
 
-      {/* Page Header — full banner image */}
-      <section className="relative overflow-hidden border-b border-white/10" style={{ minHeight: "420px" }}>
-        {/* Background image — fully visible, no heavy overlay */}
+      {/* Page Header — office banner, no overlay */}
+      <section className="relative overflow-hidden border-b border-gray-200" style={{ minHeight: "380px" }}>
+        {/* Office background image — fully clear, no overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/about-banner.jpg)` }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/about-office.png)` }}
         />
-        {/* Very light overlay just to keep text readable over the dark image */}
-        <div className="absolute inset-0 bg-black/60" />
+        {/* Bottom gradient only to ensure text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
         {/* Text content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20 flex flex-col justify-center" style={{ minHeight: "420px" }}>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "380px" }}>
           <FadeIn>
-            <p className="text-[#0071c5] font-bold tracking-widest uppercase text-xs mb-3">Company Profile</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-white leading-tight">
+            <p className="text-[#0071c5] font-bold tracking-widest uppercase text-xs mb-2">Company Profile</p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-white leading-tight">
               About Arliven Medizyne
             </h1>
-            <p className="text-base lg:text-lg text-gray-300 max-w-2xl leading-relaxed">
+            <p className="text-sm lg:text-base text-gray-200 max-w-lg leading-relaxed">
               A trusted name in pharmaceutical exports, driven by quality and an unwavering commitment to global health.
             </p>
           </FadeIn>
