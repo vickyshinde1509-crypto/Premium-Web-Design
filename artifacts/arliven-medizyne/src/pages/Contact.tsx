@@ -171,18 +171,47 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map */}
-      <section className="h-[400px] w-full bg-[#111] border-t border-white/10 grayscale hover:grayscale-0 transition-all duration-500">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3824056.248384218!2d73.86445582319208!3d18.917997397737877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcfc41e9c9cd6f9%3A0x1b2f22924be04fb6!2sMaharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Maharashtra, India Map"
-        />
+      {/* Map — clickable, opens Google Maps */}
+      <section className="w-full bg-[#111] border-t border-white/10">
+        {/* Open in Maps button */}
+        <div className="flex items-center justify-between px-6 lg:px-10 py-4 bg-[#0071c5]">
+          <div className="flex items-center gap-3 text-white">
+            <MapPin className="w-5 h-5 shrink-0" />
+            <span className="font-semibold text-sm">Arliven Medizyne Pvt Ltd — Maharashtra, India</span>
+          </div>
+          <a
+            href="https://maps.app.goo.gl/deb5VwkttGy3S7eH9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-white text-[#0071c5] font-black text-xs px-4 py-2 hover:bg-blue-50 transition-colors whitespace-nowrap"
+          >
+            Open in Maps ↗
+          </a>
+        </div>
+        {/* Embedded map — tap to open full map */}
+        <a
+          href="https://maps.app.goo.gl/deb5VwkttGy3S7eH9"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block relative h-[380px] grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
+          title="Open in Google Maps"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824056.248384218!2d73.86445582319208!3d18.917997397737877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcfc41e9c9cd6f9%3A0x1b2f22924be04fb6!2sMaharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0, pointerEvents: "none" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Arliven Medizyne Location"
+          />
+          {/* Tap overlay hint */}
+          <div className="absolute bottom-4 right-4 bg-white shadow-lg px-3 py-2 flex items-center gap-2 text-xs font-bold text-gray-800">
+            <MapPin className="w-4 h-4 text-[#0071c5]" />
+            Tap to open map
+          </div>
+        </a>
       </section>
     </main>
   );
