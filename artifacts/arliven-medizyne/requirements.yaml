@@ -1,0 +1,23 @@
+packages:
+  "framer-motion": "For premium page transitions, scroll reveals, and micro-interactions"
+  "clsx": "For conditional class merging in UI components"
+  "tailwind-merge": "For merging tailwind classes without conflicts"
+
+images:
+  - path: "artifacts/arliven-medizyne/public/images/logo.png"
+    description: "Ultra minimal, premium corporate logo for a pharmaceutical company named 'Arliven', incorporating a subtle geometric cross or pill shape, soft blue and teal gradient on a transparent background."
+    aspect_ratio: "1:1"
+  - path: "artifacts/arliven-medizyne/public/images/hero-bg-1.png"
+    description: "Abstract, premium clean light blue and white gradient background with subtle high-tech pharmaceutical molecular geometric patterns, very soft and professional."
+    aspect_ratio: "16:9"
+  - path: "artifacts/arliven-medizyne/public/images/hero-bg-2.png"
+    description: "Abstract soft focus laboratory or global logistics connection nodes in light teal and white, premium corporate aesthetic, shallow depth of field."
+    aspect_ratio: "16:9"
+  - path: "artifacts/arliven-medizyne/public/images/hero-bg-3.png"
+    description: "Clean, ultra-modern abstract global map composed of tiny glowing blue dots on a pristine white background, representing international export."
+    aspect_ratio: "16:9"
+
+notes:
+  - Frontend only application, no backend integration required.
+  - Using Framer Motion for all premium animations and the auto-playing hero slider.
+  - Using Lucide React for all iconography to maintain a clean, consistent vector look.

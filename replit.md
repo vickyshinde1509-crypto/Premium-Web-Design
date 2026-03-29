@@ -48,6 +48,18 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Artifacts
+
+### `artifacts/arliven-medizyne` (`@workspace/arliven-medizyne`)
+
+Ultra-premium pharmaceutical export corporate website for Arliven Medizyne Pvt Ltd.
+
+- **Type**: React + Vite (frontend-only, no backend)
+- **Stack**: React, Wouter (routing), Tailwind CSS, Framer Motion, Lucide React, shadcn/ui
+- **Pages**: Home, About, Products & Services, Export, Contact
+- **Features**: Hero slider, animated counters, trust features, leadership cards, product grid, export process flow, inquiry form, Google Maps embed
+- **Styling**: Light blue/white pharma corporate palette, glassmorphism header, scroll animations
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)

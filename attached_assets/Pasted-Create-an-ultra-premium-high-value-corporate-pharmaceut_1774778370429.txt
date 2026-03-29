@@ -1,0 +1,221 @@
+Create an ultra-premium, high-value, corporate pharmaceutical export website for:
+
+Company Name: Arliven Medizyne Pvt Ltd
+
+--------------------------------------------------
+
+CORE OBJECTIVE:
+Design a world-class, investor-level, globally trusted pharmaceutical website that looks like it is built by a top international web development agency.
+
+The website must reflect:
+- Trust
+- Professionalism
+- Global presence
+- Regulatory compliance
+- High-quality pharmaceutical standards
+
+--------------------------------------------------
+
+DESIGN STYLE:
+
+- Ultra clean, minimal, soft light theme
+- Color palette: White, light blue, soft grey, subtle gradients
+- Avoid dark or heavy colors
+- Use premium spacing, grid system, and typography
+- Add soft shadows, glassmorphism effects, and smooth layering
+- Corporate MNC-level UI/UX
+- Use modern sans-serif fonts (like Inter, Poppins)
+
+--------------------------------------------------
+
+USER EXPERIENCE:
+
+- Smooth scrolling
+- Micro animations (hover, fade, slide)
+- Section reveal animations
+- Fast loading and optimized performance
+- Fully responsive (mobile, tablet, desktop)
+- Sticky header with smooth navigation
+- No bugs, no layout shifts
+
+--------------------------------------------------
+
+HEADER:
+
+- Left: Company logo
+- Menu:
+  Home | About Us | Products & Services | Export | Contact
+- Right side:
+  - CTA Button: "Send Inquiry"
+  - WhatsApp icon (click to chat)
+  - Email icon (click to mail)
+
+--------------------------------------------------
+
+HOME PAGE:
+
+1. HERO SECTION (Premium Slider):
+- Full-width ultra HD banner images (pharma + global export + logistics)
+- Auto sliding with smooth transitions
+- Overlay gradient for premium look
+
+Main Heading:
+"Empowering Global Health Solutions 🌍💊"
+
+Subtext:
+"Reliable Pharmaceutical Merchant Exporter from India delivering high-quality pharmaceutical and surgical products worldwide."
+
+CTA Buttons:
+- View Products
+- Export Inquiry
+
+--------------------------------------------------
+
+2. COMPANY OVERVIEW:
+
+Arliven Medizyne Pvt Ltd is an India-based pharmaceutical merchant exporter dedicated to delivering high-quality pharmaceutical and surgical products to domestic and international markets through reliable sourcing and professional supply solutions.
+
+--------------------------------------------------
+
+3. LEADERSHIP SECTION:
+
+- Ganesh A Kute (Founder & CEO)
+- Nitin B Choure (Director)
+
+Add professional cards with clean layout and subtle animation.
+
+--------------------------------------------------
+
+4. TRUST FEATURES (ICON GRID):
+
+- Reliable Sourcing
+- Trusted Quality
+- Global Reach
+- Regulatory Compliance
+- Timely Delivery
+
+--------------------------------------------------
+
+5. PRODUCTS PREVIEW (IMAGE GRID):
+
+- Tablets
+- Capsules
+- Syrups
+- Injections
+- Surgical Products
+
+Use high-quality realistic images with hover zoom effect.
+
+--------------------------------------------------
+
+6. SERVICES PREVIEW:
+
+- Pharma Merchant Export
+- Domestic Pharma Supply
+- Bulk Supply
+- Private Label Support
+
+--------------------------------------------------
+
+7. GLOBAL REACH:
+
+- World map visualization
+- Highlight India + export regions (Asia, Africa, Middle East)
+
+--------------------------------------------------
+
+ABOUT PAGE:
+
+- Full professional company description
+- Vision & Mission
+- Leadership details
+- Emphasis on compliance, trust, partnerships
+- Add trust badges (Certified, Quality Assured, Export Ready)
+
+--------------------------------------------------
+
+PRODUCTS & SERVICES PAGE:
+
+PRODUCTS:
+- Cards with images and categories:
+  Tablets, Capsules, Syrups, Injections, Antibiotics, OTC, Surgical Products
+
+SERVICES:
+- Pharma Merchant Export
+- Domestic Supply
+- Pharma Sourcing
+- Third Party Manufacturing
+- Bulk Supply
+- Private Label
+- Export Documentation
+
+--------------------------------------------------
+
+EXPORT PAGE:
+
+- Use ultra HD logistics visuals (cargo ship, airplane, containers)
+- Export content section
+- Export support list
+
+PROCESS FLOW (with icons):
+Sourcing → Documentation → Packaging → Shipping → Delivery
+
+--------------------------------------------------
+
+CONTACT PAGE:
+
+Display:
+
+Address: Maharashtra, India  
+Phone: +91 9049175132  
+Email: info@arlivenmedizyne.com  
+
+INQUIRY FORM (Fully working):
+- Name
+- Email
+- Phone
+- Message
+- Submit button
+
+Add:
+- WhatsApp click button
+- Email click button
+- Embedded Google Map
+
+--------------------------------------------------
+
+FOOTER:
+
+- Quick Links
+- Contact Details
+- Social Icons
+- Copyright
+
+--------------------------------------------------
+
+EXTRA PREMIUM FEATURES:
+
+- Smooth image sliders
+- Animated counters (optional)
+- Scroll-triggered animations
+- Hover effects on all cards
+- Mobile hamburger menu
+- SEO-friendly structure
+- Clean and consistent spacing
+
+--------------------------------------------------
+
+IMPORTANT GUIDELINES:
+
+- Use ONLY English language
+- Maintain global corporate tone
+- No clutter, no unnecessary elements
+- Use ultra HD, realistic images only
+- Keep everything aligned, clean, and premium
+- Website must look trustworthy and suitable for a registered pharmaceutical export company
+
+--------------------------------------------------
+
+FINAL GOAL:
+
+A high-end, ultra-premium, global pharmaceutical corporate website that builds trust instantly and impresses international clients.
