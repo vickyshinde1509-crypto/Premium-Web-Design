@@ -2,7 +2,35 @@ import { Shield, Globe2, Truck, FileCheck, PackageOpen, Award, CheckCircle2, Arr
 import { Link } from "wouter";
 import { HeroSlider } from "@/components/ui/HeroSlider";
 import { FadeIn } from "@/components/FadeIn";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+
+function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: string; duration?: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-10%" });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const startTime = performance.now();
+    const animate = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(animate);
+      else setCount(target);
+    };
+    requestAnimationFrame(animate);
+  }, [isInView, target, duration]);
+
+  return (
+    <span ref={ref}>
+      {count}{suffix}
+    </span>
+  );
+}
 
 const features = [
   { icon: Shield, title: "Trusted Quality", desc: "Sourcing only from WHO-GMP certified manufacturing facilities." },
@@ -30,10 +58,10 @@ const services = [
 ];
 
 const stats = [
-  { value: "500+", label: "Products Exported" },
-  { value: "20+", label: "Countries Served" },
-  { value: "10+", label: "Years Experience" },
-  { value: "100%", label: "Quality Assurance" },
+  { target: 500, suffix: "+", label: "Products Exported" },
+  { target: 20,  suffix: "+", label: "Countries Served" },
+  { target: 10,  suffix: "+", label: "Years Experience" },
+  { target: 100, suffix: "%", label: "Quality Assurance" },
 ];
 
 // Ticker images that auto-scroll horizontally
@@ -88,8 +116,8 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
               <FadeIn key={idx} delay={idx * 0.1} direction="up" className="text-center group">
-                <div className="text-5xl lg:text-6xl font-black text-white mb-3 group-hover:text-[#0071c5] transition-colors duration-300">
-                  {stat.value}
+                <div className="text-5xl lg:text-6xl font-black text-white mb-3 group-hover:text-[#0071c5] transition-colors duration-300 tabular-nums">
+                  <CountUp target={stat.target} suffix={stat.suffix} duration={2200} />
                 </div>
                 <div className="text-gray-400 font-bold tracking-widest uppercase text-sm">
                   {stat.label}
