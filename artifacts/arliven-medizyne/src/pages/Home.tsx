@@ -2,7 +2,7 @@ import { Shield, Globe2, Truck, FileCheck, PackageOpen, Award, CheckCircle2, Arr
 import { Link } from "wouter";
 import { HeroSlider } from "@/components/ui/HeroSlider";
 import { FadeIn } from "@/components/FadeIn";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: string; duration?: number }) {
@@ -32,6 +32,20 @@ function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: 
   );
 }
 
+function ParallaxBanner({ src, alt, height = "h-80", children }: { src: string; alt: string; height?: string; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
+  return (
+    <div ref={ref} className={`relative ${height} overflow-hidden`}>
+      <motion.div style={{ y }} className="absolute inset-0 scale-125 will-change-transform">
+        <img src={src} alt={alt} className="w-full h-full object-cover" />
+      </motion.div>
+      {children}
+    </div>
+  );
+}
+
 const features = [
   { icon: Shield,      image: "feature-quality.png",     title: "Trusted Quality",        desc: "Sourcing only from WHO-GMP certified manufacturing facilities." },
   { icon: Globe2,      image: "feature-global.png",      title: "Global Reach",           desc: "Exporting to Asia, Africa, Middle East and beyond." },
@@ -51,10 +65,10 @@ const productsPreview = [
 ];
 
 const services = [
-  { title: "Pharma Merchant Export", desc: "Seamless export of generic and branded pharmaceutical products worldwide." },
-  { title: "Third Party Manufacturing", desc: "Contract manufacturing under strict WHO-GMP certified guidelines." },
-  { title: "Surgical Supply", desc: "High-grade surgical instruments and medical consumables." },
-  { title: "Regulatory Support", desc: "Complete dossier preparation and export compliance assistance." },
+  { image: "service-export.png",         title: "Pharma Merchant Export",     desc: "Seamless export of generic and branded pharmaceutical products worldwide." },
+  { image: "service-manufacturing.png",  title: "Third Party Manufacturing",  desc: "Contract manufacturing under strict WHO-GMP certified guidelines." },
+  { image: "service-surgical.png",       title: "Surgical Supply",            desc: "High-grade surgical instruments and medical consumables." },
+  { image: "service-regulatory.png",     title: "Regulatory Support",         desc: "Complete dossier preparation and export compliance assistance." },
 ];
 
 const stats = [
@@ -227,30 +241,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Banner image — full-width cinematic */}
-      <div className="relative h-64 overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.05 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}images/pharma-hero-cinematic.png`}
-            alt="Global pharma"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0071c5]/90 to-[#0071c5]/60" />
-        <div className="absolute inset-0 flex items-center justify-center z-10">
+      {/* Banner 1 — supply chain parallax, image fully visible */}
+      <ParallaxBanner
+        src={`${import.meta.env.BASE_URL}images/banner-supply-chain.png`}
+        alt="Global pharmaceutical supply chain"
+        height="h-72"
+      >
+        {/* Light text overlay only enough to read text — no heavy color wash */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
+        <div className="absolute inset-0 flex items-end justify-center z-10 pb-10">
           <FadeIn>
-            <p className="text-3xl lg:text-4xl font-black text-white text-center tracking-wide uppercase">
+            <p className="text-2xl lg:text-3xl font-black text-white text-center tracking-wide uppercase drop-shadow-lg">
               Delivering Healthcare Excellence Across Borders
             </p>
           </FadeIn>
         </div>
-      </div>
+      </ParallaxBanner>
 
       {/* Products Preview */}
       <section className="py-24 bg-[#1a1a1a]">
@@ -299,40 +305,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Full-width banner — air cargo */}
-      <div className="relative h-72 overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.1 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}images/pharma-air-cargo.png`}
-            alt="Air cargo pharma"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="absolute inset-0 flex items-center z-10">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <FadeIn direction="right">
-              <p className="text-sm font-bold tracking-widest text-[#0071c5] uppercase mb-4">GET STARTED</p>
-              <h2 className="text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-                CONNECT WITH US FOR<br />EXPORT INQUIRY AND ACHIEVE<br />RELIABLE SUPPLY CHAIN
-              </h2>
-              <p className="text-gray-400 text-lg mb-7">Arliven Medizyne offers you quality pharmaceutical solutions for your global healthcare supply chain.</p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-gray-900 font-black text-sm uppercase tracking-wider hover:bg-[#0071c5] hover:text-white transition-all duration-300"
-              >
-                Get Started <ArrowRight className="w-5 h-5" />
-              </Link>
-            </FadeIn>
-          </div>
+      {/* Banner 2 — supply chain connect, parallax, image clearly visible */}
+      <ParallaxBanner
+        src={`${import.meta.env.BASE_URL}images/banner-connect.png`}
+        alt="Pharmaceutical supply chain connect"
+        height="h-auto"
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+          <FadeIn direction="right">
+            <p className="text-xs font-bold tracking-widest text-[#0071c5] uppercase mb-3">GET STARTED</p>
+            <h2 className="text-2xl lg:text-3xl font-black text-white mb-3 leading-snug">
+              Connect With Us For Export Inquiry<br className="hidden lg:block" /> &amp; Achieve Reliable Supply Chain
+            </h2>
+            <p className="text-gray-300 text-base mb-6 max-w-xl">Arliven Medizyne offers quality pharmaceutical solutions for your global healthcare supply chain.</p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-white text-gray-900 font-black text-sm uppercase tracking-wider hover:bg-[#0071c5] hover:text-white transition-all duration-300"
+            >
+              Get Started <ArrowRight className="w-5 h-5" />
+            </Link>
+          </FadeIn>
         </div>
-      </div>
+      </ParallaxBanner>
 
       {/* Services */}
       <section className="py-24 bg-white border-t border-gray-100">
@@ -346,12 +341,26 @@ export default function Home() {
             {services.map((service, idx) => (
               <FadeIn key={idx} delay={idx * 0.08}>
                 <motion.div
-                  whileHover={{ borderColor: "#0071c5", y: -4 }}
-                  transition={{ duration: 0.25 }}
-                  className="p-8 border-2 border-gray-200 h-full bg-gray-50 group cursor-default"
+                  whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-white border border-gray-100 overflow-hidden group cursor-default h-full flex flex-col"
                 >
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-[#0071c5] transition-colors">{service.title}</h3>
-                  <p className="text-gray-600 text-base leading-relaxed">{service.desc}</p>
+                  {/* Service image — clear, no overlay */}
+                  <div className="h-44 overflow-hidden shrink-0">
+                    <motion.img
+                      whileHover={{ scale: 1.06 }}
+                      transition={{ duration: 0.5 }}
+                      src={`${import.meta.env.BASE_URL}images/${service.image}`}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Text content */}
+                  <div className="p-6 flex-1">
+                    <div className="w-1 h-8 bg-[#0071c5] mb-4" />
+                    <h3 className="text-base font-bold mb-2 text-gray-900 group-hover:text-[#0071c5] transition-colors leading-snug">{service.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
+                  </div>
                 </motion.div>
               </FadeIn>
             ))}
