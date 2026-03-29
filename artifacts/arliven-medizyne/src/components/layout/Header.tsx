@@ -13,132 +13,127 @@ const navLinks = [
 
 export function Header() {
   const [location] = useLocation();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass py-3" : "bg-white py-5 border-b border-border/50"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="flex items-center justify-between h-20">
+
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <img 
-              src={`${import.meta.env.BASE_URL}images/arliven-logo.png`} 
-              alt="Arliven Medizyne" 
-              className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+          <Link href="/" className="flex-shrink-0">
+            <img
+              src={`${import.meta.env.BASE_URL}images/arliven-logo.png`}
+              alt="Arliven Medizyne"
+              className="h-14 w-auto object-contain"
             />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav — centered */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
+              <Link
+                key={link.name}
                 href={link.href}
-                className={`text-sm font-semibold transition-colors hover:text-primary relative py-1 ${
-                  location === link.href ? "text-primary" : "text-foreground/80"
+                className={`text-base font-medium transition-colors relative py-1 ${
+                  location === link.href
+                    ? "text-[#0071c5]"
+                    : "text-gray-700 hover:text-[#0071c5]"
                 }`}
               >
                 {link.name}
                 {location === link.href && (
-                  <motion.div 
-                    layoutId="underline"
-                    className="absolute left-0 right-0 bottom-0 h-0.5 bg-primary rounded-full"
+                  <motion.div
+                    layoutId="nav-underline"
+                    className="absolute left-0 right-0 -bottom-0.5 h-0.5 bg-[#0071c5] rounded-full"
                   />
                 )}
               </Link>
             ))}
           </nav>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-2 mr-2">
-              <a 
-                href="https://wa.me/919049175132" 
-                target="_blank" 
-                rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-[#25D366]/10 text-[#25D366] flex items-center justify-center hover:bg-[#25D366] hover:text-white hover:scale-110 transition-all"
-                title="WhatsApp Us"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </a>
-              <a 
-                href="mailto:info@arlivenmedizyne.com" 
-                className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white hover:scale-110 transition-all"
-                title="Email Us"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
-            <Link 
+          {/* Desktop Right Actions */}
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://wa.me/919049175132"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all"
+              title="WhatsApp"
+            >
+              <MessageCircle className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:info@arlivenmedizyne.com"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100 transition-all"
+              title="Email"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+            <Link
               href="/contact"
-              className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
+              className="ml-2 px-6 py-2.5 border-2 border-gray-800 text-gray-800 text-sm font-bold rounded hover:bg-gray-800 hover:text-white transition-all duration-200"
             >
               Send Inquiry
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden p-2 text-foreground"
+          <button
+            className="md:hidden p-2 text-gray-700"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav Overlay */}
+      {/* Mobile Nav */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-border overflow-hidden"
+            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
-            <div className="px-4 py-6 flex flex-col gap-4">
+            <div className="px-6 py-5 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
+                <Link
+                  key={link.name}
                   href={link.href}
-                  className={`text-lg font-semibold p-2 rounded-lg ${
-                    location === link.href ? "bg-primary/10 text-primary" : "text-foreground"
+                  className={`text-lg font-medium py-2 px-3 rounded ${
+                    location === link.href
+                      ? "bg-blue-50 text-[#0071c5]"
+                      : "text-gray-800"
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="h-px bg-border my-2" />
-              <div className="flex items-center gap-4 p-2">
-                <a href="https://wa.me/919049175132" className="flex items-center gap-2 text-[#25D366] font-semibold">
+              <div className="h-px bg-gray-100 my-1" />
+              <div className="flex items-center gap-4 py-1">
+                <a
+                  href="https://wa.me/919049175132"
+                  className="flex items-center gap-2 text-[#25D366] font-semibold"
+                >
                   <MessageCircle className="w-5 h-5" /> WhatsApp
                 </a>
-                <a href="mailto:info@arlivenmedizyne.com" className="flex items-center gap-2 text-primary font-semibold">
+                <a
+                  href="mailto:info@arlivenmedizyne.com"
+                  className="flex items-center gap-2 text-[#0071c5] font-semibold"
+                >
                   <Mail className="w-5 h-5" /> Email
                 </a>
               </div>
-              <Link 
+              <Link
                 href="/contact"
-                className="mt-2 text-center w-full py-3 rounded-xl bg-primary text-white font-bold"
+                className="mt-1 text-center w-full py-3 border-2 border-gray-800 text-gray-800 font-bold rounded hover:bg-gray-800 hover:text-white transition-all"
               >
                 Send Inquiry
               </Link>
