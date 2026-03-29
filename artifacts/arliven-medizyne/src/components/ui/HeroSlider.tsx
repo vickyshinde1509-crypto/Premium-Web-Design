@@ -1,38 +1,29 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Globe } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 const slides = [
   {
     id: 1,
-    image: "hero-bg-1.png",
     title: "Empowering Global Health Solutions",
     subtitle: "Reliable Pharmaceutical Merchant Exporter from India delivering high-quality pharmaceutical and surgical products worldwide.",
-    primaryCta: "View Products",
-    primaryLink: "/products",
-    secondaryCta: "Export Inquiry",
-    secondaryLink: "/export",
+    highlight: "Health Solutions",
+    image: "pharma-hero.png"
   },
   {
     id: 2,
-    image: "hero-bg-2.png",
     title: "Uncompromising Quality Standards",
     subtitle: "WHO-GMP compliant sourcing and rigorous quality control for every shipment, ensuring safety and efficacy.",
-    primaryCta: "Our Process",
-    primaryLink: "/export",
-    secondaryCta: "Contact Us",
-    secondaryLink: "/contact",
+    highlight: "Quality Standards",
+    image: "pharma-factory.png"
   },
   {
     id: 3,
-    image: "hero-bg-3.png",
     title: "Bridging Healthcare Worldwide",
     subtitle: "Extensive global reach across Asia, Africa, Middle East, and beyond with timely and secure logistics.",
-    primaryCta: "Global Reach",
-    primaryLink: "/about",
-    secondaryCta: "Partner With Us",
-    secondaryLink: "/contact",
+    highlight: "Healthcare Worldwide",
+    image: "pharma-export.png"
   }
 ];
 
@@ -46,8 +37,22 @@ export function HeroSlider() {
     return () => clearInterval(timer);
   }, []);
 
+  const highlightText = (text: string, highlight: string) => {
+    const parts = text.split(highlight);
+    if (parts.length === 1) return text;
+    return (
+      <>
+        {parts[0]}
+        <span className="text-primary">{highlight}</span>
+        {parts[1]}
+      </>
+    );
+  };
+
   return (
-    <div className="relative h-[90vh] min-h-[600px] w-full overflow-hidden bg-secondary">
+    <div className="relative h-screen min-h-[700px] w-full overflow-hidden bg-[#1c2431] flex items-center">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1c2431] via-[#1c2431]/90 to-transparent z-10" />
+      
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -55,24 +60,22 @@ export function HeroSlider() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="absolute inset-0"
+          className="absolute inset-0 z-0"
         >
-          {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute right-0 top-0 w-full md:w-2/3 h-full bg-cover bg-center md:bg-right"
             style={{ 
               backgroundImage: `url(${import.meta.env.BASE_URL}images/${slides[currentSlide].image})`
             }}
           />
-          {/* Gradient Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
+          {/* Subtle gradient overlay to blend image into background */}
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#1c2431]/50 to-[#1c2431]" />
         </motion.div>
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-        <div className="max-w-2xl mt-16">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        <div className="max-w-2xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide + "-content"}
@@ -81,36 +84,27 @@ export function HeroSlider() {
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
-                <Globe className="w-4 h-4" />
-                <span>India's Premium Pharma Exporter</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-6">
-                {slides[currentSlide].title.split(' ').map((word, i) => (
-                  <span key={i} className={i === 1 || i === 2 ? "text-gradient block sm:inline" : ""}>
-                    {word}{" "}
-                  </span>
-                ))}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.15] mb-6">
+                {highlightText(slides[currentSlide].title, slides[currentSlide].highlight)}
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-xl">
                 {slides[currentSlide].subtitle}
               </p>
               
               <div className="flex flex-wrap items-center gap-4">
                 <Link 
-                  href={slides[currentSlide].primaryLink}
-                  className="px-8 py-4 rounded-full bg-primary text-white font-semibold text-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group"
+                  href="/products"
+                  className="px-8 py-4 rounded bg-primary text-white font-bold text-lg hover:bg-primary/90 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-primary/20"
                 >
-                  {slides[currentSlide].primaryCta}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  View Products
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link 
-                  href={slides[currentSlide].secondaryLink}
-                  className="px-8 py-4 rounded-full bg-white text-foreground border-2 border-border font-semibold text-lg hover:border-primary hover:text-primary transition-all duration-300"
+                  href="/export"
+                  className="px-8 py-4 rounded bg-transparent text-white border-2 border-white/50 font-bold text-lg hover:border-white hover:bg-white/10 transition-all duration-300"
                 >
-                  {slides[currentSlide].secondaryCta}
+                  Export Inquiry
                 </Link>
               </div>
             </motion.div>
@@ -119,13 +113,13 @@ export function HeroSlider() {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center gap-3">
+      <div className="absolute bottom-10 left-0 right-0 z-30 flex justify-center gap-3">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
-            className={`h-2 rounded-full transition-all duration-500 ${
-              idx === currentSlide ? "w-8 bg-primary" : "w-2 bg-primary/30 hover:bg-primary/50"
+            className={`h-2 transition-all duration-500 rounded-full ${
+              idx === currentSlide ? "w-12 bg-primary" : "w-4 bg-white/30 hover:bg-white/50"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />

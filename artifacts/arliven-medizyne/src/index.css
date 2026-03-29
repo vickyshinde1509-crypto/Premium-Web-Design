@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme inline {
@@ -21,25 +21,23 @@
 }
 
 :root {
-  /* Ultra clean corporate light theme: Soft Blue & White */
+  /* Dark Charcoal / Grey Corporate Theme */
   --background: 0 0% 100%;
   --foreground: 222 47% 11%;
   
-  /* Soft, professional corporate blue */
-  --primary: 211 100% 45%;
+  /* Blue */
+  --primary: 210 100% 45%;
   --primary-foreground: 0 0% 100%;
   
-  /* Very light blue/grey for subtle backgrounds */
-  --secondary: 210 40% 96%;
+  /* Light Grey */
+  --secondary: 210 20% 96%;
   --secondary-foreground: 222 47% 11%;
   
-  /* Grey for less important text/elements */
-  --muted: 210 40% 96%;
+  --muted: 210 20% 96%;
   --muted-foreground: 215 16% 47%;
   
-  /* Teal accent for highlights */
-  --accent: 187 80% 45%;
-  --accent-foreground: 0 0% 100%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
   
   --border: 214 32% 91%;
   
@@ -55,17 +53,17 @@
     @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20 selection:text-primary overflow-x-hidden;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-foreground;
+    @apply font-display tracking-tight;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/80 backdrop-blur-lg border-b border-white/20 shadow-sm;
+    @apply bg-white/80 backdrop-blur-lg border-b border-border/50 shadow-sm;
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
   }
 }
 

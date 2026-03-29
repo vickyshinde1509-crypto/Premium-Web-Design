@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail, MessageCircle } from "lucide-react";
+import { Menu, X, Mail, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -40,21 +40,11 @@ export function Header() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center overflow-hidden">
-              <img 
-                src={`${import.meta.env.BASE_URL}images/logo.png`} 
-                alt="Arliven Medizyne Logo" 
-                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-xl text-foreground leading-tight tracking-tight group-hover:text-primary transition-colors">
-                Arliven Medizyne
-              </span>
-              <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
-                Pvt Ltd
-              </span>
-            </div>
+            <img 
+              src={`${import.meta.env.BASE_URL}images/arliven-logo.png`} 
+              alt="Arliven Medizyne" 
+              className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -63,7 +53,7 @@ export function Header() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary relative py-1 ${
+                className={`text-sm font-semibold transition-colors hover:text-primary relative py-1 ${
                   location === link.href ? "text-primary" : "text-foreground/80"
                 }`}
               >
@@ -85,22 +75,22 @@ export function Header() {
                 href="https://wa.me/919049175132" 
                 target="_blank" 
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-green-50 text-green-600 flex items-center justify-center hover:bg-green-100 hover:scale-110 transition-all"
+                className="w-10 h-10 rounded-full bg-[#25D366]/10 text-[#25D366] flex items-center justify-center hover:bg-[#25D366] hover:text-white hover:scale-110 transition-all"
                 title="WhatsApp Us"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-5 h-5" />
               </a>
               <a 
                 href="mailto:info@arlivenmedizyne.com" 
-                className="w-9 h-9 rounded-full bg-primary/5 text-primary flex items-center justify-center hover:bg-primary/10 hover:scale-110 transition-all"
+                className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white hover:scale-110 transition-all"
                 title="Email Us"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-5 h-5" />
               </a>
             </div>
             <Link 
               href="/contact"
-              className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
+              className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
             >
               Send Inquiry
             </Link>
@@ -130,8 +120,8 @@ export function Header() {
                 <Link 
                   key={link.name} 
                   href={link.href}
-                  className={`text-lg font-medium p-2 rounded-lg ${
-                    location === link.href ? "bg-primary/5 text-primary" : "text-foreground"
+                  className={`text-lg font-semibold p-2 rounded-lg ${
+                    location === link.href ? "bg-primary/10 text-primary" : "text-foreground"
                   }`}
                 >
                   {link.name}
@@ -139,16 +129,16 @@ export function Header() {
               ))}
               <div className="h-px bg-border my-2" />
               <div className="flex items-center gap-4 p-2">
-                <a href="https://wa.me/919049175132" className="flex items-center gap-2 text-green-600 font-medium">
+                <a href="https://wa.me/919049175132" className="flex items-center gap-2 text-[#25D366] font-semibold">
                   <MessageCircle className="w-5 h-5" /> WhatsApp
                 </a>
-                <a href="mailto:info@arlivenmedizyne.com" className="flex items-center gap-2 text-primary font-medium">
+                <a href="mailto:info@arlivenmedizyne.com" className="flex items-center gap-2 text-primary font-semibold">
                   <Mail className="w-5 h-5" /> Email
                 </a>
               </div>
               <Link 
                 href="/contact"
-                className="mt-2 text-center w-full py-3 rounded-xl bg-primary text-white font-semibold"
+                className="mt-2 text-center w-full py-3 rounded-xl bg-primary text-white font-bold"
               >
                 Send Inquiry
               </Link>

@@ -22,14 +22,15 @@ export default function Contact() {
   };
 
   return (
-    <main className="w-full pt-28">
-      <section className="py-20 bg-secondary relative">
+    <main className="w-full pt-20 bg-[#1a1a1a]">
+      {/* Header */}
+      <section className="py-20 bg-[#111] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
-              Get In <span className="text-primary">Touch</span>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
+              Get In Touch
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Ready to start an export partnership? Contact us today for inquiries, quotes, or product catalogs.
             </p>
           </FadeIn>
@@ -43,15 +44,15 @@ export default function Contact() {
             {/* Contact Info */}
             <FadeIn className="lg:col-span-2 space-y-10">
               <div>
-                <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
-                <div className="space-y-6">
+                <h2 className="text-3xl font-bold mb-8 text-[#1a1a1a]">Contact Information</h2>
+                <div className="space-y-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <div className="w-12 h-12 rounded bg-blue-50 flex items-center justify-center text-primary shrink-0 border border-blue-100">
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Corporate Office</h4>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <h4 className="font-bold text-lg mb-1 text-[#1a1a1a]">Corporate Office</h4>
+                      <p className="text-gray-600 leading-relaxed font-medium">
                         Maharashtra, India<br/>
                         (Registered Merchant Exporter)
                       </p>
@@ -59,35 +60,35 @@ export default function Contact() {
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <div className="w-12 h-12 rounded bg-blue-50 flex items-center justify-center text-primary shrink-0 border border-blue-100">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Phone / WhatsApp</h4>
-                      <a href="tel:+919049175132" className="text-muted-foreground hover:text-primary transition-colors block">+91 90491 75132</a>
+                      <h4 className="font-bold text-lg mb-1 text-[#1a1a1a]">Phone / WhatsApp</h4>
+                      <a href="tel:+919049175132" className="text-gray-600 hover:text-primary transition-colors block font-medium">+91 90491 75132</a>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <div className="w-12 h-12 rounded bg-blue-50 flex items-center justify-center text-primary shrink-0 border border-blue-100">
                       <Mail className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Email Address</h4>
-                      <a href="mailto:info@arlivenmedizyne.com" className="text-muted-foreground hover:text-primary transition-colors block">info@arlivenmedizyne.com</a>
+                      <h4 className="font-bold text-lg mb-1 text-[#1a1a1a]">Email Address</h4>
+                      <a href="mailto:info@arlivenmedizyne.com" className="text-gray-600 hover:text-primary transition-colors block font-medium">info@arlivenmedizyne.com</a>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-border">
-                <h4 className="font-bold mb-4">Direct Connect</h4>
+              <div className="pt-8 border-t border-gray-200">
+                <h4 className="font-bold mb-4 text-[#1a1a1a]">Direct Connect</h4>
                 <div className="flex gap-4">
                   <a 
                     href="https://wa.me/919049175132" 
                     target="_blank" 
                     rel="noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-xl font-semibold hover:bg-[#20bd5a] transition-colors shadow-lg shadow-green-500/20"
+                    className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white py-4 rounded font-bold hover:bg-[#20bd5a] transition-colors shadow-lg shadow-green-500/20"
                   >
                     <MessageCircle className="w-5 h-5" />
                     WhatsApp Us
@@ -98,63 +99,63 @@ export default function Contact() {
 
             {/* Contact Form */}
             <FadeIn delay={0.2} className="lg:col-span-3">
-              <div className="bg-white rounded-3xl border border-border shadow-xl p-8 md:p-10">
-                <h3 className="text-2xl font-bold mb-6">Send an Inquiry</h3>
+              <div className="bg-[#1a1a1a] rounded p-8 md:p-10 border border-[#333] shadow-2xl">
+                <h3 className="text-2xl font-bold mb-6 text-white">Send an Inquiry</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Full Name *</label>
+                      <label className="text-sm font-bold text-gray-300">Full Name *</label>
                       <input 
                         required
                         type="text" 
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        className="w-full px-4 py-3 rounded bg-[#222] text-white border border-[#333] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-600"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Company Name</label>
+                      <label className="text-sm font-bold text-gray-300">Company Name</label>
                       <input 
                         type="text" 
-                        placeholder="Your Company LLC"
-                        className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        placeholder="Your Company"
+                        className="w-full px-4 py-3 rounded bg-[#222] text-white border border-[#333] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-600"
                       />
                     </div>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Email Address *</label>
+                      <label className="text-sm font-bold text-gray-300">Email Address *</label>
                       <input 
                         required
                         type="email" 
                         placeholder="john@example.com"
-                        className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        className="w-full px-4 py-3 rounded bg-[#222] text-white border border-[#333] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-600"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Phone Number</label>
+                      <label className="text-sm font-bold text-gray-300">Phone Number</label>
                       <input 
                         type="tel" 
                         placeholder="+1 234 567 8900"
-                        className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        className="w-full px-4 py-3 rounded bg-[#222] text-white border border-[#333] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-600"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Inquiry Details *</label>
+                    <label className="text-sm font-bold text-gray-300">Inquiry Details *</label>
                     <textarea 
                       required
                       rows={5}
                       placeholder="Please specify the products you are looking for, target country, and required quantities..."
-                      className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                      className="w-full px-4 py-3 rounded bg-[#222] text-white border border-[#333] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none placeholder:text-gray-600"
                     ></textarea>
                   </div>
 
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl bg-primary text-white font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 active:translate-y-0 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full py-4 rounded bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? "Sending..." : "Submit Inquiry"}
                     {!isSubmitting && <Send className="w-5 h-5" />}
@@ -168,7 +169,7 @@ export default function Contact() {
       </section>
 
       {/* Map */}
-      <section className="h-[400px] w-full bg-secondary grayscale hover:grayscale-0 transition-all duration-500">
+      <section className="h-[400px] w-full bg-[#111] border-t border-white/10 grayscale hover:grayscale-0 transition-all duration-500">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3824056.248384218!2d73.86445582319208!3d18.917997397737877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcfc41e9c9cd6f9%3A0x1b2f22924be04fb6!2sMaharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
           width="100%" 
