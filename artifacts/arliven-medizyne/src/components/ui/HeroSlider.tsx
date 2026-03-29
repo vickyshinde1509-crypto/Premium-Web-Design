@@ -45,8 +45,8 @@ export function HeroSlider() {
 
   return (
     <>
-      {/* HERO — reduced height, only heading text */}
-      <section className="relative w-full overflow-hidden" style={{ height: "72vh", minHeight: "500px" }}>
+      {/* HERO — starts below the header bar */}
+      <section className="relative w-full overflow-hidden mt-20" style={{ height: "72vh", minHeight: "480px" }}>
 
         {/* Background Images */}
         <AnimatePresence mode="sync">
@@ -72,7 +72,7 @@ export function HeroSlider() {
         {/* ONLY: eyebrow + heading */}
         <div className="relative z-20 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
-            <div className="max-w-2xl pt-16">
+            <div className="max-w-2xl">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current + "-text"}
@@ -81,22 +81,22 @@ export function HeroSlider() {
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.65, ease: "easeOut" }}
                 >
-                  {/* Eyebrow */}
+                  {/* Eyebrow — smaller */}
                   <motion.p
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-sm font-bold tracking-widest text-white/75 uppercase mb-4"
+                    className="text-xs font-bold tracking-widest text-white/75 uppercase mb-3"
                   >
                     {slide.eyebrow}
                   </motion.p>
 
-                  {/* Heading — medium size */}
+                  {/* Heading — reduced size */}
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.0] whitespace-pre-line"
+                    className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.05] whitespace-pre-line"
                   >
                     {slide.title}
                   </motion.h1>

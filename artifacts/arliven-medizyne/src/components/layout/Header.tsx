@@ -27,7 +27,7 @@ export function Header() {
   }, [location]);
 
   const isHome = location === "/";
-  const transparent = isHome && !isScrolled;
+  const transparent = false; // hero now starts below header, always solid white
 
   return (
     <header
@@ -42,22 +42,12 @@ export function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            {transparent ? (
-              <div className="bg-white/90 backdrop-blur-sm rounded px-3 py-1.5 shadow-lg">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/arliven-logo.png`}
-                  alt="Arliven Medizyne"
-                  className="h-11 w-auto object-contain"
-                />
-              </div>
-            ) : (
-              <img
-                src={`${import.meta.env.BASE_URL}images/arliven-logo.png`}
-                alt="Arliven Medizyne"
-                className="h-13 w-auto object-contain"
-                style={{ height: "52px" }}
-              />
-            )}
+            <img
+              src={`${import.meta.env.BASE_URL}images/arliven-logo.png`}
+              alt="Arliven Medizyne"
+              className="w-auto object-contain"
+              style={{ height: "52px" }}
+            />
           </Link>
 
           {/* Desktop Nav */}
