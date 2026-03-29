@@ -13,7 +13,7 @@ export default function About() {
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/about-banner.jpg)` }}
         />
         {/* Very light overlay just to keep text readable over the dark image */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/60" />
         {/* Text content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20 flex flex-col justify-center" style={{ minHeight: "420px" }}>
           <FadeIn>
