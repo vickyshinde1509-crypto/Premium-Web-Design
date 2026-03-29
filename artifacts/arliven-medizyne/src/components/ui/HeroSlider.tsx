@@ -1,41 +1,26 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 const slides = [
   {
     id: 1,
     eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
     title: "EMPOWERING\nGLOBAL HEALTH\nSOLUTIONS",
-    subtitle: "Your trusted pharmaceutical merchant exporter from India — WHO-GMP certified products delivered to 20+ countries with precision and care.",
-    cta: "View Products",
-    ctaLink: "/products",
-    cta2: "Export Inquiry",
-    cta2Link: "/export",
-    image: "pharma-hero-cinematic.png",
+    image: "transport-mix1.jpg",
   },
   {
     id: 2,
-    eyebrow: "AIR FREIGHT & PHARMA EXPORT",
-    title: "TRUSTED\nPHARMA CARGO\nWORLDWIDE",
-    subtitle: "Seamless air and sea freight for pharmaceutical products — ensuring cold chain integrity and regulatory compliance at every destination.",
-    cta: "Export Services",
-    ctaLink: "/export",
-    cta2: "Contact Us",
-    cta2Link: "/contact",
-    image: "pharma-air-cargo.png",
+    eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
+    title: "TRUSTED\nPHARMA EXPORT\nWORLDWIDE",
+    image: "transport-mix2.jpg",
   },
   {
     id: 3,
-    eyebrow: "GLOBAL PORT OPERATIONS",
-    title: "BRIDGING\nINDIAN PHARMA\nTO THE WORLD",
-    subtitle: "From sea freight to port logistics — we deliver quality medicines to Asia, Africa, Middle East and beyond with complete documentation support.",
-    cta: "Our Products",
-    ctaLink: "/products",
-    cta2: "About Us",
-    cta2Link: "/about",
-    image: "pharma-port-mix.png",
+    eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
+    title: "BRIDGING\nINDIAN PHARMA\nGLOBALLY",
+    image: "transport-mix3.jpg",
   },
 ];
 
@@ -55,19 +40,15 @@ export function HeroSlider() {
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, []);
 
-  const goTo = (i: number) => {
-    setCurrent(i);
-    resetTimer();
-  };
-
+  const goTo = (i: number) => { setCurrent(i); resetTimer(); };
   const slide = slides[current];
 
   return (
     <>
-      {/* FULL-SCREEN CINEMATIC HERO */}
-      <section className="relative w-full overflow-hidden" style={{ height: "100vh", minHeight: "680px" }}>
+      {/* HERO — reduced height, only heading text */}
+      <section className="relative w-full overflow-hidden" style={{ height: "72vh", minHeight: "500px" }}>
 
-        {/* Background Images with smooth cross-fade */}
+        {/* Background Images */}
         <AnimatePresence mode="sync">
           <motion.div
             key={current}
@@ -84,124 +65,91 @@ export function HeroSlider() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Gradient overlays — dark on left for text, image shows on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-10" />
+        {/* Dark overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/25 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 z-10" />
 
-        {/* Content */}
+        {/* ONLY: eyebrow + heading */}
         <div className="relative z-20 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
-            <div className="max-w-2xl pt-20">
+            <div className="max-w-2xl pt-16">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current + "-text"}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.65, ease: "easeOut" }}
                 >
                   {/* Eyebrow */}
                   <motion.p
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-sm font-bold tracking-widest text-white/70 uppercase mb-5"
+                    className="text-sm font-bold tracking-widest text-white/75 uppercase mb-4"
                   >
                     {slide.eyebrow}
                   </motion.p>
 
-                  {/* Main heading */}
+                  {/* Heading — medium size */}
                   <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.65, delay: 0.2 }}
-                    className="text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] mb-7 whitespace-pre-line"
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.0] whitespace-pre-line"
                   >
                     {slide.title}
                   </motion.h1>
 
-                  {/* Accent line */}
+                  {/* Blue accent line */}
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: "80px" }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="h-1 bg-[#0071c5] mb-7"
+                    animate={{ width: "64px" }}
+                    transition={{ duration: 0.55, delay: 0.4 }}
+                    className="h-1 bg-[#0071c5] mt-6"
                   />
-
-                  {/* Subtitle */}
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="text-lg text-white/80 leading-relaxed mb-10 max-w-lg"
-                  >
-                    {slide.subtitle}
-                  </motion.p>
-
-                  {/* CTA Buttons */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.65 }}
-                    className="flex flex-wrap gap-4"
-                  >
-                    <Link
-                      href={slide.ctaLink}
-                      className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#0071c5] text-white font-bold text-base hover:bg-blue-700 transition-all duration-200 shadow-lg shadow-blue-900/30"
-                    >
-                      {slide.cta} <ArrowRight className="w-5 h-5" />
-                    </Link>
-                    <Link
-                      href={slide.cta2Link}
-                      className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/60 text-white font-bold text-base hover:bg-white/10 hover:border-white transition-all duration-200"
-                    >
-                      {slide.cta2}
-                    </Link>
-                  </motion.div>
                 </motion.div>
               </AnimatePresence>
             </div>
           </div>
         </div>
 
-        {/* Slide indicators — bottom left */}
-        <div className="absolute bottom-10 left-0 right-0 z-30">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center gap-4">
+        {/* Slide indicators */}
+        <div className="absolute bottom-7 left-0 right-0 z-30">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center gap-3">
             {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
                 className={`transition-all duration-500 rounded-full ${
-                  i === current
-                    ? "w-12 h-2 bg-[#0071c5]"
-                    : "w-3 h-3 bg-white/30 hover:bg-white/60"
+                  i === current ? "w-10 h-2 bg-[#0071c5]" : "w-3 h-3 bg-white/35 hover:bg-white/60"
                 }`}
                 aria-label={`Slide ${i + 1}`}
               />
             ))}
-            <div className="ml-4 text-white/40 text-sm font-mono">
+            <span className="ml-3 text-white/40 text-xs font-mono">
               {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-            </div>
+            </span>
           </div>
         </div>
 
-        {/* Scroll down cue */}
+        {/* Scroll cue */}
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 7, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="absolute bottom-10 right-10 z-30 text-white/50 hidden md:block"
+          className="absolute bottom-7 right-8 z-30 text-white/40 hidden md:block"
         >
-          <ChevronDown className="w-7 h-7" />
+          <ChevronDown className="w-6 h-6" />
         </motion.div>
       </section>
 
-      {/* BELOW HERO STRIP 1 — white with bold principle */}
+      {/* Strip 1 — white principle quote */}
       <section className="bg-white py-10 border-b border-gray-200">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.55 }}
           className="max-w-4xl mx-auto px-6 text-center"
         >
           <p className="text-base text-gray-500 mb-2">
@@ -213,13 +161,13 @@ export function HeroSlider() {
         </motion.div>
       </section>
 
-      {/* BELOW HERO STRIP 2 — grey CTA bar */}
+      {/* Strip 2 — grey CTA */}
       <section className="py-8" style={{ background: "#e8e8e8" }}>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.45 }}
           className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <p className="text-xl font-black text-gray-800 tracking-widest uppercase">
