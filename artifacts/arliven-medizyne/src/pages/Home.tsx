@@ -33,12 +33,12 @@ function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: 
 }
 
 const features = [
-  { icon: Shield, title: "Trusted Quality", desc: "Sourcing only from WHO-GMP certified manufacturing facilities." },
-  { icon: Globe2, title: "Global Reach", desc: "Exporting to Asia, Africa, Middle East and beyond." },
-  { icon: FileCheck, title: "Regulatory Compliance", desc: "Expertise in complex international export documentation." },
-  { icon: Truck, title: "Timely Delivery", desc: "Optimized logistics for secure and punctual shipping." },
-  { icon: PackageOpen, title: "Reliable Sourcing", desc: "Strong network of premium WHO-GMP certified manufacturers." },
-  { icon: Award, title: "Export Expertise", desc: "Years of specialized pharmaceutical merchant export experience." },
+  { icon: Shield,      image: "feature-quality.png",     title: "Trusted Quality",        desc: "Sourcing only from WHO-GMP certified manufacturing facilities." },
+  { icon: Globe2,      image: "feature-global.png",      title: "Global Reach",           desc: "Exporting to Asia, Africa, Middle East and beyond." },
+  { icon: FileCheck,   image: "feature-compliance.png",  title: "Regulatory Compliance",  desc: "Expertise in complex international export documentation." },
+  { icon: Truck,       image: "feature-delivery.png",    title: "Timely Delivery",        desc: "Optimized logistics for secure and punctual shipping." },
+  { icon: PackageOpen, image: "feature-sourcing.png",    title: "Reliable Sourcing",      desc: "Strong network of premium WHO-GMP certified manufacturers." },
+  { icon: Award,       image: "feature-expertise.png",   title: "Export Expertise",       desc: "Years of specialized pharmaceutical merchant export experience." },
 ];
 
 const productsPreview = [
@@ -200,13 +200,26 @@ export default function Home() {
                 <motion.div
                   whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white p-9 shadow-sm border border-gray-100 group cursor-default"
+                  className="bg-white shadow-sm border border-gray-100 group cursor-default overflow-hidden"
                 >
-                  <div className="w-16 h-16 bg-blue-50 flex items-center justify-center text-[#0071c5] mb-6 group-hover:bg-[#0071c5] group-hover:text-white transition-colors duration-300">
-                    <feature.icon className="w-8 h-8" />
+                  {/* Banner image — clear, no overlay */}
+                  <div className="h-48 overflow-hidden">
+                    <motion.img
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.5 }}
+                      src={`${import.meta.env.BASE_URL}images/${feature.image}`}
+                      alt={feature.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-600 text-base leading-relaxed">{feature.desc}</p>
+                  {/* Content below image */}
+                  <div className="p-7">
+                    <div className="w-12 h-12 bg-blue-50 flex items-center justify-center text-[#0071c5] mb-4 group-hover:bg-[#0071c5] group-hover:text-white transition-colors duration-300">
+                      <feature.icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-gray-900">{feature.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
                 </motion.div>
               </FadeIn>
             ))}
