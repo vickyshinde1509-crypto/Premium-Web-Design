@@ -23,16 +23,24 @@ export default function Contact() {
   return (
     <main className="w-full pt-20">
 
-      {/* Header */}
-      <section className="py-24 bg-[#111] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
+      {/* Header — handshake banner, image fully visible */}
+      <section className="relative overflow-hidden border-b border-gray-200" style={{ minHeight: "360px" }}>
+        {/* Full background image — no overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/contact-banner.jpg)` }}
+        />
+        {/* Left-side gradient only so right side of image is 100% clear */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
+        {/* Text — left aligned, small size */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "360px" }}>
           <FadeIn>
-            <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-4">Reach Out</p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-white leading-tight">
+            <p className="text-[#0071c5] font-bold tracking-widest uppercase text-xs mb-2">Reach Out</p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-white leading-tight">
               Get In Touch
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Ready to start an export partnership? Contact us today for inquiries, quotes, or product catalogs.
+            <p className="text-sm lg:text-base text-gray-200 max-w-sm leading-relaxed">
+              Ready to start an export partnership? Contact us for inquiries, quotes, or product catalogs.
             </p>
           </FadeIn>
         </div>
