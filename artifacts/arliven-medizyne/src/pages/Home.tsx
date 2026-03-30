@@ -143,11 +143,11 @@ export default function Home() {
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">
                 About Arliven Medizyne
               </p>
-              <h2 className="text-3xl lg:text-4xl font-black mb-6 leading-tight text-[#1D1D1F] reveal reveal-up">
+              <h2 className="text-3xl lg:text-4xl font-black mb-6 leading-tight text-[#1D1D1F]">
                 Excellence in<br />
                 <span className="text-[#2F80ED]">Global Healthcare</span> Export
               </h2>
-              <p className="text-[#6E6E73] text-lg leading-relaxed mb-8 reveal reveal-up">
+              <p className="text-[#6E6E73] text-lg leading-relaxed mb-8">
                 Arliven Medizyne Pvt Ltd is a premier pharmaceutical merchant exporter based in Maharashtra, India. We bridge the gap in global healthcare by delivering high-quality pharmaceutical and surgical products across international borders with full compliance and safety.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
@@ -194,13 +194,13 @@ export default function Home() {
       <section className="py-20 bg-[#F4F8FF] border-t border-[#2F80ED]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F] reveal reveal-up">Why Choose Arliven?</h2>
-            <p className="text-[#6E6E73] text-lg reveal reveal-up">Unwavering commitment to quality, compliance, and reliable global delivery.</p>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Why Choose Arliven?</h2>
+            <p className="text-[#6E6E73] text-lg">Unwavering commitment to quality, compliance, and reliable global delivery.</p>
           </FadeIn>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, idx) => (
-              <FadeIn key={idx} delay={idx * 0.15} direction="up" className="reveal reveal-right">
+              <FadeIn key={idx} delay={idx * 0.08} direction="up">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
@@ -251,7 +251,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <FadeIn>
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Our Portfolio</p>
-              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] reveal reveal-up">Premium Healthcare Products</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Premium Healthcare Products</h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <Link
@@ -321,12 +321,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-12">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">What We Do</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] reveal reveal-up">Comprehensive Services</h2>
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Comprehensive Services</h2>
           </FadeIn>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((service, idx) => (
-              <FadeIn key={idx} delay={idx * 0.15} className="reveal reveal-right">
+              <FadeIn key={idx} delay={idx * 0.08}>
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
@@ -359,10 +359,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Export Markets</p>
-              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-6 leading-tight reveal reveal-up">
+              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-6 leading-tight">
                 Connecting Indian<br />Excellence to<br />Global Markets
               </h2>
-              <p className="text-[#6E6E73] text-lg leading-relaxed mb-8 reveal reveal-up">
+              <p className="text-[#6E6E73] text-lg leading-relaxed mb-8">
                 Our established export channels span across multiple continents with seamless regulatory compliance and robust supply chain management.
               </p>
               <ul className="space-y-3">
