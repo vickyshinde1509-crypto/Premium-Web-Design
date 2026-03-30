@@ -1,5 +1,5 @@
 import { FadeIn } from "@/components/FadeIn";
-import { StaggerChildren, StaggerItem } from "@/components/Stagger";
+
 import { Globe, FileText, Package, Ship, CheckSquare, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -44,9 +44,9 @@ export default function Export() {
 
           <div className="relative mt-16">
             <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-[#2F80ED]/15" />
-            <StaggerChildren className="grid md:grid-cols-4 gap-8 relative z-10" stagger={0.12}>
+            <div className="grid md:grid-cols-4 gap-8 relative z-10">
               {steps.map((step, idx) => (
-                <StaggerItem key={idx} className="text-center relative">
+                <FadeIn key={idx} delay={idx * 0.12} className="text-center relative">
                   <div className="w-24 h-24 mx-auto bg-[#EEF4FF] border-4 border-[#EEF4FF] shadow-xl rounded-2xl flex items-center justify-center mb-6 relative lift-card">
                     <step.icon className="w-9 h-9 text-[#2F80ED]" />
                     <div className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#2F80ED] text-white flex items-center justify-center font-black text-xs shadow-lg">
@@ -55,9 +55,9 @@ export default function Export() {
                   </div>
                   <h3 className="text-lg font-black mb-2 text-[#1D1D1F]">{step.title}</h3>
                   <p className="text-sm text-[#6E6E73] leading-relaxed">{step.desc}</p>
-                </StaggerItem>
+                </FadeIn>
               ))}
-            </StaggerChildren>
+            </div>
           </div>
         </div>
       </section>
@@ -68,16 +68,16 @@ export default function Export() {
           <div className="grid lg:grid-cols-2 gap-12">
             <FadeIn>
               <h2 className="text-3xl font-black mb-8 text-[#1D1D1F]">Global Destinations</h2>
-              <StaggerChildren className="grid sm:grid-cols-2 gap-3" stagger={0.07}>
+              <div className="grid sm:grid-cols-2 gap-3">
                 {["Asia", "Africa", "Middle East", "Southeast Asia", "CIS Countries", "Latin America"].map((region, i) => (
-                  <StaggerItem key={i}>
+                  <FadeIn key={i} delay={i * 0.07}>
                     <div className="bg-[#EEF4FF] rounded-xl px-5 py-4 border border-[#2F80ED]/10 flex items-center gap-3 shadow-sm lift-card">
                       <Globe className="w-5 h-5 text-[#2F80ED] shrink-0" />
                       <span className="text-[#1D1D1F] font-semibold text-sm">{region}</span>
                     </div>
-                  </StaggerItem>
+                  </FadeIn>
                 ))}
-              </StaggerChildren>
+              </div>
             </FadeIn>
 
             <FadeIn delay={0.2}>

@@ -16,21 +16,21 @@ export function FadeIn({
   delay = 0,
   direction = "up",
   className = "",
-  duration = 0.72,
+  duration = 0.9,
 }: FadeInProps) {
   const offsets = {
-    up:    { y: 22, x: 0 },
-    down:  { y: -22, x: 0 },
-    left:  { x: 30, y: 0 },
-    right: { x: -30, y: 0 },
+    up:    { y: 36, x: 0 },
+    down:  { y: -36, x: 0 },
+    left:  { x: 56, y: 0 },
+    right: { x: -56, y: 0 },
     none:  { x: 0, y: 0 },
   };
 
   return (
     <motion.div
-      initial={{ opacity: 0, filter: "blur(4px)", ...offsets[direction] }}
-      whileInView={{ opacity: 1, filter: "blur(0px)", x: 0, y: 0 }}
-      viewport={{ once: true, amount: "some" }}
+      initial={{ opacity: 0, ...offsets[direction] }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, margin: "-12%" }}
       transition={{ duration, delay, ease: APPLE_EASE }}
       className={className}
     >

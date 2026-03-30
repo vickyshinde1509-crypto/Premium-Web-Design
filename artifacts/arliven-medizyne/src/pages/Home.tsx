@@ -2,7 +2,7 @@ import { Shield, Globe2, Truck, FileCheck, PackageOpen, Award, CheckCircle2, Arr
 import { Link } from "wouter";
 import { HeroSlider } from "@/components/ui/HeroSlider";
 import { FadeIn } from "@/components/FadeIn";
-import { StaggerChildren, StaggerItem } from "@/components/Stagger";
+
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
@@ -199,9 +199,9 @@ export default function Home() {
             <p className="text-[#6E6E73] text-lg">Unwavering commitment to quality, compliance, and reliable global delivery.</p>
           </FadeIn>
 
-          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, idx) => (
-              <StaggerItem key={idx}>
+              <FadeIn key={idx} delay={idx * 0.08} direction="up">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
@@ -224,9 +224,9 @@ export default function Home() {
                     <p className="text-[#6E6E73] text-sm leading-relaxed">{feature.desc}</p>
                   </div>
                 </motion.div>
-              </StaggerItem>
+              </FadeIn>
             ))}
-          </StaggerChildren>
+          </div>
         </div>
       </section>
 
@@ -325,9 +325,9 @@ export default function Home() {
             <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Comprehensive Services</h2>
           </FadeIn>
 
-          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((service, idx) => (
-              <StaggerItem key={idx} className="h-full">
+              <FadeIn key={idx} delay={idx * 0.08}>
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
@@ -348,9 +348,9 @@ export default function Home() {
                     <p className="text-[#6E6E73] text-xs leading-relaxed">{service.desc}</p>
                   </div>
                 </motion.div>
-              </StaggerItem>
+              </FadeIn>
             ))}
-          </StaggerChildren>
+          </div>
         </div>
       </section>
 

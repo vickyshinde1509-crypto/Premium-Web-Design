@@ -1,5 +1,5 @@
 import { FadeIn } from "@/components/FadeIn";
-import { StaggerChildren, StaggerItem } from "@/components/Stagger";
+
 import { CheckCircle2, Target, Eye, ShieldCheck, HeartHandshake, Globe } from "lucide-react";
 
 export default function About() {
@@ -64,8 +64,8 @@ export default function About() {
           <FadeIn className="text-center mb-14">
             <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Our Mission &amp; Vision</h2>
           </FadeIn>
-          <StaggerChildren className="grid md:grid-cols-2 gap-6">
-            <StaggerItem>
+          <div className="grid md:grid-cols-2 gap-6">
+            <FadeIn>
               <div className="bg-[#EEF4FF] p-10 rounded-2xl shadow-sm border border-[#2F80ED]/10 cursor-default lift-card">
                 <div className="w-14 h-14 bg-[#EAF2FF] rounded-xl flex items-center justify-center mb-7 border border-[#2F80ED]/15">
                   <Target className="w-7 h-7 text-[#2F80ED]" />
@@ -75,9 +75,9 @@ export default function About() {
                   To consistently supply safe, effective, and affordable pharmaceutical products globally by maintaining robust supply chains, adhering to stringent quality compliances, and fostering enduring partnerships.
                 </p>
               </div>
-            </StaggerItem>
+            </FadeIn>
 
-            <StaggerItem>
+            <FadeIn delay={0.15}>
               <div className="bg-[#EEF4FF] p-10 rounded-2xl shadow-sm border border-[#2F80ED]/10 cursor-default lift-card">
                 <div className="w-14 h-14 bg-[#EAF2FF] rounded-xl flex items-center justify-center mb-7 border border-[#2F80ED]/15">
                   <Eye className="w-7 h-7 text-[#2F80ED]" />
@@ -87,8 +87,8 @@ export default function About() {
                   To be recognized globally as the most reliable and transparent pharmaceutical merchant exporter from India, contributing significantly to a healthier world.
                 </p>
               </div>
-            </StaggerItem>
-          </StaggerChildren>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -102,12 +102,12 @@ export default function About() {
             </p>
           </FadeIn>
 
-          <StaggerChildren className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
               { initials: "GK", name: "Ganesh A Kute", role: "Founder & CEO", bio: "Steering Arliven Medizyne with strategic vision and a deep commitment to global healthcare accessibility and pharmaceutical excellence." },
               { initials: "NC", name: "Nitin B Choure", role: "Director", bio: "Ensuring operational excellence, rigorous quality compliance, and robust international partnerships across all markets." },
             ].map((person, i) => (
-              <StaggerItem key={i}>
+              <FadeIn key={i} delay={i * 0.1}>
                 <div className="bg-[#EEF4FF] p-8 rounded-2xl text-center border border-[#2F80ED]/10 cursor-default lift-card">
                   <div className="w-24 h-24 rounded-full bg-[#2F80ED] mx-auto mb-6 flex items-center justify-center text-white border-4 border-white shadow-lg">
                     <span className="text-2xl font-black">{person.initials}</span>
@@ -116,9 +116,9 @@ export default function About() {
                   <p className="text-[#2F80ED] font-semibold text-sm mb-4">{person.role}</p>
                   <p className="text-[#6E6E73] text-sm leading-relaxed">{person.bio}</p>
                 </div>
-              </StaggerItem>
+              </FadeIn>
             ))}
-          </StaggerChildren>
+          </div>
         </div>
       </section>
 
@@ -142,13 +142,13 @@ export default function About() {
           <FadeIn className="text-center mb-14">
             <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Our Core Values</h2>
           </FadeIn>
-          <StaggerChildren className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-3 gap-6">
             {[
               { icon: ShieldCheck, title: "Uncompromising Quality", desc: "Zero tolerance for subpar products. We ensure WHO-GMP compliance at every step of the supply chain." },
               { icon: HeartHandshake, title: "Integrity & Transparency", desc: "Honest dealings, clear documentation, and ethical business practices in every transaction." },
               { icon: Globe, title: "Customer Centricity", desc: "Tailoring our export services to meet the specific regulatory and market needs of each client." },
             ].map((value, idx) => (
-              <StaggerItem key={idx}>
+              <FadeIn key={idx} delay={idx * 0.1}>
                 <div className="text-center p-8 bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 cursor-default lift-card">
                   <div className="w-16 h-16 bg-[#EAF2FF] mx-auto rounded-2xl flex items-center justify-center mb-6 border border-[#2F80ED]/15">
                     <value.icon className="w-8 h-8 text-[#2F80ED]" />
@@ -156,9 +156,9 @@ export default function About() {
                   <h3 className="text-xl font-black mb-3 text-[#1D1D1F]">{value.title}</h3>
                   <p className="text-[#6E6E73] text-base leading-relaxed">{value.desc}</p>
                 </div>
-              </StaggerItem>
+              </FadeIn>
             ))}
-          </StaggerChildren>
+          </div>
         </div>
       </section>
     </main>
