@@ -30,7 +30,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <h2 className="text-3xl lg:text-4xl font-black mb-6 text-[#1D1D1F] leading-tight">Our Journey<br />&amp; Purpose</h2>
+              <h2 className="text-3xl lg:text-4xl font-black mb-6 text-[#1D1D1F] leading-tight reveal reveal-up">Our Journey<br />&amp; Purpose</h2>
               <div className="space-y-5 text-lg text-[#6E6E73] leading-relaxed">
                 <p>
                   Founded in Maharashtra, India, Arliven Medizyne Pvt Ltd emerged with a singular focus: to make high-quality, life-saving pharmaceutical products accessible to markets worldwide.
@@ -61,10 +61,10 @@ export default function About() {
       <section className="py-20 bg-[#F4F8FF] border-y border-[#2F80ED]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Our Mission &amp; Vision</h2>
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] reveal reveal-up">Our Mission &amp; Vision</h2>
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-6">
-            <FadeIn>
+            <FadeIn className="reveal reveal-right">
               <div className="group bg-[#EEF4FF] p-10 rounded-2xl shadow-sm border border-[#2F80ED]/10 hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-colors duration-100 cursor-default lift-card">
                 <div className="w-14 h-14 bg-white/70 rounded-xl flex items-center justify-center mb-7 border border-[#2F80ED]/15 group-hover:bg-white/20 group-hover:border-white/20 group-active:bg-white/20 group-active:border-white/20 transition-all duration-100">
                   <Target className="w-7 h-7 text-[#2F80ED] group-hover:text-white group-active:text-white transition-colors duration-100" />
@@ -76,7 +76,7 @@ export default function About() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.2}>
+            <FadeIn delay={0.2} className="reveal reveal-right">
               <div className="group bg-[#EEF4FF] p-10 rounded-2xl shadow-sm border border-[#2F80ED]/10 hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-colors duration-100 cursor-default lift-card">
                 <div className="w-14 h-14 bg-white/70 rounded-xl flex items-center justify-center mb-7 border border-[#2F80ED]/15 group-hover:bg-white/20 group-hover:border-white/20 group-active:bg-white/20 group-active:border-white/20 transition-all duration-100">
                   <Eye className="w-7 h-7 text-[#2F80ED] group-hover:text-white group-active:text-white transition-colors duration-100" />
@@ -95,8 +95,8 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
           <FadeIn>
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Our Leadership</h2>
-            <p className="text-lg text-[#6E6E73] mb-14 max-w-2xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F] reveal reveal-up">Our Leadership</h2>
+            <p className="text-lg text-[#6E6E73] mb-14 max-w-2xl mx-auto reveal reveal-up">
               Guided by industry veterans dedicated to excellence in international pharmaceutical trade.
             </p>
           </FadeIn>
@@ -106,7 +106,7 @@ export default function About() {
               { initials: "GK", name: "Ganesh A Kute", role: "Founder & CEO", bio: "Steering Arliven Medizyne with strategic vision and a deep commitment to global healthcare accessibility and pharmaceutical excellence." },
               { initials: "NC", name: "Nitin B Choure", role: "Director", bio: "Ensuring operational excellence, rigorous quality compliance, and robust international partnerships across all markets." },
             ].map((person, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
+              <FadeIn key={i} delay={i * 0.1} className="reveal reveal-right">
                 <div className="group bg-[#EEF4FF] p-8 rounded-2xl text-center border border-[#2F80ED]/10 transition-colors duration-100 hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation cursor-default lift-card">
                   <div className="w-24 h-24 rounded-full bg-[#2F80ED] mx-auto mb-6 flex items-center justify-center text-white border-4 border-white shadow-lg group-hover:bg-white group-hover:text-[#2F80ED] group-active:bg-white group-active:text-[#2F80ED] transition-all duration-100">
                     <span className="text-2xl font-black">{person.initials}</span>
@@ -139,7 +139,7 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Our Core Values</h2>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F] reveal reveal-up">Our Core Values</h2>
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -147,7 +147,7 @@ export default function About() {
               { icon: HeartHandshake, title: "Integrity & Transparency", desc: "Honest dealings, clear documentation, and ethical business practices in every transaction." },
               { icon: Globe, title: "Customer Centricity", desc: "Tailoring our export services to meet the specific regulatory and market needs of each client." },
             ].map((value, idx) => (
-              <FadeIn key={idx} delay={idx * 0.1}>
+              <FadeIn key={idx} delay={idx * 0.1} className="reveal reveal-right">
                 <div className="group text-center p-8 bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 transition-colors duration-100 hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation cursor-default lift-card">
                   <div className="w-16 h-16 bg-white/70 mx-auto rounded-2xl flex items-center justify-center mb-6 border border-[#2F80ED]/15 group-hover:bg-white/20 group-hover:border-white/20 group-active:bg-white/20 group-active:border-white/20 transition-all duration-100">
                     <value.icon className="w-8 h-8 text-[#2F80ED] group-hover:text-white group-active:text-white transition-colors duration-100" />

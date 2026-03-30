@@ -1,14 +1,22 @@
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     }
   });
 }, {
   threshold: 0.15
 });
 
-document.querySelectorAll(".reveal").forEach((el) => {
-  observer.observe(el);
-});
+function initReveal() {
+  document.querySelectorAll(".reveal:not([data-rv])").forEach((el) => {
+    el.setAttribute("data-rv", "1");
+    revealObserver.observe(el);
+  });
+}
+
+const mutationObserver = new MutationObserver(initReveal);
+mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+initReveal();

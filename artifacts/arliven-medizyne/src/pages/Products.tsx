@@ -91,11 +91,11 @@ export default function Products() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-12">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Product Range</p>
-            <h2 className="text-2xl lg:text-3xl font-black text-[#1D1D1F]">Our Product Categories</h2>
+            <h2 className="text-2xl lg:text-3xl font-black text-[#1D1D1F] reveal reveal-up">Our Product Categories</h2>
           </FadeIn>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, idx) => (
-              <FadeIn key={idx} delay={idx * 0.08}>
+              <FadeIn key={idx} delay={idx * 0.08} className="reveal reveal-right">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
@@ -144,8 +144,8 @@ export default function Products() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">What We Do</p>
-              <h2 className="text-3xl lg:text-4xl font-black mb-6 text-[#1D1D1F] leading-tight">Our Export Services</h2>
-              <p className="text-[#6E6E73] text-lg mb-8 leading-relaxed">
+              <h2 className="text-3xl lg:text-4xl font-black mb-6 text-[#1D1D1F] leading-tight reveal reveal-up">Our Export Services</h2>
+              <p className="text-[#6E6E73] text-lg mb-8 leading-relaxed reveal reveal-up">
                 Beyond just supplying products, Arliven Medizyne acts as your comprehensive partner in the pharmaceutical supply chain, handling the complexities of international trade, regulatory compliance, and logistics.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">

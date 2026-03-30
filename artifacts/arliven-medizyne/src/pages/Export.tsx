@@ -37,15 +37,15 @@ export default function Export() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Our Export Process</h2>
-            <p className="text-[#6E6E73] text-lg">A systematic, transparent approach to guarantee reliable delivery.</p>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F] reveal reveal-up">Our Export Process</h2>
+            <p className="text-[#6E6E73] text-lg reveal reveal-up">A systematic, transparent approach to guarantee reliable delivery.</p>
           </FadeIn>
 
           <div className="relative mt-16">
             <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-[#2F80ED]/15" />
             <div className="grid md:grid-cols-4 gap-8 relative z-10">
               {steps.map((step, idx) => (
-                <FadeIn key={idx} delay={idx * 0.15} className="text-center relative">
+                <FadeIn key={idx} delay={idx * 0.15} className="text-center relative reveal reveal-right">
                   <div className="group w-24 h-24 mx-auto bg-[#EEF4FF] border-4 border-[#EEF4FF] shadow-xl rounded-2xl flex items-center justify-center mb-6 relative hover:bg-[#2F80ED] active:bg-[#2F80ED] hover:border-[#2F80ED] active:border-[#2F80ED] touch-manipulation transition-colors duration-100 cursor-pointer lift-card">
                     <step.icon className="w-9 h-9 text-[#2F80ED] group-hover:text-white group-hover:scale-110 group-active:text-white group-active:scale-110 transition-all duration-100" />
                     <div className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#2F80ED] text-white flex items-center justify-center font-black text-xs shadow-lg">
@@ -66,7 +66,7 @@ export default function Export() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12">
             <FadeIn>
-              <h2 className="text-3xl font-black mb-8 text-[#1D1D1F]">Global Destinations</h2>
+              <h2 className="text-3xl font-black mb-8 text-[#1D1D1F] reveal reveal-up">Global Destinations</h2>
               <div className="grid sm:grid-cols-2 gap-3">
                 {["Asia", "Africa", "Middle East", "Southeast Asia", "CIS Countries", "Latin America"].map((region, i) => (
                   <div key={i} className="group bg-[#EEF4FF] rounded-xl px-5 py-4 border border-[#2F80ED]/10 flex items-center gap-3 hover:bg-[#2F80ED] active:bg-[#2F80ED] hover:border-[#2F80ED] active:border-[#2F80ED] touch-manipulation transition-colors duration-100 shadow-sm cursor-pointer lift-card">
@@ -79,8 +79,8 @@ export default function Export() {
 
             <FadeIn delay={0.2}>
               <div className="bg-[#EEF4FF] rounded-2xl p-8 border border-[#2F80ED]/10 shadow-sm">
-                <h2 className="text-2xl font-black mb-5 text-[#1D1D1F]">Export Support</h2>
-                <p className="text-[#6E6E73] text-base mb-7 leading-relaxed">
+                <h2 className="text-2xl font-black mb-5 text-[#1D1D1F] reveal reveal-up">Export Support</h2>
+                <p className="text-[#6E6E73] text-base mb-7 leading-relaxed reveal reveal-up">
                   We provide end-to-end support for all regulatory and logistical hurdles in international pharmaceutical trade.
                 </p>
                 <ul className="space-y-4">
