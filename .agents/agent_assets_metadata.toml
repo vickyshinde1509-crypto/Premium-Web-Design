@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "4c426vJ6ZqCiEUnoSb8wp"
+uri = "file://artifacts/arliven-medizyne/public/images/pharma-syrups.png"
+type = "image"
+title = "premium pharmaceutical syrup bottles"
