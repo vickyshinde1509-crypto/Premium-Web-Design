@@ -200,7 +200,7 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, idx) => (
-              <FadeIn key={idx} delay={idx * 0.08} direction="up" className="reveal reveal-right">
+              <FadeIn key={idx} delay={idx * 0.15} direction="up" className="reveal reveal-right">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
@@ -326,7 +326,7 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((service, idx) => (
-              <FadeIn key={idx} delay={idx * 0.08} className="reveal reveal-right">
+              <FadeIn key={idx} delay={idx * 0.15} className="reveal reveal-right">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}

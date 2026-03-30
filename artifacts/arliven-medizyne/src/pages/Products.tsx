@@ -95,7 +95,7 @@ export default function Products() {
           </FadeIn>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, idx) => (
-              <FadeIn key={idx} delay={idx * 0.08} className="reveal reveal-right">
+              <FadeIn key={idx} delay={idx * 0.15} className="reveal reveal-right">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}

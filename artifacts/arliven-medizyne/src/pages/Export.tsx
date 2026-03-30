@@ -45,7 +45,7 @@ export default function Export() {
             <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-[#2F80ED]/15" />
             <div className="grid md:grid-cols-4 gap-8 relative z-10">
               {steps.map((step, idx) => (
-                <FadeIn key={idx} delay={idx * 0.15} className="text-center relative reveal reveal-right">
+                <FadeIn key={idx} delay={idx * 0.18} className="text-center relative reveal reveal-right">
                   <div className="group w-24 h-24 mx-auto bg-[#EEF4FF] border-4 border-[#EEF4FF] shadow-xl rounded-2xl flex items-center justify-center mb-6 relative hover:bg-[#2F80ED] active:bg-[#2F80ED] hover:border-[#2F80ED] active:border-[#2F80ED] touch-manipulation transition-colors duration-100 cursor-pointer lift-card">
                     <step.icon className="w-9 h-9 text-[#2F80ED] group-hover:text-white group-hover:scale-110 group-active:text-white group-active:scale-110 transition-all duration-100" />
                     <div className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#2F80ED] text-white flex items-center justify-center font-black text-xs shadow-lg">

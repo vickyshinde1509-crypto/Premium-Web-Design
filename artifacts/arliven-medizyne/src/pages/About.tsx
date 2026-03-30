@@ -106,7 +106,7 @@ export default function About() {
               { initials: "GK", name: "Ganesh A Kute", role: "Founder & CEO", bio: "Steering Arliven Medizyne with strategic vision and a deep commitment to global healthcare accessibility and pharmaceutical excellence." },
               { initials: "NC", name: "Nitin B Choure", role: "Director", bio: "Ensuring operational excellence, rigorous quality compliance, and robust international partnerships across all markets." },
             ].map((person, i) => (
-              <FadeIn key={i} delay={i * 0.1} className="reveal reveal-right">
+              <FadeIn key={i} delay={i * 0.15} className="reveal reveal-right">
                 <div className="group bg-[#EEF4FF] p-8 rounded-2xl text-center border border-[#2F80ED]/10 transition-colors duration-100 hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation cursor-default lift-card">
                   <div className="w-24 h-24 rounded-full bg-[#2F80ED] mx-auto mb-6 flex items-center justify-center text-white border-4 border-white shadow-lg group-hover:bg-white group-hover:text-[#2F80ED] group-active:bg-white group-active:text-[#2F80ED] transition-all duration-100">
                     <span className="text-2xl font-black">{person.initials}</span>
@@ -147,7 +147,7 @@ export default function About() {
               { icon: HeartHandshake, title: "Integrity & Transparency", desc: "Honest dealings, clear documentation, and ethical business practices in every transaction." },
               { icon: Globe, title: "Customer Centricity", desc: "Tailoring our export services to meet the specific regulatory and market needs of each client." },
             ].map((value, idx) => (
-              <FadeIn key={idx} delay={idx * 0.1} className="reveal reveal-right">
+              <FadeIn key={idx} delay={idx * 0.15} className="reveal reveal-right">
                 <div className="group text-center p-8 bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 transition-colors duration-100 hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation cursor-default lift-card">
                   <div className="w-16 h-16 bg-white/70 mx-auto rounded-2xl flex items-center justify-center mb-6 border border-[#2F80ED]/15 group-hover:bg-white/20 group-hover:border-white/20 group-active:bg-white/20 group-active:border-white/20 transition-all duration-100">
                     <value.icon className="w-8 h-8 text-[#2F80ED] group-hover:text-white group-active:text-white transition-colors duration-100" />
