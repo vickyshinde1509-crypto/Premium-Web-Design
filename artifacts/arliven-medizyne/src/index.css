@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, Helvetica, Arial, sans-serif;
-  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Inter", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Poppins", "Segoe UI", sans-serif;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -28,6 +28,10 @@
   --text-main: #1D1D1F;
   --text-sub: #6E6E73;
 
+  --apple-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --card-shadow: 0 2px 12px rgba(47, 128, 237, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 14px 36px rgba(47, 128, 237, 0.14), 0 4px 10px rgba(0, 0, 0, 0.06);
+
   --background: 0 0% 100%;
   --foreground: 222 47% 11%;
   --primary: 213 84% 56%;
@@ -46,16 +50,42 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Inter", Roboto, Helvetica, Arial, sans-serif;
     background: #ffffff;
     color: var(--text-main);
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
   }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight;
-    letter-spacing: -0.3px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Poppins", "Segoe UI", sans-serif;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--text-main);
+  }
+
+  p {
+    color: #515154;
+    line-height: 1.7;
+    letter-spacing: -0.004em;
+  }
+
+  img {
+    display: block;
   }
 }
 
@@ -63,11 +93,62 @@
   .glass {
     @apply bg-white/80 backdrop-blur-lg border-b border-border/50 shadow-sm;
   }
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#2F80ED] to-blue-400;
   }
-}
 
-html {
-  scroll-behavior: smooth;
+  /* Premium card shadow */
+  .card-premium {
+    box-shadow: var(--card-shadow);
+    border-radius: 20px;
+    transition:
+      transform 0.45s var(--apple-ease),
+      box-shadow 0.45s var(--apple-ease),
+      background-color 0.1s ease;
+    will-change: transform;
+  }
+
+  .card-premium:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  /* Smooth image zoom on card hover */
+  .card-img-zoom {
+    overflow: hidden;
+  }
+
+  .card-img-zoom img {
+    transition: transform 0.6s var(--apple-ease);
+    will-change: transform;
+  }
+
+  .card-img-zoom:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Lift effect for static (non-motion) cards */
+  .lift-card {
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .lift-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(47, 128, 237, 0.14), 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Parallax container performance */
+  .parallax-layer {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Smooth section transitions */
+  section {
+    isolation: isolate;
+  }
 }

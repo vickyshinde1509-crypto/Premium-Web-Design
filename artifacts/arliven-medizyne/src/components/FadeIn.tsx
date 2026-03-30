@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
+const APPLE_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
 interface FadeInProps {
   children: ReactNode;
   delay?: number;
@@ -9,27 +11,27 @@ interface FadeInProps {
   duration?: number;
 }
 
-export function FadeIn({ 
-  children, 
-  delay = 0, 
-  direction = "up", 
+export function FadeIn({
+  children,
+  delay = 0,
+  direction = "up",
   className = "",
-  duration = 0.6
+  duration = 0.9,
 }: FadeInProps) {
-  const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
-    none: { x: 0, y: 0 }
+  const offsets = {
+    up:    { y: 36, x: 0 },
+    down:  { y: -36, x: 0 },
+    left:  { x: 56, y: 0 },
+    right: { x: -56, y: 0 },
+    none:  { x: 0, y: 0 },
   };
 
   return (
     <motion.div
-      initial={{ opacity: 0, ...directions[direction] }}
+      initial={{ opacity: 0, ...offsets[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
-      transition={{ duration, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-12%" }}
+      transition={{ duration, delay, ease: APPLE_EASE }}
       className={className}
     >
       {children}

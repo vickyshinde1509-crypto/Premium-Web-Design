@@ -202,14 +202,14 @@ export default function Home() {
             {features.map((feature, idx) => (
               <FadeIn key={idx} delay={idx * 0.08} direction="up">
                 <motion.div
-                  whileHover={{ y: -5, boxShadow: "0 20px 48px rgba(47,128,237,0.18)" }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 group cursor-default overflow-hidden shadow-sm hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-all duration-100"
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
+                  className="bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 group cursor-default overflow-hidden shadow-[0_2px_12px_rgba(47,128,237,0.07)] hover:shadow-[0_14px_36px_rgba(47,128,237,0.14)] hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-colors duration-100"
                 >
                   <div className="h-44 overflow-hidden">
                     <motion.img
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.04 }}
+                      transition={{ type: "spring", stiffness: 260, damping: 28, mass: 0.9 }}
                       src={`${import.meta.env.BASE_URL}images/${feature.image}`}
                       alt={feature.title}
                       className="w-full h-full object-cover"
@@ -328,14 +328,14 @@ export default function Home() {
             {services.map((service, idx) => (
               <FadeIn key={idx} delay={idx * 0.08}>
                 <motion.div
-                  whileHover={{ y: -5, boxShadow: "0 12px 30px rgba(47,128,237,0.10)" }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-[#EEF4FF] border border-[#2F80ED]/10 rounded-2xl overflow-hidden group cursor-default h-full flex flex-col shadow-sm hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-all duration-100"
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
+                  className="bg-[#EEF4FF] border border-[#2F80ED]/10 rounded-2xl overflow-hidden group cursor-default h-full flex flex-col shadow-[0_2px_12px_rgba(47,128,237,0.07)] hover:shadow-[0_14px_36px_rgba(47,128,237,0.14)] hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-colors duration-100"
                 >
                   <div className="h-40 overflow-hidden shrink-0">
                     <motion.img
-                      whileHover={{ scale: 1.06 }}
-                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.04 }}
+                      transition={{ type: "spring", stiffness: 260, damping: 28, mass: 0.9 }}
                       src={`${import.meta.env.BASE_URL}images/${service.image}`}
                       alt={service.title}
                       className="w-full h-full object-cover"

@@ -97,9 +97,9 @@ export default function Products() {
             {products.map((product, idx) => (
               <FadeIn key={idx} delay={idx * 0.08}>
                 <motion.div
-                  whileHover={{ y: -5, boxShadow: "0 16px 40px rgba(47,128,237,0.10)" }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-[#EEF4FF] rounded-2xl overflow-hidden border border-[#2F80ED]/10 h-full flex flex-col group shadow-sm hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-all duration-100"
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
+                  className="bg-[#EEF4FF] rounded-2xl overflow-hidden border border-[#2F80ED]/10 h-full flex flex-col group shadow-[0_2px_12px_rgba(47,128,237,0.07)] hover:shadow-[0_14px_36px_rgba(47,128,237,0.14)] hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-colors duration-100"
                 >
                   <div className="h-48 overflow-hidden relative">
                     <img
@@ -150,7 +150,7 @@ export default function Products() {
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {services.map((service, idx) => (
-                  <div key={idx} className="group flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 hover:bg-[#2F80ED] active:bg-[#2F80ED] hover:border-[#2F80ED] active:border-[#2F80ED] touch-manipulation transition-all duration-100 cursor-pointer">
+                  <div key={idx} className="group flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 hover:bg-[#2F80ED] active:bg-[#2F80ED] hover:border-[#2F80ED] active:border-[#2F80ED] touch-manipulation transition-colors duration-100 cursor-pointer lift-card">
                     <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0 group-hover:bg-white group-active:bg-white transition-colors duration-100" />
                     <span className="text-sm font-semibold text-[#1D1D1F] group-hover:text-white group-active:text-white transition-colors duration-100">{service}</span>
                   </div>

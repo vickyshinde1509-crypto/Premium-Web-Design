@@ -1,0 +1,56 @@
+Upgrade my website to a high-end premium Apple-style UI with ultra-smooth, subtle scroll animations. The experience must feel clean, calm, and professional — no aggressive motion, no jumpy effects.
+
+ANIMATION REQUIREMENTS:
+- Implement smooth scroll-triggered reveal animations
+- Use fade + slight motion only (no large movement)
+- Cards should gently slide:
+  • from right to left OR left to right (max 60px distance)
+- Text should softly rise from bottom (max 40px)
+- Use easing: cubic-bezier(0.22, 1, 0.36, 1)
+- Duration: 0.8s to 1s
+- Add small stagger delay (0.05s–0.1s between elements)
+- Trigger animations when element enters ~85% of viewport
+- Animations must feel soft, controlled, and premium (similar to Apple.com)
+
+IMPORTANT:
+- No bounce
+- No zoom jumps
+- No fast or sharp motion
+- Keep everything smooth and minimal
+
+UI / TYPOGRAPHY:
+- Use Apple system font stack (-apple-system, Segoe UI, Roboto)
+- Headings should be medium-sized (not oversized or heavy)
+  • H1: ~34–38px
+  • H2: ~26–30px
+  • H3: ~20–22px
+- Use subtle letter-spacing and balanced line height
+- Paragraph text should be soft gray (not pure black)
+
+COLOR SYSTEM:
+- Replace all dark/black backgrounds with soft light premium blue
+- Use:
+  Primary: #2F80ED
+  Soft Background: #F4F8FF
+  Section Background: #EEF4FF
+  Card Background: #EAF2FF
+- Keep existing white and brand blue colors unchanged
+
+CARDS:
+- Rounded corners (18px–22px)
+- Very soft shadow (not heavy)
+- Subtle hover: slight lift (translateY -4px or -5px)
+- No aggressive scaling
+
+PERFORMANCE:
+- Use lightweight vanilla JavaScript (no heavy libraries)
+- Optimize scroll performance (use IntersectionObserver if possible)
+- Ensure smooth experience on mobile devices
+
+CODE IMPLEMENTATION:
+- Add reusable animation classes (fade, slide-left, slide-right, slide-up)
+- Apply animations cleanly to cards, text, and sections
+- Ensure animations trigger once (no repeat flicker)
+
+FINAL GOAL:
+The website should feel like a premium global brand — clean, minimal, smooth, and highly professional, with Apple-level motion design and zero visual noise.
