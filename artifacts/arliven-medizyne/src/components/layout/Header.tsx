@@ -58,10 +58,10 @@ export function Header() {
                 href={link.href}
                 className={`text-base font-semibold transition-colors relative py-1 ${
                   location === link.href
-                    ? transparent ? "text-white" : "text-[#0071c5]"
+                    ? transparent ? "text-white" : "text-[#2F80ED]"
                     : transparent
                       ? "text-white/90 hover:text-white"
-                      : "text-gray-700 hover:text-[#0071c5]"
+                      : "text-gray-700 hover:text-[#2F80ED]"
                 }`}
               >
                 {link.name}
@@ -69,7 +69,7 @@ export function Header() {
                   <motion.div
                     layoutId="nav-underline"
                     className={`absolute left-0 right-0 -bottom-0.5 h-0.5 rounded-full ${
-                      transparent ? "bg-white" : "bg-[#0071c5]"
+                      transparent ? "bg-white" : "bg-[#2F80ED]"
                     }`}
                   />
                 )}
@@ -141,7 +141,7 @@ export function Header() {
                   key={link.name}
                   href={link.href}
                   className={`text-lg font-semibold py-2 px-3 rounded ${
-                    location === link.href ? "bg-blue-50 text-[#0071c5]" : "text-gray-800"
+                    location === link.href ? "bg-blue-50 text-[#2F80ED]" : "text-gray-800"
                   }`}
                 >
                   {link.name}
@@ -152,7 +152,7 @@ export function Header() {
                 <a href="https://wa.me/919049175132" className="flex items-center gap-2 text-[#25D366] font-semibold">
                   <MessageCircle className="w-5 h-5" /> WhatsApp
                 </a>
-                <a href="mailto:info@arlivenmedizyne.com" className="flex items-center gap-2 text-[#0071c5] font-semibold">
+                <a href="mailto:info@arlivenmedizyne.com" className="flex items-center gap-2 text-[#2F80ED] font-semibold">
                   <Mail className="w-5 h-5" /> Email
                 </a>
               </div>

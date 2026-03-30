@@ -1,6 +1,7 @@
 import { FadeIn } from "@/components/FadeIn";
 import { Globe, FileText, Package, Ship, CheckSquare, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 
 const steps = [
   { icon: CheckSquare, title: "Requirement Analysis", desc: "Understanding client needs, regulatory requirements of the destination country, and product specifications." },
@@ -15,13 +16,13 @@ export default function Export() {
 
       {/* Hero with background image */}
       <section
-        className="relative min-h-[60vh] flex items-center"
+        className="relative min-h-[55vh] flex items-center"
         style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/pharma-export.png)`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#111]/80 to-transparent" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-24">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#111]/75 to-transparent" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
           <FadeIn>
-            <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-4">Global Logistics</p>
+            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Global Logistics</p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-5 text-white max-w-3xl leading-tight">
               Seamless Export Operations
             </h1>
@@ -33,26 +34,26 @@ export default function Export() {
       </section>
 
       {/* Export Process Flow */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900">Our Export Process</h2>
-            <p className="text-gray-600 text-lg">A systematic, transparent approach to guarantee reliable delivery.</p>
+          <FadeIn className="text-center mb-14">
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Our Export Process</h2>
+            <p className="text-[#6E6E73] text-lg">A systematic, transparent approach to guarantee reliable delivery.</p>
           </FadeIn>
 
-          <div className="relative mt-20">
-            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gray-200" />
+          <div className="relative mt-16">
+            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-[#2F80ED]/15" />
             <div className="grid md:grid-cols-4 gap-8 relative z-10">
               {steps.map((step, idx) => (
                 <FadeIn key={idx} delay={idx * 0.15} className="text-center relative">
-                  <div className="w-24 h-24 mx-auto bg-white border-4 border-gray-100 shadow-xl flex items-center justify-center mb-7 relative group hover:border-[#0071c5] transition-colors">
-                    <step.icon className="w-10 h-10 text-[#0071c5] group-hover:scale-110 transition-transform" />
-                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-black text-sm shadow-lg">
+                  <div className="w-24 h-24 mx-auto bg-white border-4 border-[#EAF2FF] shadow-xl rounded-2xl flex items-center justify-center mb-6 relative group hover:border-[#2F80ED] transition-colors">
+                    <step.icon className="w-9 h-9 text-[#2F80ED] group-hover:scale-110 transition-transform" />
+                    <div className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#2F80ED] text-white flex items-center justify-center font-black text-xs shadow-lg">
                       {idx + 1}
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-3 text-gray-900">{step.title}</h3>
-                  <p className="text-base text-gray-600 leading-relaxed">{step.desc}</p>
+                  <h3 className="text-lg font-black mb-2 text-[#1D1D1F]">{step.title}</h3>
+                  <p className="text-sm text-[#6E6E73] leading-relaxed">{step.desc}</p>
                 </FadeIn>
               ))}
             </div>
@@ -61,28 +62,28 @@ export default function Export() {
       </section>
 
       {/* Destinations & Support */}
-      <section className="py-24 bg-[#1a1a1a]">
+      <section className="py-20 bg-[#F4F8FF] border-y border-[#2F80ED]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-12">
             <FadeIn>
-              <h2 className="text-3xl font-black mb-8 text-white">Global Destinations</h2>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <h2 className="text-3xl font-black mb-8 text-[#1D1D1F]">Global Destinations</h2>
+              <div className="grid sm:grid-cols-2 gap-3">
                 {["Asia", "Africa", "Middle East", "Southeast Asia", "CIS Countries", "Latin America"].map((region, i) => (
-                  <div key={i} className="bg-[#222] p-6 border border-white/10 flex items-center gap-4 hover:border-[#0071c5]/50 transition-colors">
-                    <Globe className="w-6 h-6 text-[#0071c5] opacity-70 shrink-0" />
-                    <span className="text-white font-bold text-lg">{region}</span>
+                  <div key={i} className="bg-white rounded-xl px-5 py-4 border border-[#2F80ED]/15 flex items-center gap-3 hover:border-[#2F80ED]/40 transition-colors shadow-sm">
+                    <Globe className="w-5 h-5 text-[#2F80ED] shrink-0" />
+                    <span className="text-[#1D1D1F] font-semibold text-sm">{region}</span>
                   </div>
                 ))}
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <div className="bg-[#222] p-10 border border-white/10">
-                <h2 className="text-3xl font-black mb-6 text-white">Export Support</h2>
-                <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+              <div className="bg-white rounded-2xl p-8 border border-[#2F80ED]/12 shadow-sm">
+                <h2 className="text-2xl font-black mb-5 text-[#1D1D1F]">Export Support</h2>
+                <p className="text-[#6E6E73] text-base mb-7 leading-relaxed">
                   We provide end-to-end support for all regulatory and logistical hurdles in international pharmaceutical trade.
                 </p>
-                <ul className="space-y-5">
+                <ul className="space-y-4">
                   {[
                     "Country-specific regulatory compliance",
                     "CTD/eCTD dossiers for product registration",
@@ -90,9 +91,11 @@ export default function Export() {
                     "Certificate of Analysis (COA) & FSC provisions",
                     "Consolidation of diverse product categories",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-4">
-                      <CheckSquare className="w-6 h-6 text-[#0071c5] shrink-0 mt-0.5" />
-                      <span className="text-gray-300 font-semibold text-base">{item}</span>
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#EAF2FF] flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckSquare className="w-3 h-3 text-[#2F80ED]" />
+                      </div>
+                      <span className="text-[#1D1D1F] font-medium text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -103,19 +106,19 @@ export default function Export() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-[#0071c5] text-white text-center">
+      <section className="py-20 bg-[#2F80ED] text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn>
             <h2 className="text-3xl lg:text-4xl font-black mb-5">Start Your Export Journey</h2>
-            <p className="text-lg text-white/90 mb-10 leading-relaxed">
+            <p className="text-lg text-white/85 mb-10 leading-relaxed">
               Partner with Arliven Medizyne for reliable, compliant, and timely pharmaceutical supplies to any destination.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 px-10 py-4 bg-gray-900 text-white font-black text-base uppercase tracking-wider hover:bg-black transition-colors"
+              className="inline-flex items-center gap-3 px-9 py-3 bg-white text-[#2F80ED] font-bold text-sm rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
             >
               Contact Export Team
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>
         </div>

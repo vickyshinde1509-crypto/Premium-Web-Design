@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Poppins', sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -21,26 +21,24 @@
 }
 
 :root {
-  /* Dark Charcoal / Grey Corporate Theme */
+  --primary-brand: #2F80ED;
+  --primary-soft: #EEF4FF;
+  --section-bg: #F4F8FF;
+  --card-bg: #EAF2FF;
+  --text-main: #1D1D1F;
+  --text-sub: #6E6E73;
+
   --background: 0 0% 100%;
   --foreground: 222 47% 11%;
-  
-  /* Blue */
-  --primary: 210 100% 45%;
+  --primary: 213 84% 56%;
   --primary-foreground: 0 0% 100%;
-  
-  /* Light Grey */
-  --secondary: 210 20% 96%;
+  --secondary: 214 100% 97%;
   --secondary-foreground: 222 47% 11%;
-  
-  --muted: 210 20% 96%;
+  --muted: 214 100% 97%;
   --muted-foreground: 215 16% 47%;
-  
-  --accent: 210 40% 96%;
+  --accent: 213 100% 96%;
   --accent-foreground: 222 47% 11%;
-  
-  --border: 214 32% 91%;
-  
+  --border: 213 60% 91%;
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
 }
@@ -50,10 +48,14 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20 selection:text-primary overflow-x-hidden;
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: var(--text-main);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
+    letter-spacing: -0.3px;
   }
 }
 
@@ -61,13 +63,11 @@
   .glass {
     @apply bg-white/80 backdrop-blur-lg border-b border-border/50 shadow-sm;
   }
-  
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#2F80ED] to-blue-400;
   }
 }
 
-/* Smooth scrolling for anchor links if any */
 html {
   scroll-behavior: smooth;
 }

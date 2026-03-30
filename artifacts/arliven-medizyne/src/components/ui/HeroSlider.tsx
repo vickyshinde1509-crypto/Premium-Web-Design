@@ -106,7 +106,7 @@ export function HeroSlider() {
                     initial={{ width: 0 }}
                     animate={{ width: "64px" }}
                     transition={{ duration: 0.55, delay: 0.4 }}
-                    className="h-1 bg-[#0071c5] mt-6"
+                    className="h-1 bg-[#2F80ED] mt-6"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -122,7 +122,7 @@ export function HeroSlider() {
                 key={i}
                 onClick={() => goTo(i)}
                 className={`transition-all duration-500 rounded-full ${
-                  i === current ? "w-10 h-2 bg-[#0071c5]" : "w-3 h-3 bg-white/35 hover:bg-white/60"
+                  i === current ? "w-10 h-2 bg-[#2F80ED]" : "w-3 h-3 bg-white/35 hover:bg-white/60"
                 }`}
                 aria-label={`Slide ${i + 1}`}
               />
@@ -162,7 +162,7 @@ export function HeroSlider() {
       </section>
 
       {/* Strip 2 — grey CTA */}
-      <section className="py-8" style={{ background: "#e8e8e8" }}>
+      <section className="py-7 bg-[#EEF4FF] border-b border-[#2F80ED]/15">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -170,12 +170,12 @@ export function HeroSlider() {
           transition={{ duration: 0.45 }}
           className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <p className="text-xl font-black text-gray-800 tracking-widest uppercase">
+          <p className="text-base font-bold text-[#1D1D1F] tracking-widest uppercase">
             Need More Information?
           </p>
           <Link
             href="/contact"
-            className="px-8 py-3 bg-gray-900 text-white text-sm font-bold uppercase tracking-wider hover:bg-[#0071c5] transition-colors duration-200"
+            className="px-7 py-2.5 bg-[#2F80ED] text-white text-sm font-bold rounded-xl hover:bg-blue-600 transition-colors duration-200 shadow-md"
           >
             Contact Us
           </Link>
