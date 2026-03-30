@@ -21,14 +21,14 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#F4F8FF] border-t border-[#2F80ED]/15 pt-16 pb-8">
+    <footer className="bg-[#111111] border-t border-white/10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
 
           {/* Brand Col */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <div className="bg-white rounded-xl p-2 inline-block shadow-sm border border-[#2F80ED]/10">
+              <div className="bg-white rounded-xl p-2 inline-block">
                 <img
                   src={`${import.meta.env.BASE_URL}images/arliven-logo.png`}
                   alt="Arliven Medizyne"
@@ -36,17 +36,17 @@ export function Footer() {
                 />
               </div>
             </div>
-            <p className="text-[#6E6E73] text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Reliable Pharmaceutical Merchant Exporter from India delivering high-quality pharmaceutical and surgical products worldwide.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-full bg-white border border-[#2F80ED]/20 flex items-center justify-center text-[#2F80ED] hover:bg-[#2F80ED] hover:text-white hover:border-[#2F80ED] transition-all duration-200 shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#2F80ED] transition-all duration-200">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white border border-[#2F80ED]/20 flex items-center justify-center text-[#2F80ED] hover:bg-[#2F80ED] hover:text-white hover:border-[#2F80ED] transition-all duration-200 shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#2F80ED] transition-all duration-200">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white border border-[#2F80ED]/20 flex items-center justify-center text-[#2F80ED] hover:bg-[#2F80ED] hover:text-white hover:border-[#2F80ED] transition-all duration-200 shadow-sm">
+              <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#2F80ED] transition-all duration-200">
                 <Facebook className="w-4 h-4" />
               </a>
             </div>
@@ -54,13 +54,13 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-base mb-5 text-[#1D1D1F]">Quick Links</h4>
+            <h4 className="font-semibold text-base mb-5 text-white">Quick Links</h4>
             <ul className="space-y-3">
               {navLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-[#6E6E73] hover:text-[#2F80ED] transition-colors flex items-center gap-2 text-sm font-medium group"
+                    className="text-gray-400 hover:text-[#2F80ED] transition-colors flex items-center gap-2 text-sm font-medium group"
                   >
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-[#2F80ED]" />
                     {item.name}
@@ -72,13 +72,13 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-base mb-5 text-[#1D1D1F]">Our Services</h4>
+            <h4 className="font-semibold text-base mb-5 text-white">Our Services</h4>
             <ul className="space-y-3">
               {serviceLinks.map((s) => (
                 <li key={s}>
                   <Link
                     href="/products"
-                    className="text-[#6E6E73] hover:text-[#2F80ED] transition-colors flex items-center gap-2 text-sm font-medium group"
+                    className="text-gray-400 hover:text-[#2F80ED] transition-colors flex items-center gap-2 text-sm font-medium group"
                   >
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-[#2F80ED]" />
                     {s}
@@ -90,8 +90,8 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-base mb-5 text-[#1D1D1F]">Contact Us</h4>
-            <ul className="space-y-4 text-sm font-medium text-[#6E6E73]">
+            <h4 className="font-semibold text-base mb-5 text-white">Contact Us</h4>
+            <ul className="space-y-4 text-sm font-medium text-gray-400">
               <li>
                 <a
                   href={MAPS_LINK}
@@ -100,7 +100,7 @@ export function Footer() {
                   className="flex items-start gap-3 hover:text-[#2F80ED] transition-colors group"
                 >
                   <MapPin className="w-4 h-4 text-[#2F80ED] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                  <span>Maharashtra, India<br /><span className="text-xs text-[#6E6E73] group-hover:text-[#2F80ED]">View on Google Maps ↗</span></span>
+                  <span>Maharashtra, India<br /><span className="text-xs text-gray-500 group-hover:text-[#2F80ED]">View on Google Maps ↗</span></span>
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -115,11 +115,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#2F80ED]/15 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-[#6E6E73]">
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-gray-500">
           <p>© {new Date().getFullYear()} Arliven Medizyne Pvt Ltd. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/contact" className="hover:text-[#2F80ED] transition-colors">Privacy Policy</Link>
-            <Link href="/contact" className="hover:text-[#2F80ED] transition-colors">Terms of Service</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
