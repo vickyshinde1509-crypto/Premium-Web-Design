@@ -99,34 +99,34 @@ export default function Products() {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
-                  className="bg-[#EEF4FF] rounded-2xl overflow-hidden border border-[#2F80ED]/10 h-full flex flex-col group shadow-[0_2px_12px_rgba(47,128,237,0.07)] hover:shadow-[0_14px_36px_rgba(47,128,237,0.14)] hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-colors duration-100"
+                  className="bg-[#EEF4FF] rounded-2xl overflow-hidden border border-[#2F80ED]/10 h-full flex flex-col shadow-[0_2px_12px_rgba(47,128,237,0.07)]"
                 >
                   <div className="h-48 overflow-hidden relative">
                     <img
                       src={`${import.meta.env.BASE_URL}images/${product.image}`}
                       alt={product.category}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent group-hover:from-[#2F80ED]/40" />
-                    <div className="absolute bottom-3 left-3 w-10 h-10 bg-white rounded-xl flex items-center justify-center text-[#2F80ED] shadow-md group-hover:bg-white/20 group-hover:text-white transition-all duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
+                    <div className="absolute bottom-3 left-3 w-10 h-10 bg-white rounded-xl flex items-center justify-center text-[#2F80ED] shadow-md">
                       <product.icon className="w-5 h-5" />
                     </div>
                   </div>
 
                   <div className="p-6 flex-grow flex flex-col">
-                    <h3 className="text-lg font-black text-[#1D1D1F] mb-2 group-hover:text-white group-active:text-white transition-colors duration-100">{product.category}</h3>
-                    <p className="text-[#6E6E73] text-sm mb-5 leading-relaxed group-hover:text-white/75 group-active:text-white/75 transition-colors duration-100">{product.description}</p>
+                    <h3 className="text-lg font-black text-[#1D1D1F] mb-2">{product.category}</h3>
+                    <p className="text-[#6E6E73] text-sm mb-5 leading-relaxed">{product.description}</p>
                     <div className="space-y-2 mb-6 flex-grow">
                       {product.items.map((item, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm font-medium text-[#1D1D1F] group-hover:text-white/90 group-active:text-white/90 transition-colors duration-100">
-                          <CheckCircle className="w-4 h-4 text-[#2F80ED] shrink-0 group-hover:text-white group-active:text-white transition-colors duration-100" />
+                        <div key={i} className="flex items-center gap-2 text-sm font-medium text-[#1D1D1F]">
+                          <CheckCircle className="w-4 h-4 text-[#2F80ED] shrink-0" />
                           <span>{item}</span>
                         </div>
                       ))}
                     </div>
                     <Link
                       href="/contact"
-                      className="w-full py-3 text-center rounded-xl border-2 border-[#2F80ED] text-[#2F80ED] font-bold text-sm hover:bg-[#2F80ED] hover:text-white group-hover:border-white group-hover:text-white group-hover:bg-white/20 transition-all duration-300 mt-auto"
+                      className="w-full py-3 text-center rounded-xl border-2 border-[#2F80ED] text-[#2F80ED] font-bold text-sm hover:bg-[#2F80ED] hover:text-white transition-all duration-200 mt-auto"
                     >
                       Inquire Now
                     </Link>
@@ -150,9 +150,9 @@ export default function Products() {
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {services.map((service, idx) => (
-                  <div key={idx} className="group flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 hover:bg-[#2F80ED] active:bg-[#2F80ED] hover:border-[#2F80ED] active:border-[#2F80ED] touch-manipulation transition-colors duration-100 cursor-pointer lift-card">
-                    <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0 group-hover:bg-white group-active:bg-white transition-colors duration-100" />
-                    <span className="text-sm font-semibold text-[#1D1D1F] group-hover:text-white group-active:text-white transition-colors duration-100">{service}</span>
+                  <div key={idx} className="flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 lift-card">
+                    <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0" />
+                    <span className="text-sm font-semibold text-[#1D1D1F]">{service}</span>
                   </div>
                 ))}
               </div>
