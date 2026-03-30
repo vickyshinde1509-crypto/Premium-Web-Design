@@ -201,18 +201,18 @@ export default function Contact() {
           href="https://maps.app.goo.gl/deb5VwkttGy3S7eH9"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative h-[380px] grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
+          className="block relative h-[380px] cursor-pointer"
           title="Open in Google Maps"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824056.248384218!2d73.86445582319208!3d18.917997397737877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcfc41e9c9cd6f9%3A0x1b2f22924be04fb6!2sMaharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4792834.843267928!2d75.7139!3d19.7515!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcfc41e9c9cd6f9%3A0x1b2f22924be04fb6!2sMaharashtra%2C+India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0, pointerEvents: "none" }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Arliven Medizyne Location"
+            title="Arliven Medizyne Location — Maharashtra, India"
           />
           {/* Tap overlay hint */}
           <div className="absolute bottom-4 right-4 bg-white shadow-lg px-3 py-2 flex items-center gap-2 text-xs font-bold text-gray-800">
