@@ -62,15 +62,23 @@ export default function Products() {
   return (
     <main className="w-full pt-20">
 
-      {/* Header */}
-      <section className="py-24 bg-[#111] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      {/* Header Banner */}
+      <section
+        className="relative overflow-hidden border-b border-white/10"
+        style={{ minHeight: "340px" }}
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/pharma-hero-cinematic.png)` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/65 to-transparent" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
           <FadeIn>
-            <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-4">What We Offer</p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-white leading-tight">
-              Products &<br />Services
+            <p className="text-[#0071c5] font-bold tracking-widest uppercase text-xs mb-3">What We Offer</p>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-white leading-tight">
+              Products &amp; Services
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-400 max-w-2xl leading-relaxed">
+            <p className="text-base lg:text-lg text-gray-300 max-w-xl leading-relaxed">
               Comprehensive healthcare solutions encompassing a wide range of premium pharmaceutical formulations.
             </p>
           </FadeIn>
@@ -97,7 +105,7 @@ export default function Products() {
                   </div>
 
                   <div className="p-8 flex-grow flex flex-col">
-                    <h3 className="text-2xl font-black text-white mb-3">{product.category}</h3>
+                    <h3 className="text-lg font-black text-white mb-3">{product.category}</h3>
                     <p className="text-gray-400 text-base mb-6 leading-relaxed">{product.description}</p>
                     <div className="space-y-3 mb-8 flex-grow">
                       {product.items.map((item, i) => (
@@ -127,8 +135,8 @@ export default function Products() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-4">What We Do</p>
-              <h2 className="text-4xl lg:text-5xl font-black mb-7 text-gray-900 leading-tight">Our Export Services</h2>
-              <p className="text-gray-600 text-xl mb-10 leading-relaxed">
+              <h2 className="text-3xl lg:text-4xl font-black mb-6 text-gray-900 leading-tight">Our Export Services</h2>
+              <p className="text-gray-600 text-lg mb-10 leading-relaxed">
                 Beyond just supplying products, Arliven Medizyne acts as your comprehensive partner in the pharmaceutical supply chain, handling the complexities of international trade, regulatory compliance, and logistics.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">

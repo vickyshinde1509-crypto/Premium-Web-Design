@@ -33,8 +33,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <h2 className="text-4xl lg:text-5xl font-black mb-7 text-gray-900 leading-tight">Our Journey<br />& Purpose</h2>
-              <div className="space-y-6 text-xl text-gray-600 leading-relaxed">
+              <h2 className="text-3xl lg:text-4xl font-black mb-6 text-gray-900 leading-tight">Our Journey<br />& Purpose</h2>
+              <div className="space-y-5 text-lg text-gray-600 leading-relaxed">
                 <p>
                   Founded in Maharashtra, India, Arliven Medizyne Pvt Ltd emerged with a singular focus: to make high-quality, life-saving pharmaceutical products accessible to markets worldwide.
                 </p>
@@ -64,15 +64,15 @@ export default function About() {
       <section className="py-24 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900">Our Mission & Vision</h2>
+            <h2 className="text-3xl lg:text-4xl font-black text-gray-900">Our Mission & Vision</h2>
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-8">
             <FadeIn className="bg-white p-10 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-blue-50 flex items-center justify-center mb-8 border border-blue-100">
                 <Target className="w-8 h-8 text-[#0071c5]" />
               </div>
-              <h3 className="text-3xl font-black mb-5 text-gray-900">Our Mission</h3>
-              <p className="text-gray-600 text-xl leading-relaxed">
+              <h3 className="text-2xl font-black mb-4 text-gray-900">Our Mission</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
                 To consistently supply safe, effective, and affordable pharmaceutical products globally by maintaining robust supply chains, adhering to stringent quality compliances, and fostering enduring partnerships.
               </p>
             </FadeIn>
@@ -81,8 +81,8 @@ export default function About() {
               <div className="w-16 h-16 bg-blue-50 flex items-center justify-center mb-8 border border-blue-100">
                 <Eye className="w-8 h-8 text-[#0071c5]" />
               </div>
-              <h3 className="text-3xl font-black mb-5 text-gray-900">Our Vision</h3>
-              <p className="text-gray-600 text-xl leading-relaxed">
+              <h3 className="text-2xl font-black mb-4 text-gray-900">Our Vision</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
                 To be recognized globally as the most reliable and transparent pharmaceutical merchant exporter from India, contributing significantly to a healthier world.
               </p>
             </FadeIn>
@@ -94,8 +94,8 @@ export default function About() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
           <FadeIn>
-            <h2 className="text-4xl lg:text-5xl font-black mb-5 text-gray-900">Our Leadership</h2>
-            <p className="text-xl text-gray-600 mb-16 max-w-2xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900">Our Leadership</h2>
+            <p className="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
               Guided by industry veterans dedicated to excellence in international pharmaceutical trade.
             </p>
           </FadeIn>
@@ -138,7 +138,7 @@ export default function About() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black mb-5 text-gray-900">Our Core Values</h2>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900">Our Core Values</h2>
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-8">
             {[
@@ -150,8 +150,8 @@ export default function About() {
                 <div className="w-20 h-20 bg-blue-50 mx-auto flex items-center justify-center mb-7 border border-blue-100">
                   <value.icon className="w-10 h-10 text-[#0071c5]" />
                 </div>
-                <h3 className="text-2xl font-black mb-4 text-gray-900">{value.title}</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">{value.desc}</p>
+                <h3 className="text-xl font-black mb-3 text-gray-900">{value.title}</h3>
+                <p className="text-gray-600 text-base leading-relaxed">{value.desc}</p>
               </FadeIn>
             ))}
           </div>

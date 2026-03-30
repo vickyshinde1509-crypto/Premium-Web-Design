@@ -153,11 +153,11 @@ export default function Home() {
               <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-4">
                 About Arliven Medizyne
               </p>
-              <h2 className="text-4xl lg:text-5xl font-black mb-7 leading-tight text-gray-900">
+              <h2 className="text-3xl lg:text-4xl font-black mb-6 leading-tight text-gray-900">
                 Excellence in<br />
                 <span className="text-[#0071c5]">Global Healthcare</span> Export
               </h2>
-              <p className="text-gray-600 text-xl leading-relaxed mb-8">
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 Arliven Medizyne Pvt Ltd is a premier pharmaceutical merchant exporter based in Maharashtra, India. We bridge the gap in global healthcare by delivering high-quality pharmaceutical and surgical products across international borders with full compliance and safety.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -204,8 +204,8 @@ export default function Home() {
       <section className="py-24 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black mb-5 text-gray-900">Why Choose Arliven?</h2>
-            <p className="text-gray-600 text-xl">Unwavering commitment to quality, compliance, and reliable global delivery.</p>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900">Why Choose Arliven?</h2>
+            <p className="text-gray-600 text-lg">Unwavering commitment to quality, compliance, and reliable global delivery.</p>
           </FadeIn>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -264,7 +264,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <FadeIn>
               <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-3">Our Portfolio</p>
-              <h2 className="text-4xl lg:text-5xl font-black text-white">Premium Healthcare Products</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-white">Premium Healthcare Products</h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <Link
@@ -292,7 +292,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-[#0071c5] transition-colors flex items-center justify-between">
+                      <h3 className="text-lg font-bold text-white group-hover:text-[#0071c5] transition-colors flex items-center justify-between">
                         {product.name}
                         <ArrowRight className="w-5 h-5 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                       </h3>
@@ -334,7 +334,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-16">
             <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-4">What We Do</p>
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900">Comprehensive Services</h2>
+            <h2 className="text-3xl lg:text-4xl font-black text-gray-900">Comprehensive Services</h2>
           </FadeIn>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -374,10 +374,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-4">Export Markets</p>
-              <h2 className="text-4xl lg:text-5xl font-black text-white mb-7 leading-tight">
+              <h2 className="text-3xl lg:text-4xl font-black text-white mb-6 leading-tight">
                 Connecting Indian<br />Excellence to<br />Global Markets
               </h2>
-              <p className="text-gray-400 text-xl leading-relaxed mb-10">
+              <p className="text-gray-400 text-lg leading-relaxed mb-10">
                 Our established export channels span across multiple continents with seamless regulatory compliance and robust supply chain management.
               </p>
               <ul className="space-y-4">
@@ -413,10 +413,10 @@ export default function Home() {
       <section className="py-24 bg-[#0071c5]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="text-4xl lg:text-6xl font-black text-white mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-black text-white mb-5 leading-tight">
               Ready to Partner<br />With Us?
             </h2>
-            <p className="text-white/90 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
               Contact us today to discuss your pharmaceutical sourcing and export requirements. Let's build a healthier future together.
             </p>
             <div className="flex flex-wrap justify-center gap-5">

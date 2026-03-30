@@ -22,10 +22,10 @@ export default function Export() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-24">
           <FadeIn>
             <p className="text-[#0071c5] font-bold tracking-widest uppercase text-sm mb-4">Global Logistics</p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-7 text-white max-w-3xl leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-5 text-white max-w-3xl leading-tight">
               Seamless Export Operations
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 max-w-2xl leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
               Connecting Indian pharmaceutical manufacturing excellence to healthcare providers worldwide through robust, compliant supply chains.
             </p>
           </FadeIn>
@@ -36,8 +36,8 @@ export default function Export() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black mb-5 text-gray-900">Our Export Process</h2>
-            <p className="text-gray-600 text-xl">A systematic, transparent approach to guarantee reliable delivery.</p>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900">Our Export Process</h2>
+            <p className="text-gray-600 text-lg">A systematic, transparent approach to guarantee reliable delivery.</p>
           </FadeIn>
 
           <div className="relative mt-20">
@@ -65,7 +65,7 @@ export default function Export() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <FadeIn>
-              <h2 className="text-4xl font-black mb-10 text-white">Global Destinations</h2>
+              <h2 className="text-3xl font-black mb-8 text-white">Global Destinations</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {["Asia", "Africa", "Middle East", "Southeast Asia", "CIS Countries", "Latin America"].map((region, i) => (
                   <div key={i} className="bg-[#222] p-6 border border-white/10 flex items-center gap-4 hover:border-[#0071c5]/50 transition-colors">
@@ -106,8 +106,8 @@ export default function Export() {
       <section className="py-24 bg-[#0071c5] text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn>
-            <h2 className="text-4xl lg:text-5xl font-black mb-7">Start Your Export Journey</h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+            <h2 className="text-3xl lg:text-4xl font-black mb-5">Start Your Export Journey</h2>
+            <p className="text-lg text-white/90 mb-10 leading-relaxed">
               Partner with Arliven Medizyne for reliable, compliant, and timely pharmaceutical supplies to any destination.
             </p>
             <Link
