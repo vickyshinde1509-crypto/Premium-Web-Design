@@ -99,7 +99,7 @@ export default function Products() {
                 <motion.div
                   whileHover={{ y: -5, boxShadow: "0 16px 40px rgba(47,128,237,0.10)" }}
                   transition={{ duration: 0.3 }}
-                  className="bg-[#EEF4FF] rounded-2xl overflow-hidden border border-[#2F80ED]/10 h-full flex flex-col group shadow-sm hover:bg-[#2F80ED] transition-all duration-300"
+                  className="bg-[#EEF4FF] rounded-2xl overflow-hidden border border-[#2F80ED]/10 h-full flex flex-col group shadow-sm hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-all duration-100"
                 >
                   <div className="h-48 overflow-hidden relative">
                     <img
@@ -114,12 +114,12 @@ export default function Products() {
                   </div>
 
                   <div className="p-6 flex-grow flex flex-col">
-                    <h3 className="text-lg font-black text-[#1D1D1F] mb-2 group-hover:text-white transition-colors duration-300">{product.category}</h3>
-                    <p className="text-[#6E6E73] text-sm mb-5 leading-relaxed group-hover:text-white/75 transition-colors duration-300">{product.description}</p>
+                    <h3 className="text-lg font-black text-[#1D1D1F] mb-2 group-hover:text-white group-active:text-white transition-colors duration-100">{product.category}</h3>
+                    <p className="text-[#6E6E73] text-sm mb-5 leading-relaxed group-hover:text-white/75 group-active:text-white/75 transition-colors duration-100">{product.description}</p>
                     <div className="space-y-2 mb-6 flex-grow">
                       {product.items.map((item, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm font-medium text-[#1D1D1F] group-hover:text-white/90 transition-colors duration-300">
-                          <CheckCircle className="w-4 h-4 text-[#2F80ED] shrink-0 group-hover:text-white transition-colors duration-300" />
+                        <div key={i} className="flex items-center gap-2 text-sm font-medium text-[#1D1D1F] group-hover:text-white/90 group-active:text-white/90 transition-colors duration-100">
+                          <CheckCircle className="w-4 h-4 text-[#2F80ED] shrink-0 group-hover:text-white group-active:text-white transition-colors duration-100" />
                           <span>{item}</span>
                         </div>
                       ))}
@@ -150,9 +150,9 @@ export default function Products() {
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {services.map((service, idx) => (
-                  <div key={idx} className="group flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 hover:bg-[#2F80ED] hover:border-[#2F80ED] transition-all duration-300 cursor-pointer">
-                    <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0 group-hover:bg-white transition-colors duration-300" />
-                    <span className="text-sm font-semibold text-[#1D1D1F] group-hover:text-white transition-colors duration-300">{service}</span>
+                  <div key={idx} className="group flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 hover:bg-[#2F80ED] active:bg-[#2F80ED] hover:border-[#2F80ED] active:border-[#2F80ED] touch-manipulation transition-all duration-100 cursor-pointer">
+                    <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0 group-hover:bg-white group-active:bg-white transition-colors duration-100" />
+                    <span className="text-sm font-semibold text-[#1D1D1F] group-hover:text-white group-active:text-white transition-colors duration-100">{service}</span>
                   </div>
                 ))}
               </div>

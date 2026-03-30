@@ -204,7 +204,7 @@ export default function Home() {
                 <motion.div
                   whileHover={{ y: -5, boxShadow: "0 20px 48px rgba(47,128,237,0.18)" }}
                   transition={{ duration: 0.3 }}
-                  className="bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 group cursor-default overflow-hidden shadow-sm hover:bg-[#2F80ED] transition-all duration-300"
+                  className="bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 group cursor-default overflow-hidden shadow-sm hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-all duration-100"
                 >
                   <div className="h-44 overflow-hidden">
                     <motion.img
@@ -216,11 +216,11 @@ export default function Home() {
                     />
                   </div>
                   <div className="p-6">
-                    <div className="w-10 h-10 bg-white/60 rounded-xl flex items-center justify-center text-[#2F80ED] mb-4 group-hover:bg-white/20 group-hover:text-white transition-all duration-300">
+                    <div className="w-10 h-10 bg-white/60 rounded-xl flex items-center justify-center text-[#2F80ED] mb-4 group-hover:bg-white/20 group-hover:text-white group-active:bg-white/20 group-active:text-white transition-all duration-100">
                       <feature.icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-bold mb-2 text-[#1D1D1F] group-hover:text-white transition-colors duration-300">{feature.title}</h3>
-                    <p className="text-[#6E6E73] text-sm leading-relaxed group-hover:text-white/75 transition-colors duration-300">{feature.desc}</p>
+                    <h3 className="text-lg font-bold mb-2 text-[#1D1D1F] group-hover:text-white group-active:text-white transition-colors duration-100">{feature.title}</h3>
+                    <p className="text-[#6E6E73] text-sm leading-relaxed group-hover:text-white/75 group-active:text-white/75 transition-colors duration-100">{feature.desc}</p>
                   </div>
                 </motion.div>
               </FadeIn>
@@ -330,7 +330,7 @@ export default function Home() {
                 <motion.div
                   whileHover={{ y: -5, boxShadow: "0 12px 30px rgba(47,128,237,0.10)" }}
                   transition={{ duration: 0.3 }}
-                  className="bg-[#EEF4FF] border border-[#2F80ED]/10 rounded-2xl overflow-hidden group cursor-default h-full flex flex-col shadow-sm hover:bg-[#2F80ED] transition-all duration-300"
+                  className="bg-[#EEF4FF] border border-[#2F80ED]/10 rounded-2xl overflow-hidden group cursor-default h-full flex flex-col shadow-sm hover:bg-[#2F80ED] active:bg-[#2F80ED] touch-manipulation transition-all duration-100"
                 >
                   <div className="h-40 overflow-hidden shrink-0">
                     <motion.img
@@ -342,9 +342,9 @@ export default function Home() {
                     />
                   </div>
                   <div className="p-5 flex-1">
-                    <div className="w-1 h-6 bg-[#2F80ED] mb-3 rounded-full group-hover:bg-white transition-colors duration-300" />
-                    <h3 className="text-sm font-bold mb-2 text-[#1D1D1F] group-hover:text-white transition-colors duration-300 leading-snug">{service.title}</h3>
-                    <p className="text-[#6E6E73] text-xs leading-relaxed group-hover:text-white/75 transition-colors duration-300">{service.desc}</p>
+                    <div className="w-1 h-6 bg-[#2F80ED] mb-3 rounded-full group-hover:bg-white group-active:bg-white transition-colors duration-100" />
+                    <h3 className="text-sm font-bold mb-2 text-[#1D1D1F] group-hover:text-white group-active:text-white transition-colors duration-100 leading-snug">{service.title}</h3>
+                    <p className="text-[#6E6E73] text-xs leading-relaxed group-hover:text-white/75 group-active:text-white/75 transition-colors duration-100">{service.desc}</p>
                   </div>
                 </motion.div>
               </FadeIn>
@@ -368,9 +368,9 @@ export default function Home() {
               <ul className="space-y-3">
                 {["Southeast Asia", "African Nations", "Middle East / GCC", "CIS Countries"].map((region, i) => (
                   <FadeIn key={i} delay={i * 0.08} direction="right">
-                    <div className="group flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 shadow-sm hover:bg-[#2F80ED] hover:border-[#2F80ED] transition-all duration-300 cursor-pointer">
-                      <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0 group-hover:bg-white transition-colors duration-300" />
-                      <span className="font-semibold text-[#1D1D1F] text-sm group-hover:text-white transition-colors duration-300">{region}</span>
+                    <div className="group flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 shadow-sm hover:bg-[#2F80ED] active:bg-[#2F80ED] hover:border-[#2F80ED] active:border-[#2F80ED] touch-manipulation transition-all duration-100 cursor-pointer">
+                      <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0 group-hover:bg-white group-active:bg-white transition-colors duration-100" />
+                      <span className="font-semibold text-[#1D1D1F] text-sm group-hover:text-white group-active:text-white transition-colors duration-100">{region}</span>
                     </div>
                   </FadeIn>
                 ))}
