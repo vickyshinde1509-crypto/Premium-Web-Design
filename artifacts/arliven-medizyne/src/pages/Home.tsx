@@ -31,10 +31,10 @@ function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: 
 function ParallaxBanner({ src, alt, height = "h-80", children }: { src: string; alt: string; height?: string; children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
   return (
     <div ref={ref} className={`relative ${height} overflow-hidden`}>
-      <motion.div style={{ y }} className="absolute inset-0 scale-125 will-change-transform">
+      <motion.div style={{ y }} className="absolute inset-0 scale-110">
         <img src={src} alt={alt} className="w-full h-full object-cover" />
       </motion.div>
       {children}
@@ -137,10 +137,10 @@ export default function Home() {
       <ImageTicker />
 
       {/* Company Overview */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
+            <FadeIn direction="up">
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">
                 About Arliven Medizyne
               </p>
@@ -153,7 +153,7 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                 {["WHO-GMP Certified Products", "Timely Global Shipping", "Comprehensive Product Range", "Strict Quality Control"].map((point, i) => (
-                  <FadeIn key={i} delay={i * 0.08} direction="right">
+                  <FadeIn key={i} delay={i * 0.08} direction="up">
                     <div className="flex items-center gap-3 bg-[#EAF2FF] rounded-xl px-4 py-3 border border-[#2F80ED]/15">
                       <CheckCircle2 className="w-5 h-5 text-[#2F80ED] shrink-0" />
                       <span className="font-medium text-[#1D1D1F] text-sm">{point}</span>
@@ -170,13 +170,9 @@ export default function Home() {
               </Link>
             </FadeIn>
 
-            <FadeIn direction="left" delay={0.15}>
+            <FadeIn direction="up" delay={0.15}>
               <div className="relative">
-                <motion.div
-                  initial={{ rotate: 2, opacity: 0.4 }}
-                  whileInView={{ rotate: 1.5, opacity: 1 }}
-                  viewport={{ once: true }}
-                  className="absolute -inset-3 bg-[#EAF2FF] rounded-2xl"
+                <div className="absolute -inset-3 bg-[#EAF2FF] rounded-2xl"
                 />
                 <motion.img
                   whileHover={{ scale: 1.02 }}
@@ -301,7 +297,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-14 lg:py-18">
-          <FadeIn direction="right">
+          <FadeIn direction="up">
             <p className="text-xs font-semibold tracking-widest text-[#2F80ED] uppercase mb-3">GET STARTED</p>
             <h2 className="text-2xl lg:text-3xl font-black text-white mb-3 leading-snug">
               Connect With Us For Export Inquiry<br className="hidden lg:block" /> &amp; Achieve Reliable Supply Chain
@@ -358,7 +354,7 @@ export default function Home() {
       <section className="py-20 bg-[#F4F8FF] border-t border-[#2F80ED]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
+            <FadeIn direction="up">
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Export Markets</p>
               <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-6 leading-tight">
                 Connecting Indian<br />Excellence to<br />Global Markets
@@ -368,7 +364,7 @@ export default function Home() {
               </p>
               <ul className="space-y-3">
                 {["Southeast Asia", "African Nations", "Middle East / GCC", "CIS Countries"].map((region, i) => (
-                  <FadeIn key={i} delay={i * 0.08} direction="right">
+                  <FadeIn key={i} delay={i * 0.08} direction="up">
                     <div className="flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 shadow-sm lift-card">
                       <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0" />
                       <span className="font-semibold text-[#1D1D1F] text-sm">{region}</span>
@@ -378,7 +374,7 @@ export default function Home() {
               </ul>
             </FadeIn>
 
-            <FadeIn direction="left" delay={0.2}>
+            <FadeIn direction="up" delay={0.15}>
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}

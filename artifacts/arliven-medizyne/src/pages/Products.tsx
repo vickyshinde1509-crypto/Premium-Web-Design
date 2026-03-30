@@ -166,7 +166,7 @@ export default function Products() {
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn direction="left" delay={0.2}>
+            <FadeIn direction="up" delay={0.2}>
               <img
                 src={`${import.meta.env.BASE_URL}images/pharma-export.png`}
                 alt="Pharma export services"

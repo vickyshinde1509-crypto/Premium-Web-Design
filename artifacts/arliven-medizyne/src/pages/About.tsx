@@ -44,7 +44,7 @@ export default function About() {
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2} direction="left">
+            <FadeIn delay={0.2} direction="up">
               <div className="relative">
                 <div className="absolute -inset-3 bg-[#EAF2FF] rounded-2xl transform -rotate-2" />
                 <img
