@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/FadeIn";
+import { StaggerChildren, StaggerItem } from "@/components/Stagger";
 import { Pill, Syringe, Activity, Stethoscope, BriefcaseMedical, Shield, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -93,9 +94,9 @@ export default function Products() {
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Product Range</p>
             <h2 className="text-2xl lg:text-3xl font-black text-[#1D1D1F]">Our Product Categories</h2>
           </FadeIn>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, idx) => (
-              <FadeIn key={idx} delay={idx * 0.08}>
+              <StaggerItem key={idx} className="h-full">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
@@ -132,9 +133,9 @@ export default function Products() {
                     </Link>
                   </div>
                 </motion.div>
-              </FadeIn>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 

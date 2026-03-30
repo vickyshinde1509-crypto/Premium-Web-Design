@@ -55,6 +55,7 @@
 
   html {
     scroll-behavior: smooth;
+    overscroll-behavior-y: none;
     -webkit-tap-highlight-color: transparent;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -133,22 +134,16 @@
     transition:
       transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
   }
 
   .lift-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 14px 36px rgba(47, 128, 237, 0.14), 0 4px 10px rgba(0, 0, 0, 0.05);
+    will-change: transform;
   }
 
   /* Parallax container performance */
   .parallax-layer {
-    will-change: transform;
     backface-visibility: hidden;
-  }
-
-  /* Smooth section transitions */
-  section {
-    isolation: isolate;
   }
 }
