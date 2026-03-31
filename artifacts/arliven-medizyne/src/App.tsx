@@ -41,38 +41,39 @@ function WhatsAppButton() {
 function ScrollManager() {
   const [location] = useLocation();
   const scrollPositions = useRef<Map<string, number>>(new Map());
-  const isPopState = useRef(false);
+  const navStack = useRef<string[]>([]);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Disable CSS smooth scroll globally — we control all scrolling in JS
   useEffect(() => {
     window.history.scrollRestoration = "manual";
     document.documentElement.style.scrollBehavior = "auto";
-    const onPopState = () => { isPopState.current = true; };
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Save scroll position of the page we are LEAVING (runs on cleanup)
-  useEffect(() => {
-    return () => {
-      scrollPositions.current.set(location, window.scrollY);
-    };
-  }, [location]);
-
-  // On navigation: scroll to top for forward, restore position for back
   useEffect(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
 
-    if (isPopState.current) {
-      isPopState.current = false;
+    const stack = navStack.current;
+
+    // Detect back: new location matches the item just before the current top
+    const isBack = stack.length >= 2 && stack[stack.length - 2] === location;
+
+    // Save scroll position of the page we are leaving
+    if (stack.length > 0) {
+      const leaving = stack[stack.length - 1];
+      scrollPositions.current.set(leaving, window.scrollY);
+    }
+
+    if (isBack) {
+      // Back navigation — pop stack, restore saved scroll
+      navStack.current = stack.slice(0, -1);
       const saved = scrollPositions.current.get(location) ?? 0;
-      // Wait for the page to fully re-render, then snap to saved position
       timerRef.current = setTimeout(() => {
         document.documentElement.style.scrollBehavior = "auto";
         window.scrollTo(0, saved);
-      }, 60);
+      }, 80);
     } else {
+      // Forward navigation — push to stack, scroll to top instantly
+      navStack.current = [...stack, location];
       document.documentElement.style.scrollBehavior = "auto";
       window.scrollTo(0, 0);
     }
