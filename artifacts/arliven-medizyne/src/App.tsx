@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 // Components
 import { Header } from "@/components/layout/Header";
@@ -38,11 +38,39 @@ function WhatsAppButton() {
   );
 }
 
-function ScrollToTop() {
+function ScrollManager() {
   const [location] = useLocation();
+  const scrollPositions = useRef<Map<string, number>>(new Map());
+  const isPopState = useRef(false);
+
+  // Detect browser back/forward button press
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
+    window.history.scrollRestoration = "manual";
+    const onPopState = () => { isPopState.current = true; };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  // Save scroll position of the page we are leaving
+  useEffect(() => {
+    return () => {
+      scrollPositions.current.set(location, window.scrollY);
+    };
   }, [location]);
+
+  // On navigation: restore position for back, scroll to top for forward
+  useEffect(() => {
+    if (isPopState.current) {
+      isPopState.current = false;
+      const saved = scrollPositions.current.get(location) ?? 0;
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: saved, behavior: "instant" });
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, [location]);
+
   return null;
 }
 
@@ -71,7 +99,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <ScrollToTop />
+          <ScrollManager />
           <Router />
         </WouterRouter>
         <Toaster />
