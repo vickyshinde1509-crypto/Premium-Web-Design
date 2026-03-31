@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 // Components
 import { Header } from "@/components/layout/Header";
@@ -38,81 +38,58 @@ function WhatsAppButton() {
   );
 }
 
-const SCROLL_STORE = "arliven_scroll_v1";
-
-function readStore(): Record<string, number> {
-  try { return JSON.parse(sessionStorage.getItem(SCROLL_STORE) || "{}"); }
-  catch { return {}; }
-}
-function writeStore(path: string, y: number) {
-  try {
-    const s = readStore();
-    s[path] = y;
-    sessionStorage.setItem(SCROLL_STORE, JSON.stringify(s));
-  } catch {}
-}
-function getSaved(path: string): number {
-  return readStore()[path] ?? 0;
-}
+// Module-level — survives re-renders, no iframe/storage restrictions
+const _scrollMap = new Map<string, number>();
+let _activePath = "/";
+let _isBackNav = false;
 
 function ScrollManager() {
   const [location] = useLocation();
   const navStack = useRef<string[]>([]);
-  const isBackFlag = useRef(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const restoreTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // One-time setup
+  // Setup once: disable browser scroll restoration, listen for back gesture
   useEffect(() => {
     window.history.scrollRestoration = "manual";
     document.documentElement.style.scrollBehavior = "auto";
-    // popstate = browser back/forward button
-    const onPop = () => { isBackFlag.current = true; };
+    const onPop = () => { _isBackNav = true; };
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
-  // Continuously write scroll position to sessionStorage — independent of navigation timing
+  // Persistent scroll listener — saves to module map using _activePath,
+  // which is updated before any scroll events fire
   useEffect(() => {
     let raf = 0;
-    let lastY = -1;
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        if (window.scrollY !== lastY) {
-          lastY = window.scrollY;
-          writeStore(location, window.scrollY);
-        }
-      });
-    };
+    const save = () => { _scrollMap.set(_activePath, window.scrollY); };
+    const onScroll = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(save); };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(raf);
-      // Final save when leaving this page
-      writeStore(location, window.scrollY);
-    };
-  }, [location]);
+    return () => { window.removeEventListener("scroll", onScroll); cancelAnimationFrame(raf); };
+  }, []); // intentionally empty — runs once, uses module-level _activePath
 
-  // Handle each navigation
-  useEffect(() => {
-    if (timerRef.current) clearTimeout(timerRef.current);
+  // useLayoutEffect = runs synchronously before paint, before browser can reset scrollY
+  useLayoutEffect(() => {
+    if (restoreTimer.current) clearTimeout(restoreTimer.current);
 
     const stack = navStack.current;
-    // Back = popstate fired OR current page is one step behind top of stack
-    const isBack = isBackFlag.current || (stack.length >= 2 && stack[stack.length - 2] === location);
-    isBackFlag.current = false;
+    const isBack = _isBackNav || (stack.length >= 2 && stack[stack.length - 2] === location);
+    _isBackNav = false;
+
+    // Capture scroll of the page we are LEAVING (synchronously, before any reset)
+    _scrollMap.set(_activePath, window.scrollY);
+    // Update active path to the new page
+    _activePath = location;
 
     if (isBack) {
-      // Pop stack
-      if (stack.length >= 2) navStack.current = stack.slice(0, -1);
-      const saved = getSaved(location);
-      // Wait for page to re-render, then snap — no smooth scroll, instant jump
-      timerRef.current = setTimeout(() => {
+      navStack.current = stack.length >= 2 ? stack.slice(0, -1) : stack;
+      const saved = _scrollMap.get(location) ?? 0;
+
+      // Two-shot restore: first at 80ms (most cases), retry at 200ms (slow images/fonts)
+      restoreTimer.current = setTimeout(() => {
         document.documentElement.style.scrollBehavior = "auto";
-        window.scrollTo({ top: saved, behavior: "instant" as ScrollBehavior });
-        // Retry once in case images/fonts shifted the layout
-        setTimeout(() => window.scrollTo({ top: saved, behavior: "instant" as ScrollBehavior }), 120);
-      }, 100);
+        window.scrollTo(0, saved);
+        setTimeout(() => window.scrollTo(0, saved), 150);
+      }, 80);
     } else {
       navStack.current = [...stack, location];
       document.documentElement.style.scrollBehavior = "auto";
