@@ -38,41 +38,82 @@ function WhatsAppButton() {
   );
 }
 
+const SCROLL_STORE = "arliven_scroll_v1";
+
+function readStore(): Record<string, number> {
+  try { return JSON.parse(sessionStorage.getItem(SCROLL_STORE) || "{}"); }
+  catch { return {}; }
+}
+function writeStore(path: string, y: number) {
+  try {
+    const s = readStore();
+    s[path] = y;
+    sessionStorage.setItem(SCROLL_STORE, JSON.stringify(s));
+  } catch {}
+}
+function getSaved(path: string): number {
+  return readStore()[path] ?? 0;
+}
+
 function ScrollManager() {
   const [location] = useLocation();
-  const scrollPositions = useRef<Map<string, number>>(new Map());
   const navStack = useRef<string[]>([]);
+  const isBackFlag = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // One-time setup
   useEffect(() => {
     window.history.scrollRestoration = "manual";
     document.documentElement.style.scrollBehavior = "auto";
+    // popstate = browser back/forward button
+    const onPop = () => { isBackFlag.current = true; };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, []);
 
+  // Continuously write scroll position to sessionStorage — independent of navigation timing
+  useEffect(() => {
+    let raf = 0;
+    let lastY = -1;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        if (window.scrollY !== lastY) {
+          lastY = window.scrollY;
+          writeStore(location, window.scrollY);
+        }
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+      // Final save when leaving this page
+      writeStore(location, window.scrollY);
+    };
+  }, [location]);
+
+  // Handle each navigation
   useEffect(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
 
     const stack = navStack.current;
-
-    // Detect back: new location matches the item just before the current top
-    const isBack = stack.length >= 2 && stack[stack.length - 2] === location;
-
-    // Save scroll position of the page we are leaving
-    if (stack.length > 0) {
-      const leaving = stack[stack.length - 1];
-      scrollPositions.current.set(leaving, window.scrollY);
-    }
+    // Back = popstate fired OR current page is one step behind top of stack
+    const isBack = isBackFlag.current || (stack.length >= 2 && stack[stack.length - 2] === location);
+    isBackFlag.current = false;
 
     if (isBack) {
-      // Back navigation — pop stack, restore saved scroll
-      navStack.current = stack.slice(0, -1);
-      const saved = scrollPositions.current.get(location) ?? 0;
+      // Pop stack
+      if (stack.length >= 2) navStack.current = stack.slice(0, -1);
+      const saved = getSaved(location);
+      // Wait for page to re-render, then snap — no smooth scroll, instant jump
       timerRef.current = setTimeout(() => {
         document.documentElement.style.scrollBehavior = "auto";
-        window.scrollTo(0, saved);
-      }, 80);
+        window.scrollTo({ top: saved, behavior: "instant" as ScrollBehavior });
+        // Retry once in case images/fonts shifted the layout
+        setTimeout(() => window.scrollTo({ top: saved, behavior: "instant" as ScrollBehavior }), 120);
+      }, 100);
     } else {
-      // Forward navigation — push to stack, scroll to top instantly
       navStack.current = [...stack, location];
       document.documentElement.style.scrollBehavior = "auto";
       window.scrollTo(0, 0);
