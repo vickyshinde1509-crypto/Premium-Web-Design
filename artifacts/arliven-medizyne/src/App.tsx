@@ -42,32 +42,39 @@ function ScrollManager() {
   const [location] = useLocation();
   const scrollPositions = useRef<Map<string, number>>(new Map());
   const isPopState = useRef(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Detect browser back/forward button press
+  // Disable CSS smooth scroll globally — we control all scrolling in JS
   useEffect(() => {
     window.history.scrollRestoration = "manual";
+    document.documentElement.style.scrollBehavior = "auto";
     const onPopState = () => { isPopState.current = true; };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Save scroll position of the page we are leaving
+  // Save scroll position of the page we are LEAVING (runs on cleanup)
   useEffect(() => {
     return () => {
       scrollPositions.current.set(location, window.scrollY);
     };
   }, [location]);
 
-  // On navigation: restore position for back, scroll to top for forward
+  // On navigation: scroll to top for forward, restore position for back
   useEffect(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+
     if (isPopState.current) {
       isPopState.current = false;
       const saved = scrollPositions.current.get(location) ?? 0;
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: saved, behavior: "instant" });
-      });
+      // Wait for the page to fully re-render, then snap to saved position
+      timerRef.current = setTimeout(() => {
+        document.documentElement.style.scrollBehavior = "auto";
+        window.scrollTo(0, saved);
+      }, 60);
     } else {
-      window.scrollTo({ top: 0, behavior: "instant" });
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
     }
   }, [location]);
 
