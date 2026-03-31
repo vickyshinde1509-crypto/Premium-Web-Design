@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import { useEffect, useLayoutEffect, useRef } from "react";
+import { setSkipFadeAnimations } from "@/lib/navState";
 
 // Components
 import { Header } from "@/components/layout/Header";
@@ -84,13 +85,21 @@ function ScrollManager() {
       navStack.current = stack.length >= 2 ? stack.slice(0, -1) : stack;
       const saved = _scrollMap.get(location) ?? 0;
 
+      // Signal FadeIn components to skip animation (they read this at mount)
+      setSkipFadeAnimations(true);
+
       // Two-shot restore: first at 80ms (most cases), retry at 200ms (slow images/fonts)
       restoreTimer.current = setTimeout(() => {
         document.documentElement.style.scrollBehavior = "auto";
         window.scrollTo(0, saved);
-        setTimeout(() => window.scrollTo(0, saved), 150);
+        setTimeout(() => {
+          window.scrollTo(0, saved);
+          // Reset flag after all FadeIn components have mounted
+          setSkipFadeAnimations(false);
+        }, 150);
       }, 80);
     } else {
+      setSkipFadeAnimations(false);
       navStack.current = [...stack, location];
       document.documentElement.style.scrollBehavior = "auto";
       window.scrollTo(0, 0);

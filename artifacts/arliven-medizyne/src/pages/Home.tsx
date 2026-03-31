@@ -34,8 +34,8 @@ function ParallaxBanner({ src, alt, height = "h-80", children }: { src: string; 
   const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
   return (
     <div ref={ref} className={`relative ${height} overflow-hidden`}>
-      <motion.div style={{ y }} className="absolute inset-0 scale-110">
-        <img src={src} alt={alt} className="w-full h-full object-cover" />
+      <motion.div style={{ y }} className="parallax-layer absolute inset-0 scale-110">
+        <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
       </motion.div>
       {children}
     </div>
@@ -93,7 +93,7 @@ function ImageTicker() {
       <motion.div
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="flex gap-4"
+        className="ticker-track flex gap-4"
         style={{ width: "max-content" }}
       >
         {repeated.map((img, i) => (
@@ -101,7 +101,8 @@ function ImageTicker() {
             <img
               src={`${import.meta.env.BASE_URL}images/${img}`}
               alt=""
-              className="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-500"
+              loading="lazy"
+              className="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-105 transition-[transform,opacity] duration-500"
             />
           </div>
         ))}
@@ -179,6 +180,7 @@ export default function Home() {
                   transition={{ duration: 0.4 }}
                   src={`${import.meta.env.BASE_URL}images/pharma-factory.png`}
                   alt="Pharmaceutical manufacturing facility"
+                  loading="lazy"
                   className="relative w-full h-[460px] object-cover rounded-2xl shadow-xl"
                 />
               </div>
@@ -209,6 +211,7 @@ export default function Home() {
                       transition={{ type: "spring", stiffness: 260, damping: 28, mass: 0.9 }}
                       src={`${import.meta.env.BASE_URL}images/${feature.image}`}
                       alt={feature.title}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -272,7 +275,8 @@ export default function Home() {
                     <img
                       src={`${import.meta.env.BASE_URL}images/${product.image}`}
                       alt={product.name}
-                      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-[transform,opacity] duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent rounded-2xl" />
                     <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
@@ -335,6 +339,7 @@ export default function Home() {
                       transition={{ type: "spring", stiffness: 260, damping: 28, mass: 0.9 }}
                       src={`${import.meta.env.BASE_URL}images/${service.image}`}
                       alt={service.title}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -383,6 +388,7 @@ export default function Home() {
                 <img
                   src={`${import.meta.env.BASE_URL}images/pharma-port-mix.png`}
                   alt="Global pharmaceutical export"
+                  loading="lazy"
                   className="w-full h-[420px] object-cover shadow-xl"
                 />
               </motion.div>

@@ -106,6 +106,7 @@ export default function Products() {
                     <img
                       src={`${import.meta.env.BASE_URL}images/${product.image}`}
                       alt={product.category}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
@@ -127,7 +128,7 @@ export default function Products() {
                     </div>
                     <Link
                       href="/contact"
-                      className="w-full py-3 text-center rounded-xl border-2 border-[#2F80ED] text-[#2F80ED] font-bold text-sm hover:bg-[#2F80ED] hover:text-white transition-all duration-200 mt-auto"
+                      className="w-full py-3 text-center rounded-xl border-2 border-[#2F80ED] text-[#2F80ED] font-bold text-sm hover:bg-[#2F80ED] hover:text-white transition-colors duration-200 mt-auto"
                     >
                       Inquire Now
                     </Link>
@@ -170,6 +171,7 @@ export default function Products() {
               <img
                 src={`${import.meta.env.BASE_URL}images/pharma-export.png`}
                 alt="Pharma export services"
+                loading="lazy"
                 className="w-full h-auto shadow-xl rounded-2xl"
               />
             </FadeIn>

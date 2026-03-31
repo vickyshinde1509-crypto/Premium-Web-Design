@@ -50,6 +50,7 @@ export default function About() {
                 <img
                   src={`${import.meta.env.BASE_URL}images/pharma-factory.png`}
                   alt="Arliven pharmaceutical facility"
+                  loading="lazy"
                   className="relative w-full h-[420px] object-cover shadow-xl rounded-2xl"
                 />
               </div>

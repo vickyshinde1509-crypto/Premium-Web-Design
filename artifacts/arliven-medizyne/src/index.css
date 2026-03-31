@@ -60,6 +60,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent anchors from being hidden behind the fixed 80px header */
+    scroll-padding-top: 88px;
   }
 
   body {
@@ -100,20 +102,19 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#2F80ED] to-blue-400;
   }
 
-  /* Premium card shadow */
+  /* Premium card — NO permanent will-change (wastes GPU memory on every card at once) */
   .card-premium {
     box-shadow: var(--card-shadow);
     border-radius: 20px;
     transition:
       transform 0.45s var(--apple-ease),
-      box-shadow 0.45s var(--apple-ease),
-      background-color 0.1s ease;
-    will-change: transform;
+      box-shadow 0.45s var(--apple-ease);
   }
 
   .card-premium:hover {
     transform: translateY(-4px);
     box-shadow: var(--card-shadow-hover);
+    will-change: transform; /* Only promote to GPU layer on hover, not always */
   }
 
   /* Smooth image zoom on card hover */
@@ -123,11 +124,11 @@
 
   .card-img-zoom img {
     transition: transform 0.6s var(--apple-ease);
-    will-change: transform;
   }
 
   .card-img-zoom:hover img {
     transform: scale(1.04);
+    will-change: transform;
   }
 
   /* Lift effect for static (non-motion) cards */
@@ -143,8 +144,16 @@
     will-change: transform;
   }
 
-  /* Parallax container performance */
+  /* Parallax & ticker — force GPU layer for smooth 60fps */
   .parallax-layer {
     backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Ticker — promote to own compositing layer */
+  .ticker-track {
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
   }
 }
