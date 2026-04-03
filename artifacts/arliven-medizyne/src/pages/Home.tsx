@@ -248,7 +248,7 @@ export default function Home() {
 
       {/* Banner 1 — parallax */}
       <ParallaxBanner
-        src={`${import.meta.env.BASE_URL}images/banner-supply-chain.png`}
+        src={`${import.meta.env.BASE_URL}images/transport-mix1-new.jpg`}
         alt="Global pharmaceutical supply chain"
         height="h-64"
       >
