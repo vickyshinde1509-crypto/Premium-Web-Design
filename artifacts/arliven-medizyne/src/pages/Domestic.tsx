@@ -47,7 +47,7 @@ export default function Domestic() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">India Domestic Supply</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-5 text-white max-w-3xl leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-5 text-white max-w-3xl leading-tight">
               Reliable Pharmaceutical Supply Across India
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl leading-relaxed mb-8">
@@ -163,7 +163,7 @@ export default function Domestic() {
             </FadeIn>
             <FadeIn direction="up" delay={0.15}>
               <img
-                src={`${import.meta.env.BASE_URL}images/pharma-tablets.png`}
+                src={`${import.meta.env.BASE_URL}images/domestic-all-products.png`}
                 alt="Domestic pharmaceutical supply India"
                 loading="lazy"
                 className="w-full h-[420px] object-cover shadow-xl rounded-2xl"

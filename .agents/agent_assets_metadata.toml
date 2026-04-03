@@ -96,3 +96,9 @@ id = "l0oYI5ytZmaacLFe2ag2K"
 uri = "file://artifacts/arliven-medizyne/public/images/products-banner-hq.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "19aYxXiEijNUwhN1G1BCj"
+uri = "file://artifacts/arliven-medizyne/public/images/domestic-all-products.png"
+type = "image"
+title = "generated_image"
