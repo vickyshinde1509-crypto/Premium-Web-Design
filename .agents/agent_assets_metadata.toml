@@ -84,3 +84,9 @@ id = "aRMEWK7TmjC3V-6qJcbc9"
 uri = "file://artifacts/arliven-medizyne/public/images/cta-cargo-crane.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "xgBa7UEo3e47ygr-nOP79"
+uri = "file://artifacts/arliven-medizyne/public/images/hero-slide3-export.png"
+type = "image"
+title = "generated_image"

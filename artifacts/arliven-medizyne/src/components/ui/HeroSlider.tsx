@@ -20,7 +20,7 @@ const slides = [
     id: 3,
     eyebrow: "Arliven Medizyne Pvt Ltd",
     title: "International Pharmaceutical\nMerchant Export Solutions",
-    image: "transport-mix3.png",
+    image: "hero-slide3-export.png",
   },
 ];
 
