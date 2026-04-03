@@ -32,16 +32,35 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <h2 className="text-3xl lg:text-4xl font-black mb-6 text-[#1D1D1F] leading-tight">Our Journey<br />&amp; Purpose</h2>
-              <div className="space-y-5 text-lg text-[#6E6E73] leading-relaxed">
+              <div className="space-y-5 text-base text-[#6E6E73] leading-relaxed mb-8">
                 <p>
-                  Founded in Maharashtra, India, Arliven Medizyne Pvt Ltd emerged with a singular focus: to make high-quality, life-saving pharmaceutical products accessible to markets worldwide.
+                  Arliven Medizyne Pvt Ltd is an India-based pharmaceutical merchant exporter and domestic supplier committed to delivering high-quality pharmaceutical and surgical products to domestic and global healthcare markets.
                 </p>
                 <p>
-                  As a specialized Merchant Exporter, we don't just ship products; we build healthcare bridges. We partner exclusively with WHO-GMP certified manufacturers to ensure that every tablet, capsule, and surgical tool we export meets the highest international safety and efficacy standards.
+                  We collaborate with trusted and certified manufacturing partners to ensure quality, reliability, and consistent supply for hospitals, distributors, and international buyers.
                 </p>
                 <p>
-                  Our expertise spans the entire export lifecycle — from rigorous vendor auditing and regulatory documentation to customized packaging and secure logistics.
+                  Our mission is to build long-term pharmaceutical partnerships by maintaining professionalism, transparency, and ethical business practices.
                 </p>
+                <p>
+                  Reliable Pharmaceutical Merchant Exporter &amp; Domestic Supplier from India delivering quality pharmaceutical and surgical products to hospitals, distributors, institutions, and global buyers.
+                </p>
+                <p>
+                  We connect trusted Indian pharmaceutical manufacturers with domestic and international markets through professional sourcing, transparent communication, and timely supply.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3">
+                {[
+                  "Domestic Pharmaceutical Supply",
+                  "International Pharmaceutical Export",
+                  "Bulk & Institutional Supply",
+                  "Trusted Pharma Business Partner",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#2F80ED] shrink-0" />
+                    <span className="text-[#1D1D1F] font-semibold text-sm">{item}</span>
+                  </div>
+                ))}
               </div>
             </FadeIn>
             <FadeIn delay={0.2} direction="up">
