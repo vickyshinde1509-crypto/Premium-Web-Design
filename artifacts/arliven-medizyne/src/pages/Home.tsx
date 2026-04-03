@@ -49,7 +49,7 @@ const features = [
   { icon: Tag,           image: "feature-sourcing.png",   title: "Competitive Pricing",                 desc: "Cost-effective pharmaceutical sourcing without compromising on product quality." },
   { icon: Globe2,        image: "feature-global.png",     title: "Domestic & Global Supply Capability", desc: "Serving hospitals, distributors, and institutions both within India and across global markets." },
   { icon: Truck,         image: "feature-delivery.png",   title: "Timely Delivery System",              desc: "Optimised logistics and proactive planning ensure on-time delivery every time." },
-  { icon: MessageSquare, image: "pharma-port-mix.png",    title: "Transparent Communication",           desc: "Open, honest updates at every stage of your order — from inquiry to final shipment." },
+  { icon: MessageSquare, image: "pharma-port-mix.png",    title: "Transparent Communication",           desc: "Open, honest updates at every stage of your order — from inquiry to final shipment.", tint: "linear-gradient(135deg,rgba(41,182,246,0.30) 0%,rgba(47,128,237,0.22) 50%,rgba(14,165,233,0.18) 100%)" },
   { icon: Users,         image: "feature-expertise.png",  title: "Long-Term Business Commitment",       desc: "Building lasting partnerships through consistent performance, trust, and reliable supply." },
 ];
 
@@ -215,7 +215,7 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 340, damping: 26, mass: 0.8 }}
                   className="bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 cursor-default overflow-hidden shadow-[0_2px_12px_rgba(47,128,237,0.07)]"
                 >
-                  <div className="h-44 overflow-hidden">
+                  <div className="h-44 overflow-hidden relative">
                     <motion.img
                       whileHover={{ scale: 1.04 }}
                       transition={{ type: "spring", stiffness: 260, damping: 28, mass: 0.9 }}
@@ -223,7 +223,14 @@ export default function Home() {
                       alt={feature.title}
                       loading="lazy"
                       className="w-full h-full object-cover"
+                      style={(feature as any).tint ? { filter: "saturate(1.25) contrast(1.08) brightness(1.04)" } : undefined}
                     />
+                    {(feature as any).tint && (
+                      <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{ background: (feature as any).tint, mixBlendMode: "overlay" }}
+                      />
+                    )}
                   </div>
                   <div className="p-6">
                     <div className="w-10 h-10 bg-[#EAF2FF] rounded-xl flex items-center justify-center text-[#2F80ED] mb-4">
