@@ -102,3 +102,9 @@ id = "19aYxXiEijNUwhN1G1BCj"
 uri = "file://artifacts/arliven-medizyne/public/images/domestic-all-products.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "oON9GQluO9FEJVAHeggiI"
+uri = "file://artifacts/arliven-medizyne/public/images/export-journey-cta.png"
+type = "image"
+title = "generated_image"

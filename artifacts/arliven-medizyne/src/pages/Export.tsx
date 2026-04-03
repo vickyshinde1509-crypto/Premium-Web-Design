@@ -26,12 +26,12 @@ export default function Export() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#111]/75 to-transparent" />
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
           <FadeIn>
-            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Global Logistics</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-5 text-white max-w-3xl leading-tight">
-              Seamless Export Operations
+            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">International Export</p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-5 text-white max-w-3xl leading-tight">
+              Pharmaceutical Export
             </h1>
-            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-              Connecting Indian pharmaceutical manufacturing excellence to healthcare providers worldwide through robust, compliant supply chains.
+            <p className="text-base text-gray-300 max-w-2xl leading-relaxed">
+              Arliven Medizyne Pvt Ltd provides professional pharmaceutical export solutions to global markets with proper documentation and reliable supply.
             </p>
           </FadeIn>
         </div>
@@ -41,7 +41,7 @@ export default function Export() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Our Export Process</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-[#1D1D1F]">Our Export Process</h2>
             <p className="text-[#6E6E73] text-lg">A systematic, transparent approach to guarantee reliable delivery.</p>
           </FadeIn>
 
@@ -69,7 +69,7 @@ export default function Export() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12">
             <FadeIn>
-              <h2 className="text-3xl font-black mb-8 text-[#1D1D1F]">Global Destinations</h2>
+              <h2 className="text-2xl font-bold mb-8 text-[#1D1D1F]">Global Destinations</h2>
               <div className="grid sm:grid-cols-2 gap-3">
                 {["Asia", "Africa", "Middle East", "CIS Countries", "Global Markets", "Latin America"].map((region, i) => (
                   <FadeIn key={i} delay={i * 0.07}>
@@ -84,7 +84,7 @@ export default function Export() {
 
             <FadeIn delay={0.2}>
               <div className="bg-[#EEF4FF] rounded-2xl p-8 border border-[#2F80ED]/10 shadow-sm">
-                <h2 className="text-2xl font-black mb-5 text-[#1D1D1F]">Export Support</h2>
+                <h2 className="text-xl font-bold mb-5 text-[#1D1D1F]">Export Support</h2>
                 <p className="text-[#6E6E73] text-base mb-7 leading-relaxed">
                   We provide end-to-end support for all regulatory and logistical hurdles in international pharmaceutical trade.
                 </p>
@@ -114,8 +114,8 @@ export default function Export() {
       <section className="py-20 bg-[#2F80ED] text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn>
-            <h2 className="text-3xl lg:text-4xl font-black mb-5">Start Your Export Journey</h2>
-            <p className="text-lg text-white/85 mb-10 leading-relaxed">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-5">Start Your Export Journey</h2>
+            <p className="text-base text-white/85 mb-10 leading-relaxed">
               Partner with Arliven Medizyne for reliable, compliant, and timely pharmaceutical supplies to any destination.
             </p>
             <Link
@@ -125,6 +125,28 @@ export default function Export() {
               Contact Export Team
               <ArrowRight className="w-4 h-4" />
             </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Export Journey Image */}
+      <section className="bg-white py-14">
+        <div className="max-w-5xl mx-auto px-6 lg:px-10">
+          <FadeIn direction="up">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[#2F80ED]/10">
+              <img
+                src={`${import.meta.env.BASE_URL}images/export-journey-cta.png`}
+                alt="International pharmaceutical export — cargo and shipping"
+                loading="lazy"
+                className="w-full h-[380px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a3a6e]/40 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-white font-semibold text-sm drop-shadow">
+                  Professional pharmaceutical export to global markets — Asia, Africa, Middle East, CIS Countries &amp; beyond.
+                </p>
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
