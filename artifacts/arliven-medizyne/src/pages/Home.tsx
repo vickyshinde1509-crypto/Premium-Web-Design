@@ -54,12 +54,12 @@ const features = [
 ];
 
 const productsPreview = [
-  { name: "Tablets & Capsules",   image: "pharma-tablets.png" },
-  { name: "Injections & Ampoules", image: "pharma-injections.png" },
-  { name: "Syrups & Suspensions", image: "pharma-syrups.png" },
-  { name: "Surgical Products",    image: "pharma-surgical.png" },
-  { name: "Antibiotics Range",    image: "pharma-tablets.png" },
-  { name: "OTC Healthcare",       image: "pharma-factory.png" },
+  { name: "Tablets",             image: "pharma-tablets-hq.png" },
+  { name: "Capsules",            image: "pharma-capsules-hq.png" },
+  { name: "Syrups",              image: "pharma-syrups-hq.png" },
+  { name: "Injections",          image: "pharma-injections.png" },
+  { name: "Surgical Products",   image: "pharma-surgical.png" },
+  { name: "Medical Consumables", image: "pharma-factory.png" },
 ];
 
 const services = [
@@ -268,7 +268,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <FadeIn>
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Our Portfolio</p>
-              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Premium Healthcare Products</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Product Categories</h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <Link
