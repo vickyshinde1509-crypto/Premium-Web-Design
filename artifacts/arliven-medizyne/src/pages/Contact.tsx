@@ -225,28 +225,37 @@ export default function Contact() {
             Open in Maps ↗
           </a>
         </div>
-        <a
-          href="https://maps.app.goo.gl/deb5VwkttGy3S7eH9"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block relative h-[360px] cursor-pointer"
-          title="Open in Google Maps"
-        >
+        <div className="relative h-[420px]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4792834.843267928!2d75.7139!3d19.7515!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcfc41e9c9cd6f9%3A0x1b2f22924be04fb6!2sMaharashtra%2C+India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            src="https://maps.google.com/maps?q=Apratim+Park,+Satara+Parisar,+Chhatrapati+Sambhajinagar,+Maharashtra+431010,+India&t=&z=17&ie=UTF8&iwloc=B&output=embed"
             width="100%"
             height="100%"
-            style={{ border: 0, pointerEvents: "none" }}
+            style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Arliven Medizyne Location"
+            title="Arliven Medizyne Location — Apratim Park, Satara Parisar, Aurangabad"
           />
-          <div className="absolute bottom-4 right-4 bg-white shadow-lg rounded-xl px-3 py-2 flex items-center gap-2 text-xs font-bold text-[#1D1D1F]">
-            <MapPin className="w-3.5 h-3.5 text-[#2F80ED]" />
-            Tap to open map
+          {/* Overlay pin label */}
+          <div className="absolute top-4 left-4 bg-white shadow-lg rounded-xl px-4 py-2.5 flex items-center gap-2.5 border border-[#2F80ED]/15 pointer-events-none">
+            <div className="w-7 h-7 bg-[#2F80ED] rounded-lg flex items-center justify-center shrink-0">
+              <MapPin className="w-4 h-4 text-white" />
+            </div>
+            <div>
+              <p className="text-xs font-black text-[#1D1D1F] leading-tight">Arliven Medizyne Pvt Ltd</p>
+              <p className="text-[10px] text-[#6E6E73] leading-tight">S-45, Apratim Park, Satara Parisar</p>
+            </div>
           </div>
-        </a>
+          <a
+            href="https://maps.app.goo.gl/deb5VwkttGy3S7eH9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-4 right-4 bg-white shadow-lg rounded-xl px-3 py-2 flex items-center gap-2 text-xs font-bold text-[#1D1D1F] hover:bg-blue-50 transition-colors border border-[#2F80ED]/10"
+          >
+            <MapPin className="w-3.5 h-3.5 text-[#2F80ED]" />
+            Open in Google Maps ↗
+          </a>
+        </div>
       </section>
     </main>
   );
