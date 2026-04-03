@@ -37,7 +37,7 @@ export default function Contact() {
               Get In Touch
             </h1>
             <p className="text-sm lg:text-base text-gray-200 max-w-sm leading-relaxed">
-              Ready to start an export partnership? Contact us for inquiries, quotes, or product catalogs.
+              Contact us for domestic pharmaceutical supply, international export inquiries, quotes, or product catalogs.
             </p>
           </FadeIn>
         </div>
@@ -60,9 +60,20 @@ export default function Contact() {
                     <div>
                       <h4 className="font-bold text-base mb-1 text-[#1D1D1F]">Corporate Office</h4>
                       <p className="text-[#6E6E73] leading-relaxed text-sm">
-                        Maharashtra, India<br />
-                        (Registered Merchant Exporter)
+                        S-45, S.No 97, Apratim Park,<br />
+                        Satara Parisar,<br />
+                        Chhatrapati Sambhajinagar<br />
+                        (Aurangabad) 431010,<br />
+                        Maharashtra, India
                       </p>
+                      <a
+                        href="https://maps.app.goo.gl/deb5VwkttGy3S7eH9"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs text-[#2F80ED] font-semibold mt-1 inline-block hover:underline"
+                      >
+                        View on Google Maps ↗
+                      </a>
                     </div>
                   </div>
 
@@ -111,6 +122,7 @@ export default function Contact() {
               <div className="bg-[#F4F8FF] p-8 rounded-2xl border border-[#2F80ED]/15 shadow-sm">
                 <h3 className="text-xl font-black mb-6 text-[#1D1D1F]">Send an Inquiry</h3>
                 <form onSubmit={handleSubmit} className="space-y-5">
+
                   <div className="grid md:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">Full Name *</label>
@@ -133,11 +145,11 @@ export default function Contact() {
 
                   <div className="grid md:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">Email Address *</label>
+                      <label className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">Country *</label>
                       <input
                         required
-                        type="email"
-                        placeholder="john@example.com"
+                        type="text"
+                        placeholder="India / UAE / Kenya…"
                         className="w-full px-4 py-3 bg-white text-[#1D1D1F] border border-[#2F80ED]/20 rounded-xl focus:outline-none focus:border-[#2F80ED] focus:ring-2 focus:ring-[#2F80ED]/15 transition-all placeholder:text-gray-400 text-sm"
                       />
                     </div>
@@ -145,18 +157,37 @@ export default function Contact() {
                       <label className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">Phone Number</label>
                       <input
                         type="tel"
-                        placeholder="+1 234 567 8900"
+                        placeholder="+91 9000000000"
                         className="w-full px-4 py-3 bg-white text-[#1D1D1F] border border-[#2F80ED]/20 rounded-xl focus:outline-none focus:border-[#2F80ED] focus:ring-2 focus:ring-[#2F80ED]/15 transition-all placeholder:text-gray-400 text-sm"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">Inquiry Details *</label>
-                    <textarea
+                    <label className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">Email Address *</label>
+                    <input
                       required
-                      rows={5}
-                      placeholder="Please specify the products you are looking for, target country, and required quantities..."
+                      type="email"
+                      placeholder="john@example.com"
+                      className="w-full px-4 py-3 bg-white text-[#1D1D1F] border border-[#2F80ED]/20 rounded-xl focus:outline-none focus:border-[#2F80ED] focus:ring-2 focus:ring-[#2F80ED]/15 transition-all placeholder:text-gray-400 text-sm"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">Requirement *</label>
+                    <input
+                      required
+                      type="text"
+                      placeholder="e.g. Tablets, Injections, Surgical Products…"
+                      className="w-full px-4 py-3 bg-white text-[#1D1D1F] border border-[#2F80ED]/20 rounded-xl focus:outline-none focus:border-[#2F80ED] focus:ring-2 focus:ring-[#2F80ED]/15 transition-all placeholder:text-gray-400 text-sm"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">Message</label>
+                    <textarea
+                      rows={4}
+                      placeholder="Please specify quantities, target market, and any additional details…"
                       className="w-full px-4 py-3 bg-white text-[#1D1D1F] border border-[#2F80ED]/20 rounded-xl focus:outline-none focus:border-[#2F80ED] focus:ring-2 focus:ring-[#2F80ED]/15 transition-all resize-none placeholder:text-gray-400 text-sm"
                     />
                   </div>
@@ -166,7 +197,7 @@ export default function Contact() {
                     disabled={isSubmitting}
                     className="w-full py-3 bg-[#2F80ED] text-white font-bold text-sm rounded-xl hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-blue-200"
                   >
-                    {isSubmitting ? "Sending..." : "Submit Inquiry"}
+                    {isSubmitting ? "Sending…" : "Submit Inquiry"}
                     {!isSubmitting && <Send className="w-4 h-4" />}
                   </button>
                 </form>
@@ -181,7 +212,9 @@ export default function Contact() {
         <div className="flex items-center justify-between px-6 lg:px-10 py-4 bg-[#2F80ED]">
           <div className="flex items-center gap-3 text-white">
             <MapPin className="w-5 h-5 shrink-0" />
-            <span className="font-semibold text-sm">Arliven Medizyne Pvt Ltd — Maharashtra, India</span>
+            <span className="font-semibold text-sm">
+              S-45, Apratim Park, Satara Parisar, Chhatrapati Sambhajinagar 431010
+            </span>
           </div>
           <a
             href="https://maps.app.goo.gl/deb5VwkttGy3S7eH9"
@@ -207,7 +240,7 @@ export default function Contact() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Arliven Medizyne Location — Maharashtra, India"
+            title="Arliven Medizyne Location"
           />
           <div className="absolute bottom-4 right-4 bg-white shadow-lg rounded-xl px-3 py-2 flex items-center gap-2 text-xs font-bold text-[#1D1D1F]">
             <MapPin className="w-3.5 h-3.5 text-[#2F80ED]" />

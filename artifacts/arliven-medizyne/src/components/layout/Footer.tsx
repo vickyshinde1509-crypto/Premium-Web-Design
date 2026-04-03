@@ -4,19 +4,21 @@ import { Phone, Mail, MapPin, ArrowRight, Linkedin, Twitter, Facebook } from "lu
 const MAPS_LINK = "https://maps.app.goo.gl/deb5VwkttGy3S7eH9";
 
 const navLinks = [
-  { name: "Home",                href: "/" },
-  { name: "About Us",            href: "/about" },
-  { name: "Products & Services", href: "/products" },
-  { name: "Export",              href: "/export" },
-  { name: "Contact",             href: "/contact" },
+  { name: "Home",                 href: "/" },
+  { name: "About Us",             href: "/about" },
+  { name: "Products & Services",  href: "/products" },
+  { name: "Domestic Supply",      href: "/domestic" },
+  { name: "International Export", href: "/export" },
+  { name: "Certifications",       href: "/certifications" },
+  { name: "Contact",              href: "/contact" },
 ];
 
 const serviceLinks = [
-  "Pharma Merchant Export",
-  "Domestic Pharma Supply",
-  "Third Party Manufacturing",
-  "Bulk Supply & Sourcing",
-  "Private Label Support",
+  { label: "Domestic Pharmaceutical Supply", href: "/domestic" },
+  { label: "International Pharma Export",    href: "/export" },
+  { label: "Bulk & Institutional Supply",    href: "/products" },
+  { label: "Merchant Export Solutions",      href: "/export" },
+  { label: "Certifications & Compliance",    href: "/certifications" },
 ];
 
 export function Footer() {
@@ -37,7 +39,10 @@ export function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Reliable Pharmaceutical Merchant Exporter from India delivering high-quality pharmaceutical and surgical products worldwide.
+              Empowering Global &amp; Domestic Healthcare Solutions
+            </p>
+            <p className="text-gray-500 text-xs leading-relaxed">
+              Domestic Supply | International Export
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#2F80ED] transition-all duration-200">
@@ -75,13 +80,13 @@ export function Footer() {
             <h4 className="font-semibold text-base mb-5 text-white">Our Services</h4>
             <ul className="space-y-3">
               {serviceLinks.map((s) => (
-                <li key={s}>
+                <li key={s.label}>
                   <Link
-                    href="/products"
+                    href={s.href}
                     className="text-gray-400 hover:text-[#2F80ED] transition-colors flex items-center gap-2 text-sm font-medium group"
                   >
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-[#2F80ED]" />
-                    {s}
+                    {s.label}
                   </Link>
                 </li>
               ))}
@@ -100,7 +105,13 @@ export function Footer() {
                   className="flex items-start gap-3 hover:text-[#2F80ED] transition-colors group"
                 >
                   <MapPin className="w-4 h-4 text-[#2F80ED] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                  <span>Maharashtra, India<br /><span className="text-xs text-gray-500 group-hover:text-[#2F80ED]">View on Google Maps ↗</span></span>
+                  <span>
+                    S-45, S.No 97, Apratim Park,<br />
+                    Satara Parisar,<br />
+                    Chhatrapati Sambhajinagar<br />
+                    (Aurangabad) 431010,<br />
+                    Maharashtra, India
+                  </span>
                 </a>
               </li>
               <li className="flex items-center gap-3">

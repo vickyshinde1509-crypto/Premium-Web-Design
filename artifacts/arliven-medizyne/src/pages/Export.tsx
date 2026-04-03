@@ -1,14 +1,17 @@
 import { FadeIn } from "@/components/FadeIn";
 
-import { Globe, FileText, Package, Ship, CheckSquare, ArrowRight } from "lucide-react";
+import { Globe, FileText, Package, Ship, CheckSquare, ArrowRight, MessageSquare, ClipboardList, BadgeCheck, Box } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
 const steps = [
-  { icon: CheckSquare, title: "Requirement Analysis", desc: "Understanding client needs, regulatory requirements of the destination country, and product specifications." },
-  { icon: FileText, title: "Sourcing & Documentation", desc: "Procuring from WHO-GMP units and preparing rigorous export documentation (COA, FSC, Dossiers)." },
-  { icon: Package, title: "Custom Packaging", desc: "Ensuring packaging meets international transit standards and country-specific labeling laws." },
-  { icon: Ship, title: "Secure Logistics", desc: "Partnering with trusted freight forwarders for secure, temperature-controlled transit worldwide." },
+  { icon: MessageSquare, title: "Buyer Inquiry",      desc: "Receiving and understanding the buyer's product requirements, market, and quantity details." },
+  { icon: Package,       title: "Product Selection",  desc: "Identifying suitable products from our certified manufacturing network to match buyer specifications." },
+  { icon: ClipboardList, title: "Quotation",          desc: "Providing transparent and competitive pricing with clear quotation including all applicable costs." },
+  { icon: FileText,      title: "Documentation",      desc: "Preparing all export documents — COA, FSC, invoices, and regulatory compliance papers." },
+  { icon: Box,           title: "Packing",            desc: "Custom packaging meeting international transit standards and destination-country labelling requirements." },
+  { icon: Ship,          title: "Shipping",           desc: "Partnering with trusted freight forwarders for secure, temperature-controlled transit worldwide." },
+  { icon: BadgeCheck,    title: "Delivery",           desc: "Confirmed delivery at destination with complete documentation handover and post-shipment support." },
 ];
 
 export default function Export() {
@@ -42,22 +45,21 @@ export default function Export() {
             <p className="text-[#6E6E73] text-lg">A systematic, transparent approach to guarantee reliable delivery.</p>
           </FadeIn>
 
-          <div className="relative mt-16">
-            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-[#2F80ED]/15" />
-            <div className="grid md:grid-cols-4 gap-8 relative z-10">
-              {steps.map((step, idx) => (
-                <FadeIn key={idx} delay={idx * 0.12} className="text-center relative">
-                  <div className="w-24 h-24 mx-auto bg-[#EEF4FF] border-4 border-[#EEF4FF] shadow-xl rounded-2xl flex items-center justify-center mb-6 relative lift-card">
-                    <step.icon className="w-9 h-9 text-[#2F80ED]" />
-                    <div className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#2F80ED] text-white flex items-center justify-center font-black text-xs shadow-lg">
-                      {idx + 1}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {steps.map((step, idx) => (
+              <FadeIn key={idx} delay={idx * 0.09} className="relative">
+                <div className="bg-[#EEF4FF] rounded-2xl p-6 border border-[#2F80ED]/10 h-full shadow-[0_2px_12px_rgba(47,128,237,0.07)] lift-card">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-[#2F80ED] shadow-sm border border-[#2F80ED]/15 shrink-0">
+                      <step.icon className="w-5 h-5" />
                     </div>
+                    <div className="text-3xl font-black text-[#2F80ED]/15 leading-none">{String(idx + 1).padStart(2, "0")}</div>
                   </div>
-                  <h3 className="text-lg font-black mb-2 text-[#1D1D1F]">{step.title}</h3>
+                  <h3 className="text-base font-black mb-2 text-[#1D1D1F]">{step.title}</h3>
                   <p className="text-sm text-[#6E6E73] leading-relaxed">{step.desc}</p>
-                </FadeIn>
-              ))}
-            </div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -69,7 +71,7 @@ export default function Export() {
             <FadeIn>
               <h2 className="text-3xl font-black mb-8 text-[#1D1D1F]">Global Destinations</h2>
               <div className="grid sm:grid-cols-2 gap-3">
-                {["Asia", "Africa", "Middle East", "Southeast Asia", "CIS Countries", "Latin America"].map((region, i) => (
+                {["Asia", "Africa", "Middle East", "CIS Countries", "Global Markets", "Latin America"].map((region, i) => (
                   <FadeIn key={i} delay={i * 0.07}>
                     <div className="bg-[#EEF4FF] rounded-xl px-5 py-4 border border-[#2F80ED]/10 flex items-center gap-3 shadow-sm lift-card">
                       <Globe className="w-5 h-5 text-[#2F80ED] shrink-0" />

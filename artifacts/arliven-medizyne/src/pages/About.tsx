@@ -105,8 +105,8 @@ export default function About() {
 
           <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
-              { initials: "GK", name: "Ganesh A Kute", role: "Founder & CEO", bio: "Steering Arliven Medizyne with strategic vision and a deep commitment to global healthcare accessibility and pharmaceutical excellence." },
-              { initials: "NC", name: "Nitin B Choure", role: "Director", bio: "Ensuring operational excellence, rigorous quality compliance, and robust international partnerships across all markets." },
+              { initials: "GK", name: "Ganesh A Kute", role: "Founder & CEO", bio: "Ganesh A Kute leads Arliven Medizyne Pvt Ltd with a vision to build a strong pharmaceutical supply and export company connecting Indian manufacturers with domestic and global markets. Committed to delivering reliable healthcare products through professionalism, trust, and long-term business relationships." },
+              { initials: "NC", name: "Nitin B Choure", role: "Director", bio: "Nitin B Choure supports the company's operations and business development by strengthening domestic supply and international business coordination. He focuses on building strong partnerships and ensuring smooth pharmaceutical supply operations." },
             ].map((person, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="bg-[#EEF4FF] p-8 rounded-2xl text-center border border-[#2F80ED]/10 cursor-default lift-card">
@@ -116,6 +116,33 @@ export default function About() {
                   <h3 className="text-xl font-black mb-1 text-[#1D1D1F]">{person.name}</h3>
                   <p className="text-[#2F80ED] font-semibold text-sm mb-4">{person.role}</p>
                   <p className="text-[#6E6E73] text-sm leading-relaxed">{person.bio}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Business Model */}
+      <section className="py-20 bg-white border-t border-[#2F80ED]/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <FadeIn className="text-center mb-14">
+            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">How We Operate</p>
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-4">Our Business Model</h2>
+            <p className="text-[#6E6E73] text-lg max-w-2xl mx-auto">Connecting trusted Indian manufacturers with domestic and international healthcare markets.</p>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { num: "01", title: "Pharmaceutical Merchant Exporter", desc: "Facilitating professional export of quality pharmaceutical products to global markets with full documentation and compliance." },
+              { num: "02", title: "Domestic Supply Partner",          desc: "Reliable supply of pharmaceutical and surgical products to hospitals, distributors, and institutions across India." },
+              { num: "03", title: "International Pharma Export",      desc: "End-to-end export solutions covering sourcing, quotation, documentation, packing, shipping, and delivery." },
+              { num: "04", title: "Bulk Supply Solutions",            desc: "Large-volume pharmaceutical supply tailored for institutional buyers, distributors, and global healthcare organizations." },
+            ].map((model, idx) => (
+              <FadeIn key={idx} delay={idx * 0.1}>
+                <div className="bg-[#EEF4FF] rounded-2xl p-7 border border-[#2F80ED]/10 h-full lift-card shadow-[0_2px_12px_rgba(47,128,237,0.07)]">
+                  <div className="text-4xl font-black text-[#2F80ED]/15 mb-4 leading-none">{model.num}</div>
+                  <h3 className="text-base font-black text-[#1D1D1F] mb-3">{model.title}</h3>
+                  <p className="text-[#6E6E73] text-sm leading-relaxed">{model.desc}</p>
                 </div>
               </FadeIn>
             ))}

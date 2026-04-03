@@ -397,23 +397,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Industries We Serve */}
+      <section className="py-20 bg-white border-t border-[#2F80ED]/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <FadeIn className="text-center mb-14">
+            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Who We Work With</p>
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-4">Industries We Serve</h2>
+            <p className="text-[#6E6E73] text-lg max-w-2xl mx-auto">Delivering reliable pharmaceutical supply to a diverse range of healthcare partners across India and globally.</p>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {[
+              { icon: "🏥", label: "Hospitals" },
+              { icon: "📦", label: "Distributors" },
+              { icon: "💊", label: "Pharmacies" },
+              { icon: "🩺", label: "Healthcare Institutions" },
+              { icon: "🌍", label: "Global Buyers" },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="bg-[#EEF4FF] rounded-2xl p-7 border border-[#2F80ED]/10 text-center shadow-[0_2px_12px_rgba(47,128,237,0.07)] lift-card">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-base font-black text-[#1D1D1F]">{item.label}</h3>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-[#F4F8FF] border-t border-[#2F80ED]/10">
+        <div className="max-w-4xl mx-auto px-6 lg:px-10">
+          <FadeIn className="text-center mb-14">
+            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Quick Answers</p>
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Frequently Asked Questions</h2>
+          </FadeIn>
+          <div className="space-y-4">
+            {[
+              { q: "Do you supply medicines in India?",       a: "Yes, we provide domestic pharmaceutical supply across India to hospitals, distributors, pharmacies, medical stores, and healthcare institutions." },
+              { q: "Do you export pharmaceutical products?",  a: "Yes, we provide international pharmaceutical export solutions to global markets including Asia, Africa, Middle East, CIS Countries, and beyond." },
+              { q: "Do you accept bulk orders?",              a: "Yes, bulk and institutional orders are accepted. We have dedicated supply channels for large-volume requirements." },
+              { q: "Do you work with distributors?",          a: "Yes, we work with both domestic and international distributors with professional supply and documentation support." },
+            ].map((faq, i) => (
+              <FadeIn key={i} delay={i * 0.07}>
+                <div className="bg-white rounded-2xl p-7 border border-[#2F80ED]/10 shadow-sm">
+                  <h3 className="text-base font-black text-[#1D1D1F] mb-3 flex items-start gap-3">
+                    <span className="w-6 h-6 bg-[#EAF2FF] rounded-lg flex items-center justify-center text-[#2F80ED] font-black text-xs shrink-0 mt-0.5">Q</span>
+                    {faq.q}
+                  </h3>
+                  <p className="text-[#6E6E73] text-sm leading-relaxed pl-9">{faq.a}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="py-20 bg-[#2F80ED]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-5 leading-tight">
-              Ready to Partner<br />With Us?
+              Ready to Work With<br />Arliven Medizyne?
             </h2>
             <p className="text-white/85 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              Contact us today to discuss your pharmaceutical sourcing and export requirements. Let's build a healthier future together.
+              Contact us today for domestic pharmaceutical supply and international export inquiries.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
                 className="px-8 py-3 bg-white text-[#2F80ED] font-bold text-sm rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-lg"
               >
-                Send Inquiry
+                Get Quote
               </Link>
+              <a
+                href="https://wa.me/919049175132"
+                target="_blank"
+                rel="noreferrer"
+                className="px-8 py-3 border-2 border-white/50 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all duration-200"
+              >
+                WhatsApp Inquiry
+              </a>
               <Link
                 href="/products"
                 className="px-8 py-3 border-2 border-white/50 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all duration-200"
