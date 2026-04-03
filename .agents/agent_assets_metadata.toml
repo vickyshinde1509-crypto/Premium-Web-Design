@@ -6,3 +6,45 @@ id = "4c426vJ6ZqCiEUnoSb8wp"
 uri = "file://artifacts/arliven-medizyne/public/images/pharma-syrups.png"
 type = "image"
 title = "premium pharmaceutical syrup bottles"
+
+[[generated]]
+id = "yqWgMjuVOJh6aX9KTxIf5"
+uri = "file://artifacts/arliven-medizyne/public/images/transport-mix1.png"
+type = "image"
+title = "hero slide 1 cargo ship"
+
+[[generated]]
+id = "xfjoMATIuaEwBXHw95Dt5"
+uri = "file://artifacts/arliven-medizyne/public/images/transport-mix2.png"
+type = "image"
+title = "hero slide 2 air cargo pharma"
+
+[[generated]]
+id = "w9AUX9mxWk8EIvLgaUANg"
+uri = "file://artifacts/arliven-medizyne/public/images/transport-mix3.png"
+type = "image"
+title = "hero slide 3 global pharma bridge"
+
+[[generated]]
+id = "2IMl6-7ckLkATRVv7DMMJ"
+uri = "file://artifacts/arliven-medizyne/public/images/about-office.png"
+type = "image"
+title = "about page office boardroom"
+
+[[generated]]
+id = "MTlSIapCDRyaVv0gE2jDK"
+uri = "file://artifacts/arliven-medizyne/public/images/contact-banner.png"
+type = "image"
+title = "contact page handshake partnership"
+
+[[generated]]
+id = "nvDakIfSxJpdwmyofXlpE"
+uri = "file://artifacts/arliven-medizyne/public/images/pharma-hero-cinematic.png"
+type = "image"
+title = "products page pharma flatlay"
+
+[[generated]]
+id = "wzjjpop41ms_doAaNUBkq"
+uri = "file://artifacts/arliven-medizyne/public/images/pharma-export.png"
+type = "image"
+title = "export page port aerial view"

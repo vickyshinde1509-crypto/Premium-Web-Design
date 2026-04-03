@@ -27,7 +27,7 @@ export default function Contact() {
       <section className="relative overflow-hidden border-b border-[#2F80ED]/15" style={{ minHeight: "340px" }}>
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/contact-banner.jpg)` }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/contact-banner.png)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>

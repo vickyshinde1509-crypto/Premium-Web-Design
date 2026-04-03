@@ -8,19 +8,19 @@ const slides = [
     id: 1,
     eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
     title: "EMPOWERING\nGLOBAL HEALTH\nSOLUTIONS",
-    image: "transport-mix1.jpg",
+    image: "transport-mix1.png",
   },
   {
     id: 2,
     eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
     title: "TRUSTED\nPHARMA EXPORT\nWORLDWIDE",
-    image: "transport-mix2.jpg",
+    image: "transport-mix2.png",
   },
   {
     id: 3,
     eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
     title: "BRIDGING\nINDIAN PHARMA\nGLOBALLY",
-    image: "transport-mix3.jpg",
+    image: "transport-mix3.png",
   },
 ];
 
