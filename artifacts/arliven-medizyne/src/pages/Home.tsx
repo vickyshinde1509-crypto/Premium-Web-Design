@@ -1,9 +1,9 @@
-import { Shield, Globe2, Truck, FileCheck, Award, CheckCircle2, ArrowRight, Building2, Tag, MessageSquare, Users, HeartPulse, Package, Hospital, ShoppingBag } from "lucide-react";
+import { Shield, Globe2, Truck, FileCheck, Award, CheckCircle2, ArrowRight, Building2, Tag, MessageSquare, Users, HeartPulse, Package, Hospital, ShoppingBag, ChevronDown } from "lucide-react";
 import { Link } from "wouter";
 import { HeroSlider } from "@/components/ui/HeroSlider";
 import { FadeIn } from "@/components/FadeIn";
 
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: string; duration?: number }) {
@@ -114,6 +114,8 @@ function ImageTicker() {
 }
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <main className="w-full">
       <HeroSlider />
@@ -459,7 +461,7 @@ export default function Home() {
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Quick Answers</p>
             <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Frequently Asked Questions</h2>
           </FadeIn>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {[
               { q: "Do you supply medicines in India?",       a: "Yes, we provide domestic pharmaceutical supply across India to hospitals, distributors, pharmacies, medical stores, and healthcare institutions." },
               { q: "Do you export pharmaceutical products?",  a: "Yes, we provide international pharmaceutical export solutions to global markets including Asia, Africa, Middle East, CIS Countries, and beyond." },
@@ -467,12 +469,43 @@ export default function Home() {
               { q: "Do you work with distributors?",          a: "Yes, we work with both domestic and international distributors with professional supply and documentation support." },
             ].map((faq, i) => (
               <FadeIn key={i} delay={i * 0.07}>
-                <div className="bg-white rounded-2xl p-7 border border-[#2F80ED]/10 shadow-sm">
-                  <h3 className="text-base font-black text-[#1D1D1F] mb-3 flex items-start gap-3">
-                    <span className="w-6 h-6 bg-[#EAF2FF] rounded-lg flex items-center justify-center text-[#2F80ED] font-black text-xs shrink-0 mt-0.5">Q</span>
-                    {faq.q}
-                  </h3>
-                  <p className="text-[#6E6E73] text-sm leading-relaxed pl-9">{faq.a}</p>
+                <div
+                  className={`bg-white rounded-2xl border transition-all duration-300 shadow-sm overflow-hidden ${openFaq === i ? "border-[#2F80ED]/30 shadow-[0_4px_20px_rgba(47,128,237,0.10)]" : "border-[#2F80ED]/10"}`}
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left cursor-pointer group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="w-6 h-6 bg-[#EAF2FF] rounded-lg flex items-center justify-center text-[#2F80ED] font-black text-xs shrink-0">Q</span>
+                      <span className="text-base font-bold text-[#1D1D1F] group-hover:text-[#2F80ED] transition-colors duration-200">{faq.q}</span>
+                    </div>
+                    <motion.div
+                      animate={{ rotate: openFaq === i ? 180 : 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="shrink-0"
+                    >
+                      <ChevronDown className={`w-5 h-5 transition-colors duration-200 ${openFaq === i ? "text-[#2F80ED]" : "text-[#6E6E73]"}`} />
+                    </motion.div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {openFaq === i && (
+                      <motion.div
+                        key="answer"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-7 pb-6 pl-16">
+                          <div className="w-full h-px bg-[#2F80ED]/10 mb-4" />
+                          <p className="text-[#6E6E73] text-sm leading-relaxed">{faq.a}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </FadeIn>
             ))}
