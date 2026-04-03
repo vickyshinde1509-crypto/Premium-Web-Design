@@ -339,7 +339,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-12">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">What We Do</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Comprehensive Services</h2>
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Our Core Services</h2>
           </FadeIn>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
