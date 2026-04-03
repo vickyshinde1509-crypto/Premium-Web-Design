@@ -63,10 +63,10 @@ const productsPreview = [
 ];
 
 const services = [
-  { image: "service-export.png",         title: "Pharma Merchant Export",     desc: "Seamless export of generic and branded pharmaceutical products worldwide." },
-  { image: "service-manufacturing.png",  title: "Third Party Manufacturing",  desc: "Contract manufacturing under strict WHO-GMP certified guidelines." },
-  { image: "service-surgical.png",       title: "Surgical Supply",            desc: "High-grade surgical instruments and medical consumables." },
-  { image: "service-regulatory.png",     title: "Regulatory Support",         desc: "Complete dossier preparation and export compliance assistance." },
+  { image: "service-export.png",         title: "Domestic Pharmaceutical Supply",    desc: "Reliable supply of quality pharmaceutical products to hospitals, distributors, and institutions across India." },
+  { image: "service-manufacturing.png",  title: "Bulk & Institutional Supply",       desc: "Large-volume pharmaceutical supply tailored for institutions, government bodies, and bulk buyers." },
+  { image: "service-surgical.png",       title: "International Pharmaceutical Export", desc: "Seamless export of generic and branded pharmaceutical products to global markets with full compliance." },
+  { image: "service-regulatory.png",     title: "Merchant Export Solutions",         desc: "End-to-end merchant export services including sourcing, documentation, packing, and timely delivery." },
 ];
 
 const stats = [
