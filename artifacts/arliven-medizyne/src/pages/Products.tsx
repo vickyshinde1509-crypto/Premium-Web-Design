@@ -8,21 +8,21 @@ const products = [
   {
     category: "Tablets",
     icon: Pill,
-    image: "pharma-tablets.png",
+    image: "pharma-tablets-hq.png",
     description: "Wide range of solid oral tablets sourced from certified manufacturers for domestic and export markets.",
     items: ["General Medicines", "Antibiotics", "Pain Relief", "Vitamins & Supplements"],
   },
   {
     category: "Capsules",
     icon: Stethoscope,
-    image: "pharma-tablets.png",
+    image: "pharma-capsules-hq.png",
     description: "High-quality capsule formulations for a variety of therapeutic categories.",
     items: ["Antibiotics", "Multivitamins", "General Pharma Products"],
   },
   {
     category: "Syrups",
     icon: Activity,
-    image: "pharma-syrups.png",
+    image: "pharma-syrups-hq.png",
     description: "Oral liquid formulations designed for optimal patient compliance and absorption.",
     items: ["Cough Syrups", "Health Syrups", "Paediatric Syrups"],
   },
@@ -71,7 +71,7 @@ export default function Products() {
       >
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/pharma-hero-cinematic.png)` }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/products-banner-hq.png)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/60 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
