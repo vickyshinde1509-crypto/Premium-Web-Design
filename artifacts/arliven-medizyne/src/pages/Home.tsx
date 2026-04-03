@@ -514,13 +514,24 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 bg-[#2F80ED]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="relative py-28 overflow-hidden">
+        {/* Background image */}
+        <img
+          src="/images/cta-cargo-crane.png"
+          alt="Cargo transport"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+        />
+        {/* Deep blue gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a4fa0]/90 via-[#2F80ED]/80 to-[#1a3a6e]/92" />
+        {/* Subtle dark bottom fade */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#1a3a6e]/60 to-transparent" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="text-3xl lg:text-4xl font-black text-white mb-5 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-black text-white mb-5 leading-tight drop-shadow-lg">
               Ready to Work With<br />Arliven Medizyne?
             </h2>
-            <p className="text-white/85 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
               Contact us today for domestic pharmaceutical supply and international export inquiries.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
