@@ -66,3 +66,15 @@ id = "lBqXp8iHXwUSnraNhnFik"
 uri = "file://artifacts/arliven-medizyne/public/images/pharma-syrups-hq.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "GersKiJbNuy7LZ6qGLEqH"
+uri = "file://artifacts/arliven-medizyne/public/images/service-intl-export.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "5mJz10ByUiTcSNJ0aa1-H"
+uri = "file://artifacts/arliven-medizyne/public/images/service-merchant-export.png"
+type = "image"
+title = "generated_image"
