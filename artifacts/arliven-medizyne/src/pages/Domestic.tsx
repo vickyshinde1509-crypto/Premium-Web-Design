@@ -78,7 +78,7 @@ export default function Domestic() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Our Customers</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-4">We Supply To</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#1D1D1F] mb-4">We Supply To</h2>
             <p className="text-[#6E6E73] text-lg max-w-2xl mx-auto">Serving the full spectrum of domestic healthcare supply needs with professionalism and reliability.</p>
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -106,7 +106,7 @@ export default function Domestic() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">What We Offer</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-4">Domestic Supply Services</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#1D1D1F] mb-4">Domestic Supply Services</h2>
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {domesticServices.map((s, idx) => (
@@ -126,7 +126,7 @@ export default function Domestic() {
       <section className="py-14 bg-[#2F80ED]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-8">
-            <h2 className="text-2xl font-black text-white mb-2">Products We Supply</h2>
+            <h2 className="text-xl font-bold text-white mb-2">Products We Supply</h2>
             <p className="text-white/75 text-sm">Sourced from certified manufacturing partners</p>
           </FadeIn>
           <div className="flex flex-wrap justify-center gap-3">
@@ -147,7 +147,7 @@ export default function Domestic() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Why Partner With Us</p>
-              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-8 leading-tight">
+              <h2 className="text-2xl lg:text-3xl font-bold text-[#1D1D1F] mb-8 leading-tight">
                 Your Trusted<br />Domestic Pharma Partner
               </h2>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -178,7 +178,7 @@ export default function Domestic() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
             <Truck className="w-12 h-12 text-[#2F80ED] mx-auto mb-6 opacity-80" />
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-5">Start Your Domestic Supply Partnership</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#1D1D1F] mb-5">Start Your Domestic Supply Partnership</h2>
             <p className="text-[#6E6E73] text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
               Contact us today for reliable pharmaceutical supply to your hospital, pharmacy, or distribution network anywhere in India.
             </p>
