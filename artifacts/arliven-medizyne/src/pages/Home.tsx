@@ -1,4 +1,4 @@
-import { Shield, Globe2, Truck, FileCheck, PackageOpen, Award, CheckCircle2, ArrowRight } from "lucide-react";
+import { Shield, Globe2, Truck, FileCheck, Award, CheckCircle2, ArrowRight, Building2, Tag, MessageSquare, Users } from "lucide-react";
 import { Link } from "wouter";
 import { HeroSlider } from "@/components/ui/HeroSlider";
 import { FadeIn } from "@/components/FadeIn";
@@ -43,12 +43,14 @@ function ParallaxBanner({ src, alt, height = "h-80", children }: { src: string; 
 }
 
 const features = [
-  { icon: Shield,      image: "feature-quality.png",     title: "Trusted Quality",        desc: "Sourcing only from WHO-GMP certified manufacturing facilities." },
-  { icon: Globe2,      image: "feature-global.png",      title: "Global Reach",           desc: "Exporting to Asia, Africa, Middle East and beyond." },
-  { icon: FileCheck,   image: "feature-compliance.png",  title: "Regulatory Compliance",  desc: "Expertise in complex international export documentation." },
-  { icon: Truck,       image: "feature-delivery.png",    title: "Timely Delivery",        desc: "Optimized logistics for secure and punctual shipping." },
-  { icon: PackageOpen, image: "feature-sourcing.png",    title: "Reliable Sourcing",      desc: "Strong network of premium WHO-GMP certified manufacturers." },
-  { icon: Award,       image: "feature-expertise.png",   title: "Export Expertise",       desc: "Years of specialized pharmaceutical merchant export experience." },
+  { icon: Building2,     image: "pharma-factory.png",     title: "Trusted Manufacturing Network",       desc: "Partnered with a reliable network of WHO-GMP certified Indian pharmaceutical manufacturers." },
+  { icon: Shield,        image: "feature-quality.png",    title: "Quality Assurance Focus",             desc: "Strict quality checks at every step — from sourcing to final delivery of products." },
+  { icon: FileCheck,     image: "feature-compliance.png", title: "Professional Business Approach",      desc: "Transparent dealings, clear communication, and professional end-to-end coordination." },
+  { icon: Tag,           image: "feature-sourcing.png",   title: "Competitive Pricing",                 desc: "Cost-effective pharmaceutical sourcing without compromising on product quality." },
+  { icon: Globe2,        image: "feature-global.png",     title: "Domestic & Global Supply Capability", desc: "Serving hospitals, distributors, and institutions both within India and across global markets." },
+  { icon: Truck,         image: "feature-delivery.png",   title: "Timely Delivery System",              desc: "Optimised logistics and proactive planning ensure on-time delivery every time." },
+  { icon: MessageSquare, image: "pharma-port-mix.png",    title: "Transparent Communication",           desc: "Open, honest updates at every stage of your order — from inquiry to final shipment." },
+  { icon: Users,         image: "feature-expertise.png",  title: "Long-Term Business Commitment",       desc: "Building lasting partnerships through consistent performance, trust, and reliable supply." },
 ];
 
 const productsPreview = [
@@ -205,7 +207,7 @@ export default function Home() {
             <p className="text-[#6E6E73] text-lg">Unwavering commitment to quality, compliance, and reliable global delivery.</p>
           </FadeIn>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, idx) => (
               <FadeIn key={idx} delay={idx * 0.08} direction="up">
                 <motion.div
