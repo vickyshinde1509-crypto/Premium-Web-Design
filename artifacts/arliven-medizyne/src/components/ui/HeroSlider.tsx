@@ -6,20 +6,20 @@ import { ChevronDown } from "lucide-react";
 const slides = [
   {
     id: 1,
-    eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
-    title: "EMPOWERING\nGLOBAL HEALTH\nSOLUTIONS",
+    eyebrow: "Arliven Medizyne Pvt Ltd",
+    title: "Empowering Global & Domestic\nHealthcare Solutions",
     image: "transport-mix1.png",
   },
   {
     id: 2,
-    eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
-    title: "TRUSTED\nPHARMA EXPORT\nWORLDWIDE",
+    eyebrow: "Arliven Medizyne Pvt Ltd",
+    title: "Domestic Pharmaceutical\nSupply",
     image: "transport-mix2.png",
   },
   {
     id: 3,
-    eyebrow: "ARLIVEN MEDIZYNE PVT LTD",
-    title: "BRIDGING\nINDIAN PHARMA\nGLOBALLY",
+    eyebrow: "Arliven Medizyne Pvt Ltd",
+    title: "International Pharmaceutical\nMerchant Export Solutions",
     image: "transport-mix3.png",
   },
 ];
@@ -81,22 +81,22 @@ export function HeroSlider() {
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.65, ease: "easeOut" }}
                 >
-                  {/* Eyebrow — smaller */}
+                  {/* Eyebrow — company name in logo blue */}
                   <motion.p
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-xs font-bold tracking-widest text-white/75 uppercase mb-3"
+                    className="text-sm font-semibold tracking-wider text-[#2F80ED] mb-3"
                   >
                     {slide.eyebrow}
                   </motion.p>
 
-                  {/* Heading — reduced size */}
+                  {/* Heading — medium weight, comfortable size */}
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-[1.1] whitespace-pre-line"
+                    className="text-2xl md:text-3xl lg:text-4xl font-medium text-white leading-[1.2] whitespace-pre-line"
                   >
                     {slide.title}
                   </motion.h1>

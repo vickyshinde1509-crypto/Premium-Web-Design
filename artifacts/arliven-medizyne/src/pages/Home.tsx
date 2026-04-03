@@ -142,22 +142,31 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="up">
-              <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">
-                About Arliven Medizyne
+              <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">
+                About Arliven Medizyne Pvt Ltd
               </p>
-              <h2 className="text-3xl lg:text-4xl font-black mb-6 leading-tight text-[#1D1D1F]">
-                Excellence in<br />
-                <span className="text-[#2F80ED]">Global Healthcare</span> Export
+              <h2 className="text-3xl lg:text-4xl font-black mb-5 leading-tight text-[#1D1D1F]">
+                Empowering Global &amp; Domestic<br />
+                <span className="text-[#2F80ED]">Healthcare Solutions</span>
               </h2>
-              <p className="text-[#6E6E73] text-lg leading-relaxed mb-8">
-                Arliven Medizyne Pvt Ltd is a premier pharmaceutical merchant exporter based in Maharashtra, India. We bridge the gap in global healthcare by delivering high-quality pharmaceutical and surgical products across international borders with full compliance and safety.
+              <p className="text-[#6E6E73] text-base leading-relaxed mb-3">
+                Reliable Pharmaceutical Merchant Exporter &amp; Domestic Supplier from India delivering quality pharmaceutical and surgical products to hospitals, distributors, institutions, and global buyers.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-                {["WHO-GMP Certified Products", "Timely Global Shipping", "Comprehensive Product Range", "Strict Quality Control"].map((point, i) => (
+              <p className="text-[#6E6E73] text-base leading-relaxed mb-8">
+                We connect trusted Indian pharmaceutical manufacturers with domestic and international markets through professional sourcing, transparent communication, and timely supply.
+              </p>
+              <div className="flex flex-col gap-3 mb-10">
+                {[
+                  { label: "Domestic Pharmaceutical Supply", flag: "🇮🇳" },
+                  { label: "International Pharmaceutical Export", flag: "🌍" },
+                  { label: "Bulk & Institutional Supply", flag: "💊" },
+                  { label: "Trusted Pharma Business Partner", flag: "🤝" },
+                ].map((point, i) => (
                   <FadeIn key={i} delay={i * 0.08} direction="up">
                     <div className="flex items-center gap-3 bg-[#EAF2FF] rounded-xl px-4 py-3 border border-[#2F80ED]/15">
-                      <CheckCircle2 className="w-5 h-5 text-[#2F80ED] shrink-0" />
-                      <span className="font-medium text-[#1D1D1F] text-sm">{point}</span>
+                      <span className="text-[#2F80ED] font-black text-sm shrink-0">✔</span>
+                      <span className="font-semibold text-[#1D1D1F] text-sm flex-1">{point.label}</span>
+                      <span className="text-lg shrink-0">{point.flag}</span>
                     </div>
                   </FadeIn>
                 ))}
