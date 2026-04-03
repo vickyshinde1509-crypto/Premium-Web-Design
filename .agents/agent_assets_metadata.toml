@@ -108,3 +108,21 @@ id = "oON9GQluO9FEJVAHeggiI"
 uri = "file://artifacts/arliven-medizyne/public/images/export-journey-cta.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "tBtqXmGJgQgGh6m5QYt3x"
+uri = "file://artifacts/arliven-medizyne/public/images/certifications-banner.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "SqT4tCjtfmEVgIAiOBrEa"
+uri = "file://artifacts/arliven-medizyne/public/images/cert-badge-whogmp.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "R4BB_hSLIMLRQD1V4FeuP"
+uri = "file://artifacts/arliven-medizyne/public/images/cert-badge-iso.png"
+type = "image"
+title = "generated_image"

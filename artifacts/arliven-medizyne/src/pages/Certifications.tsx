@@ -9,6 +9,8 @@ const certifications = [
     code: "IEC",
     title: "Import Export Code",
     badge: "DGFT Registered",
+    color: "#2F80ED",
+    image: null,
     desc: "Registered with the Directorate General of Foreign Trade (DGFT) of India. Our IEC registration authorizes Arliven Medizyne to legally conduct pharmaceutical import and export operations worldwide.",
   },
   {
@@ -16,6 +18,8 @@ const certifications = [
     code: "GST",
     title: "GST Registration",
     badge: "Tax Compliant",
+    color: "#1a9e6e",
+    image: null,
     desc: "Fully GST-compliant business with valid Goods and Services Tax registration, ensuring transparent and lawful financial transactions across all domestic and international operations.",
   },
   {
@@ -23,6 +27,8 @@ const certifications = [
     code: "CIN",
     title: "Company Registration",
     badge: "MCA Registered",
+    color: "#7c3aed",
+    image: null,
     desc: "Arliven Medizyne Pvt Ltd is a legally registered private limited company under the Companies Act of India, ensuring full corporate accountability and legal compliance.",
   },
   {
@@ -30,13 +36,17 @@ const certifications = [
     code: "WHO-GMP",
     title: "WHO-GMP Manufacturers",
     badge: "Quality Assured",
-    desc: "We source exclusively from WHO-GMP (World Health Organization Good Manufacturing Practice) certified manufacturing partners, guaranteeing the highest quality and safety standards for every product.",
+    color: "#2F80ED",
+    image: "cert-badge-whogmp.png",
+    desc: "We source exclusively from WHO-GMP certified manufacturing partners, guaranteeing the highest quality and safety standards for every product.",
   },
   {
     icon: Award,
     code: "ISO",
     title: "ISO Certification",
     badge: "ISO Standard",
+    color: "#d97706",
+    image: "cert-badge-iso.png",
     desc: "Our manufacturing partners hold ISO certification reflecting adherence to internationally recognized quality management standards for pharmaceutical production and supply.",
   },
   {
@@ -44,6 +54,8 @@ const certifications = [
     code: "COA",
     title: "Certificate of Analysis",
     badge: "Product Verified",
+    color: "#0891b2",
+    image: null,
     desc: "Every product shipment is accompanied by a Certificate of Analysis (COA) confirming that products meet the required pharmaceutical quality specifications and international standards.",
   },
 ];
@@ -64,16 +76,16 @@ export default function Certifications() {
       {/* Hero */}
       <section
         className="relative min-h-[50vh] flex items-center"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/about-office.png)`, backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/certifications-banner.png)`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/82 via-black/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Compliance & Trust</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-5 text-white max-w-3xl leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-5 text-white max-w-3xl leading-tight">
               Certifications & Compliance
             </h1>
-            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
+            <p className="text-base text-gray-300 max-w-2xl leading-relaxed">
               Our credentials and manufacturing partner certifications that underpin our commitment to quality, regulatory safety, and professional pharmaceutical supply.
             </p>
           </FadeIn>
@@ -84,8 +96,8 @@ export default function Certifications() {
       <section className="py-20 bg-[#F4F8FF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-4">Our Credentials</h2>
-            <p className="text-[#6E6E73] text-lg max-w-2xl mx-auto">
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#1D1D1F] mb-4">Our Credentials</h2>
+            <p className="text-[#6E6E73] text-base max-w-2xl mx-auto">
               Every certificate and compliance credential represents our promise — reliable, safe, and legally compliant pharmaceutical supply.
             </p>
           </FadeIn>
@@ -99,15 +111,30 @@ export default function Certifications() {
                   className="bg-white rounded-2xl p-8 border border-[#2F80ED]/10 shadow-[0_2px_12px_rgba(47,128,237,0.07)] h-full flex flex-col"
                 >
                   <div className="flex items-start justify-between mb-6">
-                    <div className="w-16 h-16 bg-[#EAF2FF] rounded-2xl flex items-center justify-center text-[#2F80ED] border border-[#2F80ED]/15 shrink-0">
-                      <cert.icon className="w-8 h-8" />
-                    </div>
-                    <span className="text-xs font-bold bg-[#EEF4FF] text-[#2F80ED] px-3 py-1.5 rounded-full border border-[#2F80ED]/20 ml-3">
+                    {/* Premium badge logo area */}
+                    {cert.image ? (
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden border border-[#2F80ED]/15 shadow-md shrink-0 bg-[#EAF2FF]">
+                        <img
+                          src={`${import.meta.env.BASE_URL}images/${cert.image}`}
+                          alt={cert.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="w-20 h-20 rounded-2xl flex flex-col items-center justify-center shrink-0 border shadow-md"
+                        style={{ background: `linear-gradient(135deg, ${cert.color}18, ${cert.color}30)`, borderColor: `${cert.color}25` }}
+                      >
+                        <cert.icon className="w-7 h-7 mb-1" style={{ color: cert.color }} />
+                        <span className="text-[9px] font-black tracking-widest uppercase" style={{ color: cert.color }}>{cert.code}</span>
+                      </div>
+                    )}
+                    <span className="text-xs font-bold bg-[#EEF4FF] text-[#2F80ED] px-3 py-1.5 rounded-full border border-[#2F80ED]/20 ml-3 shrink-0">
                       {cert.badge}
                     </span>
                   </div>
                   <p className="text-xs font-black tracking-widest text-[#2F80ED] uppercase mb-2">{cert.code}</p>
-                  <h3 className="text-lg font-black text-[#1D1D1F] mb-4">{cert.title}</h3>
+                  <h3 className="text-base font-bold text-[#1D1D1F] mb-4">{cert.title}</h3>
                   <p className="text-[#6E6E73] text-sm leading-relaxed flex-grow">{cert.desc}</p>
                 </motion.div>
               </FadeIn>
@@ -122,7 +149,7 @@ export default function Certifications() {
           <div className="bg-[#EEF4FF] rounded-3xl p-10 border border-[#2F80ED]/15">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <FadeIn>
-                <h2 className="text-2xl lg:text-3xl font-black text-[#1D1D1F] mb-5">Commitment to Quality</h2>
+                <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F] mb-5">Commitment to Quality</h2>
                 <p className="text-[#6E6E73] text-base leading-relaxed mb-6">
                   We work exclusively with trusted and certified manufacturers to ensure reliable pharmaceutical supply for domestic and international markets while maintaining professional sourcing and the highest quality standards in every transaction.
                 </p>
@@ -138,7 +165,7 @@ export default function Certifications() {
                 <div className="grid grid-cols-2 gap-4">
                   {statsRow.map((stat, i) => (
                     <div key={i} className="bg-white rounded-xl p-5 border border-[#2F80ED]/10 text-center shadow-sm">
-                      <div className="text-xl font-black text-[#2F80ED] mb-1">{stat.value}</div>
+                      <div className="text-lg font-bold text-[#2F80ED] mb-1">{stat.value}</div>
                       <div className="text-xs font-semibold text-[#6E6E73] uppercase tracking-wide">{stat.label}</div>
                     </div>
                   ))}
@@ -153,7 +180,7 @@ export default function Certifications() {
       <section className="py-14 bg-[#2F80ED]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-8">
-            <h2 className="text-2xl font-black text-white mb-2">Industries We Serve</h2>
+            <h2 className="text-xl font-bold text-white mb-2">Industries We Serve</h2>
           </FadeIn>
           <div className="flex flex-wrap justify-center gap-4">
             {["Hospitals", "Distributors", "Pharmacies", "Healthcare Institutions", "Global Buyers"].map((ind, i) => (
@@ -171,7 +198,7 @@ export default function Certifications() {
       <section className="py-16 bg-[#F4F8FF] border-t border-[#2F80ED]/10 text-center">
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn>
-            <h2 className="text-2xl lg:text-3xl font-black text-[#1D1D1F] mb-5">Need Compliance Documentation?</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F] mb-5">Need Compliance Documentation?</h2>
             <p className="text-[#6E6E73] text-base mb-8 leading-relaxed">
               Contact us for product-specific COA, FSC, or regulatory documentation required for your import market or institutional buyer.
             </p>
