@@ -66,7 +66,7 @@ const services = [
   { image: "service-export.png",         title: "Domestic Pharmaceutical Supply",    desc: "Reliable supply of quality pharmaceutical products to hospitals, distributors, and institutions across India." },
   { image: "service-manufacturing.png",  title: "Bulk & Institutional Supply",       desc: "Large-volume pharmaceutical supply tailored for institutions, government bodies, and bulk buyers." },
   { image: "service-intl-export.png",    title: "International Pharmaceutical Export", desc: "Seamless export of generic and branded pharmaceutical products to global markets with full compliance." },
-  { image: "service-merchant-export.png", title: "Merchant Export Solutions",         desc: "End-to-end merchant export services including sourcing, documentation, packing, and timely delivery." },
+  { image: "service-merchant-export.png", title: "Our Core Values", desc: "The principles that guide every decision, partnership, and delivery we make.", values: ["Integrity", "Quality", "Transparency", "Commitment", "Customer Satisfaction"] },
 ];
 
 const stats = [
@@ -363,7 +363,16 @@ export default function Home() {
                   <div className="p-5 flex-1">
                     <div className="w-1 h-6 bg-[#2F80ED] mb-3 rounded-full" />
                     <h3 className="text-sm font-bold mb-2 text-[#1D1D1F] leading-snug">{service.title}</h3>
-                    <p className="text-[#6E6E73] text-xs leading-relaxed">{service.desc}</p>
+                    <p className="text-[#6E6E73] text-xs leading-relaxed mb-3">{service.desc}</p>
+                    {(service as any).values && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {(service as any).values.map((v: string, i: number) => (
+                          <span key={i} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-[#2F80ED]/10 text-[#2F80ED] border border-[#2F80ED]/20 whitespace-nowrap">
+                            {v}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               </FadeIn>
