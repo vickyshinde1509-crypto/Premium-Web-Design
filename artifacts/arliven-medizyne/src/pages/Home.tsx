@@ -157,16 +157,15 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3 mb-10">
                 {[
-                  { label: "Domestic Pharmaceutical Supply", flag: "🇮🇳" },
-                  { label: "International Pharmaceutical Export", flag: "🌍" },
-                  { label: "Bulk & Institutional Supply", flag: "💊" },
-                  { label: "Trusted Pharma Business Partner", flag: "🤝" },
-                ].map((point, i) => (
+                  "Domestic Pharmaceutical Supply",
+                  "International Pharmaceutical Export",
+                  "Bulk & Institutional Supply",
+                  "Trusted Pharma Business Partner",
+                ].map((label, i) => (
                   <FadeIn key={i} delay={i * 0.08} direction="up">
                     <div className="flex items-center gap-3 bg-[#EAF2FF] rounded-xl px-4 py-3 border border-[#2F80ED]/15">
                       <span className="text-[#2F80ED] font-black text-sm shrink-0">✔</span>
-                      <span className="font-semibold text-[#1D1D1F] text-sm flex-1">{point.label}</span>
-                      <span className="text-lg shrink-0">{point.flag}</span>
+                      <span className="font-semibold text-[#1D1D1F] text-sm">{label}</span>
                     </div>
                   </FadeIn>
                 ))}
