@@ -8,7 +8,7 @@ const slides = [
     id: 1,
     eyebrow: "Arliven Medizyne Pvt Ltd",
     title: "Empowering Global & Domestic\nHealthcare Solutions",
-    image: "transport-mix1.png",
+    image: "transport-mix1-new.jpg",
   },
   {
     id: 2,
