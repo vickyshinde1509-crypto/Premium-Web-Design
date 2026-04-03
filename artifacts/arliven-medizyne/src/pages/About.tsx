@@ -92,7 +92,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-black mb-4 text-[#1D1D1F]">Our Mission</h3>
                 <p className="text-[#6E6E73] text-lg leading-relaxed">
-                  To consistently supply safe, effective, and affordable pharmaceutical products globally by maintaining robust supply chains, adhering to stringent quality compliances, and fostering enduring partnerships.
+                  To deliver reliable pharmaceutical and surgical products to domestic and international markets with professionalism and quality focus.
                 </p>
               </div>
             </FadeIn>
@@ -104,7 +104,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-black mb-4 text-[#1D1D1F]">Our Vision</h3>
                 <p className="text-[#6E6E73] text-lg leading-relaxed">
-                  To be recognized globally as the most reliable and transparent pharmaceutical merchant exporter from India, contributing significantly to a healthier world.
+                  To become a trusted pharmaceutical supply and export company globally.
                 </p>
               </div>
             </FadeIn>
