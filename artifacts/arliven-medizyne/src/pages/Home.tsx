@@ -1,4 +1,4 @@
-import { Shield, Globe2, Truck, FileCheck, Award, CheckCircle2, ArrowRight, Building2, Tag, MessageSquare, Users } from "lucide-react";
+import { Shield, Globe2, Truck, FileCheck, Award, CheckCircle2, ArrowRight, Building2, Tag, MessageSquare, Users, HeartPulse, Package, Hospital, ShoppingBag } from "lucide-react";
 import { Link } from "wouter";
 import { HeroSlider } from "@/components/ui/HeroSlider";
 import { FadeIn } from "@/components/FadeIn";
@@ -391,10 +391,10 @@ export default function Home() {
                 Connecting Indian<br />Excellence to<br />Global Markets
               </h2>
               <p className="text-[#6E6E73] text-lg leading-relaxed mb-8">
-                Our established export channels span across multiple continents with seamless regulatory compliance and robust supply chain management.
+                Arliven Medizyne Pvt Ltd provides professional pharmaceutical export solutions to global markets with proper documentation and reliable supply.
               </p>
               <ul className="space-y-3">
-                {["Southeast Asia", "African Nations", "Middle East / GCC", "CIS Countries"].map((region, i) => (
+                {["Asia", "Southeast Asia", "African Nations", "Middle East / GCC", "CIS Countries", "Global Markets"].map((region, i) => (
                   <FadeIn key={i} delay={i * 0.08} direction="up">
                     <div className="flex items-center gap-3 bg-[#EEF4FF] rounded-xl px-4 py-3 border border-[#2F80ED]/10 shadow-sm lift-card">
                       <div className="w-2 h-2 rounded-full bg-[#2F80ED] shrink-0" />
@@ -433,15 +433,17 @@ export default function Home() {
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
-              { icon: "🏥", label: "Hospitals" },
-              { icon: "📦", label: "Distributors" },
-              { icon: "💊", label: "Pharmacies" },
-              { icon: "🩺", label: "Healthcare Institutions" },
-              { icon: "🌍", label: "Global Buyers" },
+              { Icon: Hospital,    label: "Hospitals",               color: "#2F80ED" },
+              { Icon: Package,     label: "Distributors",            color: "#0EA5E9" },
+              { Icon: ShoppingBag, label: "Pharmacies",              color: "#2F80ED" },
+              { Icon: HeartPulse,  label: "Healthcare Institutions", color: "#0EA5E9" },
+              { Icon: Globe2,      label: "Global Buyers",           color: "#2F80ED" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="bg-[#EEF4FF] rounded-2xl p-7 border border-[#2F80ED]/10 text-center shadow-[0_2px_12px_rgba(47,128,237,0.07)] lift-card">
-                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <div className="w-14 h-14 rounded-2xl bg-white shadow-md border border-[#2F80ED]/15 flex items-center justify-center mx-auto mb-4">
+                    <item.Icon className="w-7 h-7" style={{ color: item.color }} strokeWidth={1.5} />
+                  </div>
                   <h3 className="text-base font-black text-[#1D1D1F]">{item.label}</h3>
                 </div>
               </FadeIn>
