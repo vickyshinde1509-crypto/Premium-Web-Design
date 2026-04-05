@@ -82,7 +82,7 @@ export default function Certifications() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Compliance & Trust</p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-5 text-white max-w-3xl leading-tight">
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-5 text-white max-w-3xl leading-tight">
               Certifications & Compliance
             </h1>
             <p className="text-base text-gray-300 max-w-2xl leading-relaxed">
@@ -96,7 +96,7 @@ export default function Certifications() {
       <section className="py-20 bg-[#F4F8FF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#1D1D1F] mb-4">Our Credentials</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F] mb-4">Our Credentials</h2>
             <p className="text-[#6E6E73] text-base max-w-2xl mx-auto">
               Every certificate and compliance credential represents our promise — reliable, safe, and legally compliant pharmaceutical supply.
             </p>

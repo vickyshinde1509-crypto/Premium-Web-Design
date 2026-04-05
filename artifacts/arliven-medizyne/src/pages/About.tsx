@@ -16,7 +16,7 @@ export default function About() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-2">Company Profile</p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 text-white leading-tight">
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-3 text-white leading-tight">
               About Arliven Medizyne
             </h1>
             <p className="text-sm lg:text-base text-gray-200 max-w-lg leading-relaxed">

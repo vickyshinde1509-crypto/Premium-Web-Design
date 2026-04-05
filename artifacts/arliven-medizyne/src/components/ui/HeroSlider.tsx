@@ -96,7 +96,7 @@ export function HeroSlider() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-2xl md:text-3xl lg:text-4xl font-medium text-white leading-[1.2] whitespace-pre-line"
+                    className="text-lg md:text-xl lg:text-2xl font-medium text-white leading-[1.2] whitespace-pre-line"
                   >
                     {slide.title}
                   </motion.h1>
@@ -155,7 +155,7 @@ export function HeroSlider() {
           <p className="text-base text-gray-500 mb-2">
             We source, document and deliver pharmaceutical products based on the
           </p>
-          <p className="text-3xl lg:text-4xl font-black text-gray-900 tracking-tight">
+          <p className="text-xl lg:text-2xl font-bold text-gray-900 tracking-tight">
             "QUALITY-FIRST PRINCIPLE."
           </p>
         </motion.div>

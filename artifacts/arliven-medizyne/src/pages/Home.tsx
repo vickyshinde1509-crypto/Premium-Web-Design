@@ -238,7 +238,7 @@ export default function Home() {
                     <div className="w-10 h-10 bg-[#EAF2FF] rounded-xl flex items-center justify-center text-[#2F80ED] mb-4">
                       <feature.icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-bold mb-2 text-[#1D1D1F]">{feature.title}</h3>
+                    <h3 className="text-sm font-semibold mb-2 text-[#1D1D1F]">{feature.title}</h3>
                     <p className="text-[#6E6E73] text-sm leading-relaxed">{feature.desc}</p>
                   </div>
                 </motion.div>
@@ -482,7 +482,7 @@ export default function Home() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-6 h-6 bg-[#EAF2FF] rounded-lg flex items-center justify-center text-[#2F80ED] font-black text-xs shrink-0">Q</span>
-                      <span className="text-base font-bold text-[#1D1D1F] group-hover:text-[#2F80ED] transition-colors duration-200">{faq.q}</span>
+                      <span className="text-sm font-semibold text-[#1D1D1F] group-hover:text-[#2F80ED] transition-colors duration-200">{faq.q}</span>
                     </div>
                     <motion.div
                       animate={{ rotate: openFaq === i ? 180 : 0 }}

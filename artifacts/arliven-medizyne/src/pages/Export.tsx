@@ -27,7 +27,7 @@ export default function Export() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">International Export</p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-5 text-white max-w-3xl leading-tight">
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-5 text-white max-w-3xl leading-tight">
               Pharmaceutical Export
             </h1>
             <p className="text-base text-gray-300 max-w-2xl leading-relaxed">
@@ -41,7 +41,7 @@ export default function Export() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-[#1D1D1F]">Our Export Process</h2>
+            <h2 className="text-xl lg:text-2xl font-bold mb-4 text-[#1D1D1F]">Our Export Process</h2>
             <p className="text-[#6E6E73] text-lg">A systematic, transparent approach to guarantee reliable delivery.</p>
           </FadeIn>
 
@@ -53,9 +53,9 @@ export default function Export() {
                     <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-[#2F80ED] shadow-sm border border-[#2F80ED]/15 shrink-0">
                       <step.icon className="w-5 h-5" />
                     </div>
-                    <div className="text-3xl font-black text-[#2F80ED]/15 leading-none">{String(idx + 1).padStart(2, "0")}</div>
+                    <div className="text-2xl font-bold text-[#2F80ED]/15 leading-none">{String(idx + 1).padStart(2, "0")}</div>
                   </div>
-                  <h3 className="text-base font-black mb-2 text-[#1D1D1F]">{step.title}</h3>
+                  <h3 className="text-sm font-semibold mb-2 text-[#1D1D1F]">{step.title}</h3>
                   <p className="text-sm text-[#6E6E73] leading-relaxed">{step.desc}</p>
                 </div>
               </FadeIn>
@@ -69,7 +69,7 @@ export default function Export() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12">
             <FadeIn>
-              <h2 className="text-2xl font-bold mb-8 text-[#1D1D1F]">Global Destinations</h2>
+              <h2 className="text-xl font-bold mb-8 text-[#1D1D1F]">Global Destinations</h2>
               <div className="grid sm:grid-cols-2 gap-3">
                 {["Asia", "Africa", "Middle East", "CIS Countries", "Global Markets", "Latin America"].map((region, i) => (
                   <FadeIn key={i} delay={i * 0.07}>
@@ -84,7 +84,7 @@ export default function Export() {
 
             <FadeIn delay={0.2}>
               <div className="bg-[#EEF4FF] rounded-2xl p-8 border border-[#2F80ED]/10 shadow-sm">
-                <h2 className="text-xl font-bold mb-5 text-[#1D1D1F]">Export Support</h2>
+                <h2 className="text-lg font-semibold mb-5 text-[#1D1D1F]">Export Support</h2>
                 <p className="text-[#6E6E73] text-base mb-7 leading-relaxed">
                   We provide end-to-end support for all regulatory and logistical hurdles in international pharmaceutical trade.
                 </p>
@@ -120,7 +120,7 @@ export default function Export() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a4fa0]/88 via-[#2F80ED]/75 to-[#1a3a6e]/90" />
         <div className="relative z-10 max-w-3xl mx-auto px-6">
           <FadeIn>
-            <h2 className="text-2xl lg:text-3xl font-bold mb-5 drop-shadow-lg">Start Your Export Journey</h2>
+            <h2 className="text-xl lg:text-2xl font-bold mb-5 drop-shadow-lg">Start Your Export Journey</h2>
             <p className="text-base text-white/90 mb-10 leading-relaxed drop-shadow">
               Partner with Arliven Medizyne for reliable, compliant, and timely pharmaceutical supplies to any destination.
             </p>
