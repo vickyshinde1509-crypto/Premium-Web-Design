@@ -77,7 +77,7 @@ export default function Products() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">What We Offer</p>
-            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-white leading-tight">
+            <h1 className="text-base md:text-lg lg:text-xl font-semibold mb-4 text-white leading-tight">
               Products &amp; Services
             </h1>
             <p className="text-base lg:text-lg text-gray-300 max-w-xl leading-relaxed">

@@ -83,7 +83,7 @@ export default function Certifications() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Compliance & Trust</p>
-            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-5 text-white max-w-3xl leading-tight">
+            <h1 className="text-base md:text-lg lg:text-xl font-semibold mb-5 text-white max-w-3xl leading-tight">
               Certifications & Compliance
             </h1>
             <p className="text-base text-gray-300 max-w-2xl leading-relaxed">
