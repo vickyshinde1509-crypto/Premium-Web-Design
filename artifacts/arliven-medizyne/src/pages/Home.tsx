@@ -250,7 +250,7 @@ export default function Home() {
 
       {/* Banner 1 — parallax */}
       <ParallaxBanner
-        src={`${import.meta.env.BASE_URL}images/parallax-cargo.jpg`}
+        src={`${import.meta.env.BASE_URL}images/parallax-pharma-global.png`}
         alt="Global pharmaceutical supply chain"
         height="h-64"
       >
