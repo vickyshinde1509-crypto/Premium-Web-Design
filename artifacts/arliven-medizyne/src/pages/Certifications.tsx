@@ -10,7 +10,7 @@ const certifications = [
     title: "Import Export Code",
     badge: "DGFT Registered",
     color: "#2F80ED",
-    image: null,
+    image: "cert-ie-license.jpg",
     desc: "Registered with the Directorate General of Foreign Trade (DGFT) of India. Our IEC registration authorizes Arliven Medizyne to legally conduct pharmaceutical import and export operations worldwide.",
   },
   {
@@ -19,7 +19,7 @@ const certifications = [
     title: "GST Registration",
     badge: "Tax Compliant",
     color: "#1a9e6e",
-    image: null,
+    image: "cert-gst.jpg",
     desc: "Fully GST-compliant business with valid Goods and Services Tax registration, ensuring transparent and lawful financial transactions across all domestic and international operations.",
   },
   {
@@ -28,7 +28,7 @@ const certifications = [
     title: "Company Registration",
     badge: "MCA Registered",
     color: "#7c3aed",
-    image: null,
+    image: "cert-registration.jpg",
     desc: "Arliven Medizyne Pvt Ltd is a legally registered private limited company under the Companies Act of India, ensuring full corporate accountability and legal compliance.",
   },
   {
@@ -46,7 +46,7 @@ const certifications = [
     title: "ISO Certification",
     badge: "ISO Standard",
     color: "#d97706",
-    image: "cert-badge-iso.png",
+    image: "cert-iso-new.jpg",
     desc: "Our manufacturing partners hold ISO certification reflecting adherence to internationally recognized quality management standards for pharmaceutical production and supply.",
   },
   {
@@ -55,7 +55,7 @@ const certifications = [
     title: "Certificate of Analysis",
     badge: "Product Verified",
     color: "#0891b2",
-    image: null,
+    image: "cert-coa.jpg",
     desc: "Every product shipment is accompanied by a Certificate of Analysis (COA) confirming that products meet the required pharmaceutical quality specifications and international standards.",
   },
 ];
@@ -113,11 +113,11 @@ export default function Certifications() {
                   <div className="flex items-start justify-between mb-6">
                     {/* Premium badge logo area */}
                     {cert.image ? (
-                      <div className="w-20 h-20 rounded-2xl overflow-hidden border border-[#2F80ED]/15 shadow-md shrink-0 bg-[#EAF2FF]">
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden border border-[#2F80ED]/15 shadow-md shrink-0 bg-white flex items-center justify-center p-2">
                         <img
                           src={`${import.meta.env.BASE_URL}images/${cert.image}`}
                           alt={cert.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                     ) : (

@@ -525,10 +525,8 @@ export default function Home() {
           alt="Cargo transport"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
         />
-        {/* Deep blue gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a4fa0]/90 via-[#2F80ED]/80 to-[#1a3a6e]/92" />
-        {/* Subtle dark bottom fade */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#1a3a6e]/60 to-transparent" />
+        {/* Very light overlay — 10% only so background image shows through */}
+        <div className="absolute inset-0 bg-black/10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
