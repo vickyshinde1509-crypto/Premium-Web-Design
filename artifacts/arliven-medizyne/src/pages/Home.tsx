@@ -250,7 +250,7 @@ export default function Home() {
 
       {/* Banner 1 — parallax */}
       <ParallaxBanner
-        src={`${import.meta.env.BASE_URL}images/transport-mix1-new.jpg`}
+        src={`${import.meta.env.BASE_URL}images/parallax-cargo.jpg`}
         alt="Global pharmaceutical supply chain"
         height="h-64"
       >
@@ -525,8 +525,8 @@ export default function Home() {
           alt="Cargo transport"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
         />
-        {/* Very light overlay — 10% only so background image shows through */}
-        <div className="absolute inset-0 bg-black/10" />
+        {/* 30% overlay so text stays clearly readable */}
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
