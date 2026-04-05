@@ -525,8 +525,8 @@ export default function Home() {
           alt="Cargo transport"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
         />
-        {/* 30% overlay so text stays clearly readable */}
-        <div className="absolute inset-0 bg-black/30" />
+        {/* 50% overlay so text stays clearly readable */}
+        <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
