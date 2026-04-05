@@ -435,19 +435,19 @@ export default function Home() {
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
-              { img: "industry-hospitals.jpg",    label: "Hospitals" },
-              { img: "industry-distributors.jpg", label: "Distributors" },
-              { img: "industry-pharmacies.jpg",   label: "Pharmacies" },
-              { img: "industry-healthcare.jpg",   label: "Healthcare Institutions" },
-              { img: "industry-globalbuyers.jpg", label: "Global Buyers" },
+              { img: "industry-hospitals.jpg",    label: "Hospitals",               contain: false },
+              { img: "industry-distributors.jpg", label: "Distributors",            contain: false },
+              { img: "industry-pharmacies.jpg",   label: "Pharmacies",              contain: true  },
+              { img: "industry-healthcare.jpg",   label: "Healthcare Institutions", contain: false },
+              { img: "industry-globalbuyers.jpg", label: "Global Buyers",           contain: true  },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="bg-[#EEF4FF] rounded-2xl p-7 border border-[#2F80ED]/10 text-center shadow-[0_2px_12px_rgba(47,128,237,0.07)] lift-card">
-                  <div className="w-14 h-14 rounded-2xl bg-white shadow-md border border-[#2F80ED]/15 overflow-hidden mx-auto mb-4">
+                  <div className="w-14 h-14 rounded-2xl bg-white shadow-md border border-[#2F80ED]/15 overflow-hidden mx-auto mb-4 flex items-center justify-center">
                     <img
                       src={`${import.meta.env.BASE_URL}images/${item.img}`}
                       alt={item.label}
-                      className="w-full h-full object-cover"
+                      className={`${item.contain ? "w-10 h-10 object-contain" : "w-full h-full object-cover"}`}
                     />
                   </div>
                   <h3 className="text-base font-semibold text-[#1D1D1F]">{item.label}</h3>
