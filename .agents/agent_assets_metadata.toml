@@ -132,3 +132,9 @@ id = "muh6Dscx7BgE0321p-ukl"
 uri = "file://artifacts/arliven-medizyne/public/images/parallax-pharma-global.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "wY33BCBFHgc_dwzhF2Sod"
+uri = "file://artifacts/arliven-medizyne/public/images/banner-connect.png"
+type = "image"
+title = "generated_image"
