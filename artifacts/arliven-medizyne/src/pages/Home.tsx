@@ -126,7 +126,7 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
               <FadeIn key={idx} delay={idx * 0.1} direction="up" className="text-center group">
-                <div className="text-4xl lg:text-5xl font-black text-[#2F80ED] mb-2 tabular-nums">
+                <div className="text-3xl lg:text-4xl font-bold text-[#2F80ED] mb-2 tabular-nums">
                   <CountUp target={stat.target} suffix={stat.suffix} duration={2200} />
                 </div>
                 <div className="text-[#6E6E73] font-semibold tracking-widest uppercase text-xs">
@@ -149,7 +149,7 @@ export default function Home() {
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">
                 About Arliven Medizyne Pvt Ltd
               </p>
-              <h2 className="text-3xl lg:text-4xl font-black mb-5 leading-tight text-[#1D1D1F]">
+              <h2 className="text-xl lg:text-2xl font-bold mb-5 leading-tight text-[#1D1D1F]">
                 Empowering Global &amp; Domestic<br />
                 <span className="text-[#2F80ED]">Healthcare Solutions</span>
               </h2>
@@ -205,7 +205,7 @@ export default function Home() {
       <section className="py-20 bg-[#F4F8FF] border-t border-[#2F80ED]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Why Choose Arliven?</h2>
+            <h2 className="text-xl lg:text-2xl font-bold mb-4 text-[#1D1D1F]">Why Choose Arliven?</h2>
             <p className="text-[#6E6E73] text-lg">Unwavering commitment to quality, compliance, and reliable global delivery.</p>
           </FadeIn>
 
@@ -257,7 +257,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
         <div className="absolute inset-0 flex items-end justify-center z-10 pb-10">
           <FadeIn>
-            <p className="text-xl lg:text-2xl font-black text-white text-center tracking-wide uppercase drop-shadow-lg">
+            <p className="text-base lg:text-lg font-semibold text-white text-center tracking-wide uppercase drop-shadow-lg">
               Delivering Healthcare Excellence Across Borders
             </p>
           </FadeIn>
@@ -270,7 +270,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <FadeIn>
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Our Portfolio</p>
-              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Product Categories</h2>
+              <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F]">Product Categories</h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <Link
@@ -322,7 +322,7 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-14 lg:py-18">
           <FadeIn direction="up">
             <p className="text-xs font-semibold tracking-widest text-[#2F80ED] uppercase mb-3">GET STARTED</p>
-            <h2 className="text-2xl lg:text-3xl font-black text-white mb-3 leading-snug">
+            <h2 className="text-lg lg:text-xl font-bold text-white mb-3 leading-snug">
               Connect With Us For Export Inquiry<br className="hidden lg:block" /> &amp; Achieve Reliable Supply Chain
             </h2>
             <p className="text-gray-300 text-base mb-6 max-w-xl">Arliven Medizyne offers quality pharmaceutical solutions for your global healthcare supply chain.</p>
@@ -341,7 +341,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-12">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">What We Do</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Our Core Services</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F]">Our Core Services</h2>
           </FadeIn>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -389,7 +389,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="up">
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Export Markets</p>
-              <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-6 leading-tight">
+              <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F] mb-6 leading-tight">
                 Connecting Indian<br />Excellence to<br />Global Markets
               </h2>
               <p className="text-[#6E6E73] text-lg leading-relaxed mb-8">
@@ -430,7 +430,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Who We Work With</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-4">Industries We Serve</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F] mb-4">Industries We Serve</h2>
             <p className="text-[#6E6E73] text-lg max-w-2xl mx-auto">Delivering reliable pharmaceutical supply to a diverse range of healthcare partners across India and globally.</p>
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -446,7 +446,7 @@ export default function Home() {
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-md border border-[#2F80ED]/15 flex items-center justify-center mx-auto mb-4">
                     <item.Icon className="w-7 h-7" style={{ color: item.color }} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-base font-black text-[#1D1D1F]">{item.label}</h3>
+                  <h3 className="text-base font-semibold text-[#1D1D1F]">{item.label}</h3>
                 </div>
               </FadeIn>
             ))}
@@ -459,7 +459,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Quick Answers</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Frequently Asked Questions</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F]">Frequently Asked Questions</h2>
           </FadeIn>
           <div className="space-y-3">
             {[
@@ -528,7 +528,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="text-3xl lg:text-4xl font-black text-white mb-5 leading-tight drop-shadow-lg">
+            <h2 className="text-xl lg:text-2xl font-bold text-white mb-5 leading-tight drop-shadow-lg">
               Ready to Work With<br />Arliven Medizyne?
             </h2>
             <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">

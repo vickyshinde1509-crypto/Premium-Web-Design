@@ -16,7 +16,7 @@ export default function About() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-2">Company Profile</p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-white leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 text-white leading-tight">
               About Arliven Medizyne
             </h1>
             <p className="text-sm lg:text-base text-gray-200 max-w-lg leading-relaxed">
@@ -31,7 +31,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <h2 className="text-3xl lg:text-4xl font-black mb-6 text-[#1D1D1F] leading-tight">Our Journey<br />&amp; Purpose</h2>
+              <h2 className="text-xl lg:text-2xl font-bold mb-6 text-[#1D1D1F] leading-tight">Our Journey &amp; Purpose</h2>
               <div className="space-y-5 text-base text-[#6E6E73] leading-relaxed mb-8">
                 <p>
                   Arliven Medizyne Pvt Ltd is an India-based pharmaceutical merchant exporter and domestic supplier committed to delivering high-quality pharmaceutical and surgical products to domestic and global healthcare markets.
@@ -82,7 +82,7 @@ export default function About() {
       <section className="py-20 bg-[#F4F8FF] border-y border-[#2F80ED]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F]">Our Mission &amp; Vision</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F]">Our Mission &amp; Vision</h2>
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-6">
             <FadeIn>
@@ -90,7 +90,7 @@ export default function About() {
                 <div className="w-14 h-14 bg-[#EAF2FF] rounded-xl flex items-center justify-center mb-7 border border-[#2F80ED]/15">
                   <Target className="w-7 h-7 text-[#2F80ED]" />
                 </div>
-                <h3 className="text-2xl font-black mb-4 text-[#1D1D1F]">Our Mission</h3>
+                <h3 className="text-lg font-bold mb-4 text-[#1D1D1F]">Our Mission</h3>
                 <p className="text-[#6E6E73] text-lg leading-relaxed">
                   To deliver reliable pharmaceutical and surgical products to domestic and international markets with professionalism and quality focus.
                 </p>
@@ -102,7 +102,7 @@ export default function About() {
                 <div className="w-14 h-14 bg-[#EAF2FF] rounded-xl flex items-center justify-center mb-7 border border-[#2F80ED]/15">
                   <Eye className="w-7 h-7 text-[#2F80ED]" />
                 </div>
-                <h3 className="text-2xl font-black mb-4 text-[#1D1D1F]">Our Vision</h3>
+                <h3 className="text-lg font-bold mb-4 text-[#1D1D1F]">Our Vision</h3>
                 <p className="text-[#6E6E73] text-lg leading-relaxed">
                   To become a trusted pharmaceutical supply and export company globally.
                 </p>
@@ -116,7 +116,7 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
           <FadeIn>
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Our Leadership</h2>
+            <h2 className="text-xl lg:text-2xl font-bold mb-4 text-[#1D1D1F]">Our Leadership</h2>
             <p className="text-lg text-[#6E6E73] mb-14 max-w-2xl mx-auto">
               Guided by industry veterans dedicated to excellence in international pharmaceutical trade.
             </p>
@@ -130,9 +130,9 @@ export default function About() {
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="bg-[#EEF4FF] p-8 rounded-2xl text-center border border-[#2F80ED]/10 cursor-default lift-card">
                   <div className="w-24 h-24 rounded-full bg-[#2F80ED] mx-auto mb-6 flex items-center justify-center text-white border-4 border-white shadow-lg">
-                    <span className="text-2xl font-black">{person.initials}</span>
+                    <span className="text-xl font-bold">{person.initials}</span>
                   </div>
-                  <h3 className="text-xl font-black mb-1 text-[#1D1D1F]">{person.name}</h3>
+                  <h3 className="text-lg font-semibold mb-1 text-[#1D1D1F]">{person.name}</h3>
                   <p className="text-[#2F80ED] font-semibold text-sm mb-4">{person.role}</p>
                   <p className="text-[#6E6E73] text-sm leading-relaxed">{person.bio}</p>
                 </div>
@@ -147,7 +147,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">How We Operate</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1D1D1F] mb-4">Our Business Model</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F] mb-4">Our Business Model</h2>
             <p className="text-[#6E6E73] text-lg max-w-2xl mx-auto">Connecting trusted Indian manufacturers with domestic and international healthcare markets.</p>
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -159,8 +159,8 @@ export default function About() {
             ].map((model, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
                 <div className="bg-[#EEF4FF] rounded-2xl p-7 border border-[#2F80ED]/10 h-full lift-card shadow-[0_2px_12px_rgba(47,128,237,0.07)]">
-                  <div className="text-4xl font-black text-[#2F80ED]/15 mb-4 leading-none">{model.num}</div>
-                  <h3 className="text-base font-black text-[#1D1D1F] mb-3">{model.title}</h3>
+                  <div className="text-3xl font-bold text-[#2F80ED]/15 mb-4 leading-none">{model.num}</div>
+                  <h3 className="text-base font-semibold text-[#1D1D1F] mb-3">{model.title}</h3>
                   <p className="text-[#6E6E73] text-sm leading-relaxed">{model.desc}</p>
                 </div>
               </FadeIn>
@@ -187,7 +187,7 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 text-[#1D1D1F]">Our Core Values</h2>
+            <h2 className="text-xl lg:text-2xl font-bold mb-4 text-[#1D1D1F]">Our Core Values</h2>
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -200,7 +200,7 @@ export default function About() {
                   <div className="w-16 h-16 bg-[#EAF2FF] mx-auto rounded-2xl flex items-center justify-center mb-6 border border-[#2F80ED]/15">
                     <value.icon className="w-8 h-8 text-[#2F80ED]" />
                   </div>
-                  <h3 className="text-xl font-black mb-3 text-[#1D1D1F]">{value.title}</h3>
+                  <h3 className="text-base font-semibold mb-3 text-[#1D1D1F]">{value.title}</h3>
                   <p className="text-[#6E6E73] text-base leading-relaxed">{value.desc}</p>
                 </div>
               </FadeIn>

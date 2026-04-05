@@ -77,7 +77,7 @@ export default function Products() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">What We Offer</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-white leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 text-white leading-tight">
               Products &amp; Services
             </h1>
             <p className="text-base lg:text-lg text-gray-300 max-w-xl leading-relaxed">
@@ -92,7 +92,7 @@ export default function Products() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-12">
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">Product Range</p>
-            <h2 className="text-2xl lg:text-3xl font-black text-[#1D1D1F]">Our Product Categories</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#1D1D1F]">Our Product Categories</h2>
           </FadeIn>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, idx) => (
@@ -116,7 +116,7 @@ export default function Products() {
                   </div>
 
                   <div className="p-6 flex-grow flex flex-col">
-                    <h3 className="text-lg font-black text-[#1D1D1F] mb-2">{product.category}</h3>
+                    <h3 className="text-base font-semibold text-[#1D1D1F] mb-2">{product.category}</h3>
                     <p className="text-[#6E6E73] text-sm mb-5 leading-relaxed">{product.description}</p>
                     <div className="space-y-2 mb-6 flex-grow">
                       {product.items.map((item, i) => (
@@ -146,7 +146,7 @@ export default function Products() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">What We Do</p>
-              <h2 className="text-3xl lg:text-4xl font-black mb-6 text-[#1D1D1F] leading-tight">Our Export Services</h2>
+              <h2 className="text-xl lg:text-2xl font-bold mb-6 text-[#1D1D1F] leading-tight">Our Export Services</h2>
               <p className="text-[#6E6E73] text-lg mb-8 leading-relaxed">
                 Beyond just supplying products, Arliven Medizyne acts as your comprehensive partner in the pharmaceutical supply chain, handling the complexities of international trade, regulatory compliance, and logistics.
               </p>

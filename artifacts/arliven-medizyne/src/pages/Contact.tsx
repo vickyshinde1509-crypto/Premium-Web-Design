@@ -33,7 +33,7 @@ export default function Contact() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
           <FadeIn>
             <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-2">Reach Out</p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-white leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 text-white leading-tight">
               Get In Touch
             </h1>
             <p className="text-sm lg:text-base text-gray-200 max-w-sm leading-relaxed">
@@ -51,7 +51,7 @@ export default function Contact() {
             {/* Contact Info */}
             <FadeIn className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-black mb-8 text-[#1D1D1F]">Contact Information</h2>
+                <h2 className="text-xl font-bold mb-8 text-[#1D1D1F]">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-[#EAF2FF] rounded-xl flex items-center justify-center text-[#2F80ED] shrink-0 border border-[#2F80ED]/15">
@@ -120,7 +120,7 @@ export default function Contact() {
             {/* Contact Form */}
             <FadeIn delay={0.2} className="lg:col-span-3">
               <div className="bg-[#F4F8FF] p-8 rounded-2xl border border-[#2F80ED]/15 shadow-sm">
-                <h3 className="text-xl font-black mb-6 text-[#1D1D1F]">Send an Inquiry</h3>
+                <h3 className="text-lg font-bold mb-6 text-[#1D1D1F]">Send an Inquiry</h3>
                 <form onSubmit={handleSubmit} className="space-y-5">
 
                   <div className="grid md:grid-cols-2 gap-5">
