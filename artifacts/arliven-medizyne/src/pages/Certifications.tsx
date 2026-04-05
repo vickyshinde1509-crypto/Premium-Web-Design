@@ -11,6 +11,7 @@ const certifications = [
     badge: "DGFT Registered",
     color: "#2F80ED",
     image: "cert-ie-license.jpg",
+    cover: true,
     desc: "Registered with the Directorate General of Foreign Trade (DGFT) of India. Our IEC registration authorizes Arliven Medizyne to legally conduct pharmaceutical import and export operations worldwide.",
   },
   {
@@ -113,11 +114,11 @@ export default function Certifications() {
                   <div className="flex items-start justify-between mb-6">
                     {/* Premium badge logo area */}
                     {cert.image ? (
-                      <div className="w-20 h-20 rounded-2xl overflow-hidden border border-[#2F80ED]/15 shadow-md shrink-0 bg-white flex items-center justify-center p-2">
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden border border-[#2F80ED]/15 shadow-md shrink-0 bg-white flex items-center justify-center" style={(cert as any).cover ? {} : { padding: "8px" }}>
                         <img
                           src={`${import.meta.env.BASE_URL}images/${cert.image}`}
                           alt={cert.title}
-                          className="w-full h-full object-contain"
+                          className={(cert as any).cover ? "w-full h-full object-cover scale-110" : "w-full h-full object-contain"}
                         />
                       </div>
                     ) : (
