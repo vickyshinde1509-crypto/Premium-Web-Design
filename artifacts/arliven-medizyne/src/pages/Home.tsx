@@ -437,9 +437,9 @@ export default function Home() {
             {[
               { img: "industry-hospitals.jpg",    label: "Hospitals",               contain: false },
               { img: "industry-distributors.jpg", label: "Distributors",            contain: false },
-              { img: "industry-pharmacies.jpg",   label: "Pharmacies",              contain: true  },
+              { img: "industry-pharmacies.jpg",   label: "Pharmacies",              contain: false },
               { img: "industry-healthcare.jpg",   label: "Healthcare Institutions", contain: false },
-              { img: "industry-globalbuyers.jpg", label: "Global Buyers",           contain: true  },
+              { img: "industry-globalbuyers.jpg", label: "Global Buyers",           contain: false },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="bg-[#EEF4FF] rounded-2xl p-7 border border-[#2F80ED]/10 text-center shadow-[0_2px_12px_rgba(47,128,237,0.07)] lift-card">
