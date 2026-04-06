@@ -26,7 +26,7 @@ export default function Contact() {
       {/* Header — handshake banner */}
       <section className="relative overflow-hidden border-b border-[#2F80ED]/15" style={{ minHeight: "340px" }}>
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 page-banner-bg bg-[#111]"
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/contact-banner.png)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />

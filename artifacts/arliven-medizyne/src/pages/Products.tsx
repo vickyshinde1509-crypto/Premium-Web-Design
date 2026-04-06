@@ -70,7 +70,7 @@ export default function Products() {
         style={{ minHeight: "340px" }}
       >
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 page-banner-bg bg-[#111]"
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/products-banner-hq.png)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/60 to-transparent" />

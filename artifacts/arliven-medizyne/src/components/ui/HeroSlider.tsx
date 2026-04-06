@@ -46,7 +46,7 @@ export function HeroSlider() {
   return (
     <>
       {/* HERO — starts below the header bar */}
-      <section className="relative w-full overflow-hidden mt-20" style={{ height: "72vh", minHeight: "480px" }}>
+      <section className="relative w-full overflow-hidden mt-20 hero-section" style={{ height: "72vh", minHeight: "480px" }}>
 
         {/* Background Images */}
         <AnimatePresence mode="sync">
@@ -59,7 +59,7 @@ export function HeroSlider() {
             className="absolute inset-0"
           >
             <div
-              className="absolute inset-0 bg-cover bg-center"
+              className="absolute inset-0 hero-slide-bg bg-[#111]"
               style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/${slide.image})` }}
             />
           </motion.div>

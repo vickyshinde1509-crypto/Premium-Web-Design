@@ -76,8 +76,8 @@ export default function Certifications() {
 
       {/* Hero */}
       <section
-        className="relative min-h-[50vh] flex items-center"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/certifications-banner.png)`, backgroundSize: "cover", backgroundPosition: "center" }}
+        className="relative min-h-[50vh] flex items-center page-banner-bg bg-[#111]"
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/certifications-banner.png)` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">

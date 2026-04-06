@@ -20,8 +20,8 @@ export default function Export() {
 
       {/* Hero with background image */}
       <section
-        className="relative min-h-[55vh] flex items-center"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/pharma-export.png)`, backgroundSize: "cover", backgroundPosition: "center" }}
+        className="relative min-h-[55vh] flex items-center page-banner-bg bg-[#111]"
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/pharma-export.png)` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#111]/75 to-transparent" />
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">

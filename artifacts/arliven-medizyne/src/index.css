@@ -144,6 +144,40 @@
     will-change: transform;
   }
 
+  /* ─── Responsive hero / banner background ─────────────────────────── */
+  /* Desktop: cover (fills the frame for a cinematic look)              */
+  .hero-slide-bg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .page-banner-bg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tablet & mobile: contain (full image always visible, no crop)      */
+  @media (max-width: 1023px) {
+    .hero-slide-bg {
+      background-size: contain;
+      background-position: center center;
+    }
+
+    .page-banner-bg {
+      background-size: contain;
+      background-position: center center;
+    }
+
+    /* Shrink hero height on mobile so it hugs the contained image        */
+    .hero-section {
+      height: clamp(200px, 56.25vw, 420px) !important;
+      min-height: unset !important;
+    }
+  }
+  /* ─────────────────────────────────────────────────────────────────── */
+
   /* Parallax & ticker — force GPU layer for smooth 60fps */
   .parallax-layer {
     backface-visibility: hidden;
