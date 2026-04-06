@@ -77,15 +77,20 @@ const stats = [
 ];
 
 const tickerImages = [
-  "pharma-hero-cinematic.png",
-  "pharma-tablets.png",
+  "hero-slide1-new.png",
+  "pharma-tablets-hq.png",
+  "pharma-capsules-hq.png",
+  "hero-slide2-new.jpg",
+  "pharma-syrups-hq.png",
   "pharma-injections.png",
-  "pharma-air-cargo.png",
-  "pharma-syrups.png",
-  "pharma-port-mix.png",
+  "hero-slide3-new.png",
   "pharma-surgical.png",
   "pharma-factory.png",
-  "pharma-export.png",
+  "service-export.png",
+  "pharma-air-cargo.png",
+  "service-intl-export.png",
+  "transport-mix1-new.jpg",
+  "parallax-pharma-global.png",
 ];
 
 function ImageTicker() {
