@@ -85,6 +85,26 @@ export function Header() {
             </Link>
           </div>
 
+          {/* Mobile quick-action icons — visible below lg, hidden on desktop */}
+          <div className="flex lg:hidden items-center gap-2 mr-1">
+            <a
+              href="https://wa.me/919049175132"
+              target="_blank"
+              rel="noreferrer"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all"
+              title="WhatsApp"
+            >
+              <MessageCircle className="w-4 h-4" />
+            </a>
+            <a
+              href="mailto:info@arlivenmedizyne.com"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-500 hover:bg-gray-100 transition-all"
+              title="Email"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+          </div>
+
           {/* Mobile Toggle */}
           <button
             className="lg:hidden p-2 text-gray-700 transition-colors"

@@ -314,24 +314,26 @@ export default function Home() {
 
       {/* Banner 2 — Export Inquiry (full natural image, no zoom/crop) */}
       <section className="relative overflow-hidden">
-        {/* Image at full natural proportions — fills edge-to-edge, no zoom */}
+        {/* Full-width image — natural proportions, no zoom */}
         <img
           src={`${import.meta.env.BASE_URL}images/banner-export-inquiry.png`}
           alt="Pharmaceutical export supply chain"
           className="w-full h-auto block"
           loading="lazy"
         />
-        {/* Subtle dark gradient only on the left third so text is readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
-        {/* Text overlay — vertically centred over the image */}
-        <div className="absolute inset-0 flex items-center">
+
+        {/* Desktop only: left gradient for text readability */}
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
+
+        {/* Desktop only: text overlay centred on the image */}
+        <div className="hidden md:flex absolute inset-0 items-center">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
             <FadeIn direction="up">
               <p className="text-xs font-semibold tracking-widest text-[#60aaff] uppercase mb-3">GET STARTED</p>
               <h2 className="text-lg lg:text-xl font-bold text-white mb-3 leading-snug drop-shadow-lg">
                 Connect With Us For Export Inquiry<br className="hidden lg:block" /> &amp; Achieve Reliable Supply Chain
               </h2>
-              <p className="text-gray-100 text-base mb-6 max-w-xl drop-shadow">Arliven Medizyne offers quality pharmaceutical solutions for your global healthcare supply chain.</p>
+              <p className="text-gray-100 text-sm mb-6 max-w-xl drop-shadow">Arliven Medizyne offers quality pharmaceutical solutions for your global healthcare supply chain.</p>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3 bg-[#2F80ED] text-white font-semibold text-sm rounded-xl hover:bg-blue-600 transition-all duration-300 shadow-lg"
@@ -340,6 +342,21 @@ export default function Home() {
               </Link>
             </FadeIn>
           </div>
+        </div>
+
+        {/* Mobile only: text stacked below the image on a solid dark background */}
+        <div className="md:hidden bg-[#0d1b2a] px-5 py-7">
+          <p className="text-xs font-semibold tracking-widest text-[#60aaff] uppercase mb-2">GET STARTED</p>
+          <h2 className="text-base font-bold text-white mb-2 leading-snug">
+            Connect With Us For Export Inquiry &amp; Achieve Reliable Supply Chain
+          </h2>
+          <p className="text-gray-300 text-sm mb-5">Arliven Medizyne offers quality pharmaceutical solutions for your global healthcare supply chain.</p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#2F80ED] text-white font-semibold text-sm rounded-xl hover:bg-blue-600 transition-all duration-300 shadow-lg"
+          >
+            Get Started <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
