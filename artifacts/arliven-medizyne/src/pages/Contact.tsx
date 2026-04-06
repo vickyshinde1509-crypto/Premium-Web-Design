@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/FadeIn";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -23,25 +24,12 @@ export default function Contact() {
   return (
     <main className="w-full pt-20">
 
-      {/* Header — handshake banner */}
-      <section className="relative overflow-hidden border-b border-[#2F80ED]/15" style={{ minHeight: "340px" }}>
-        <div
-          className="absolute inset-0 page-banner-bg bg-[#111]"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/contact-banner.png)` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
-          <FadeIn>
-            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-2">Reach Out</p>
-            <h1 className="text-base md:text-lg lg:text-xl font-semibold mb-3 text-white leading-tight">
-              Get In Touch
-            </h1>
-            <p className="text-sm lg:text-base text-gray-200 max-w-sm leading-relaxed">
-              Contact us for domestic pharmaceutical supply, international export inquiries, quotes, or product catalogs.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBanner
+        image={`${import.meta.env.BASE_URL}images/contact-banner.png`}
+        eyebrow="Reach Out"
+        title="Get In Touch"
+        subtitle="Contact us for domestic pharmaceutical supply, international export inquiries, quotes, or product catalogs."
+      />
 
       {/* Main Contact Section */}
       <section className="py-20 bg-white">

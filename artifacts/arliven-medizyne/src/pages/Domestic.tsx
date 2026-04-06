@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/FadeIn";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { Hospital, Package, Pill, Building2, Users, CheckCircle2, ArrowRight, Truck } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -38,40 +39,33 @@ export default function Domestic() {
   return (
     <main className="w-full pt-20">
 
-      {/* Hero */}
-      <section
-        className="relative min-h-[55vh] flex items-center page-banner-bg bg-[#111]"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/pharma-factory.png)` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#111]/75 to-transparent" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
-          <FadeIn>
-            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">India Domestic Supply</p>
-            <h1 className="text-base md:text-lg lg:text-xl font-semibold mb-5 text-white max-w-3xl leading-tight">
-              Reliable Pharmaceutical Supply Across India
-            </h1>
-            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed mb-8">
-              Arliven Medizyne provides trusted pharmaceutical and surgical product supply to hospitals, distributors, pharmacies, and healthcare institutions throughout India.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3 bg-[#2F80ED] text-white font-bold text-sm rounded-xl hover:bg-blue-600 transition-colors shadow-lg"
-              >
-                Get Domestic Quote <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="https://wa.me/919049175132"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3 border-2 border-white/50 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-colors"
-              >
-                WhatsApp Us
-              </a>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBanner
+        image={`${import.meta.env.BASE_URL}images/pharma-factory.png`}
+        eyebrow="India Domestic Supply"
+        title="Reliable Pharmaceutical Supply Across India"
+        subtitle="Arliven Medizyne provides trusted pharmaceutical and surgical product supply to hospitals, distributors, pharmacies, and healthcare institutions throughout India."
+        gradient="from-[#0a0a0a] via-[#111]/75 to-transparent"
+        desktopChildren={
+          <div className="flex flex-wrap gap-4">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3 bg-[#2F80ED] text-white font-bold text-sm rounded-xl hover:bg-blue-600 transition-colors shadow-lg">
+              Get Domestic Quote <ArrowRight className="w-4 h-4" />
+            </Link>
+            <a href="https://wa.me/919049175132" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-7 py-3 border-2 border-white/50 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-colors">
+              WhatsApp Us
+            </a>
+          </div>
+        }
+        mobileChildren={
+          <div className="flex flex-wrap gap-3">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2F80ED] text-white font-bold text-sm rounded-xl hover:bg-blue-600 transition-colors shadow-lg">
+              Get Domestic Quote <ArrowRight className="w-4 h-4" />
+            </Link>
+            <a href="https://wa.me/919049175132" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-white/40 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-colors">
+              WhatsApp Us
+            </a>
+          </div>
+        }
+      />
 
       {/* We Supply To */}
       <section className="py-20 bg-[#F4F8FF]">

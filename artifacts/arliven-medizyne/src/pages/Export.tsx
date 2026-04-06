@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/FadeIn";
+import { PageBanner } from "@/components/ui/PageBanner";
 
 import { Globe, FileText, Package, Ship, CheckSquare, ArrowRight, MessageSquare, ClipboardList, BadgeCheck, Box } from "lucide-react";
 import { Link } from "wouter";
@@ -18,24 +19,13 @@ export default function Export() {
   return (
     <main className="w-full pt-20">
 
-      {/* Hero with background image */}
-      <section
-        className="relative min-h-[55vh] flex items-center page-banner-bg bg-[#111]"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/pharma-export.png)` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#111]/75 to-transparent" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
-          <FadeIn>
-            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">International Export</p>
-            <h1 className="text-base md:text-lg lg:text-xl font-semibold mb-5 text-white max-w-3xl leading-tight">
-              Pharmaceutical Export
-            </h1>
-            <p className="text-base text-gray-300 max-w-2xl leading-relaxed">
-              Arliven Medizyne Pvt Ltd provides professional pharmaceutical export solutions to global markets with proper documentation and reliable supply.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBanner
+        image={`${import.meta.env.BASE_URL}images/pharma-export.png`}
+        eyebrow="International Export"
+        title="Pharmaceutical Export"
+        subtitle="Arliven Medizyne Pvt Ltd provides professional pharmaceutical export solutions to global markets with proper documentation and reliable supply."
+        gradient="from-[#0a0a0a] via-[#111]/75 to-transparent"
+      />
 
       {/* Export Process Flow */}
       <section className="py-20 bg-white">

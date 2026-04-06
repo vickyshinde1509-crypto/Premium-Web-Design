@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/FadeIn";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { ShieldCheck, FileCheck, Award, Globe2, Building2, ClipboardCheck, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -74,24 +75,13 @@ export default function Certifications() {
   return (
     <main className="w-full pt-20">
 
-      {/* Hero */}
-      <section
-        className="relative min-h-[50vh] flex items-center page-banner-bg bg-[#111]"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/certifications-banner.png)` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10 py-20">
-          <FadeIn>
-            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-4">Compliance & Trust</p>
-            <h1 className="text-base md:text-lg lg:text-xl font-semibold mb-5 text-white max-w-3xl leading-tight">
-              Certifications & Compliance
-            </h1>
-            <p className="text-base text-gray-300 max-w-2xl leading-relaxed">
-              Our credentials and manufacturing partner certifications that underpin our commitment to quality, regulatory safety, and professional pharmaceutical supply.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBanner
+        image={`${import.meta.env.BASE_URL}images/certifications-banner.png`}
+        eyebrow="Compliance & Trust"
+        title="Certifications & Compliance"
+        subtitle="Our credentials and manufacturing partner certifications that underpin our commitment to quality, regulatory safety, and professional pharmaceutical supply."
+        gradient="from-black/85 via-black/55 to-transparent"
+      />
 
       {/* Certifications Grid */}
       <section className="py-20 bg-[#F4F8FF]">

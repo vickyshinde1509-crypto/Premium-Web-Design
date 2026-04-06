@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/FadeIn";
+import { PageBanner } from "@/components/ui/PageBanner";
 
 import { Pill, Syringe, Activity, Stethoscope, BriefcaseMedical, Shield, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
@@ -64,28 +65,13 @@ export default function Products() {
   return (
     <main className="w-full pt-20">
 
-      {/* Header Banner */}
-      <section
-        className="relative overflow-hidden border-b border-[#2F80ED]/15"
-        style={{ minHeight: "340px" }}
-      >
-        <div
-          className="absolute inset-0 page-banner-bg bg-[#111]"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/products-banner-hq.png)` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/60 to-transparent" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
-          <FadeIn>
-            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-3">What We Offer</p>
-            <h1 className="text-base md:text-lg lg:text-xl font-semibold mb-4 text-white leading-tight">
-              Products &amp; Services
-            </h1>
-            <p className="text-base lg:text-lg text-gray-300 max-w-xl leading-relaxed">
-              Comprehensive healthcare solutions encompassing a wide range of premium pharmaceutical formulations.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBanner
+        image={`${import.meta.env.BASE_URL}images/products-banner-hq.png`}
+        eyebrow="What We Offer"
+        title="Products & Services"
+        subtitle="Comprehensive healthcare solutions encompassing a wide range of premium pharmaceutical formulations."
+        gradient="from-[#0a0a0a]/90 via-[#0a0a0a]/60 to-transparent"
+      />
 
       {/* Product Categories */}
       <section className="py-20 bg-[#F4F8FF]">

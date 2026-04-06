@@ -1,30 +1,17 @@
 import { FadeIn } from "@/components/FadeIn";
-
+import { PageBanner } from "@/components/ui/PageBanner";
 import { CheckCircle2, Target, Eye, ShieldCheck, HeartHandshake, Globe } from "lucide-react";
 
 export default function About() {
   return (
     <main className="w-full pt-20">
 
-      {/* Page Banner — office photo */}
-      <section className="relative overflow-hidden border-b border-[#2F80ED]/15" style={{ minHeight: "340px" }}>
-        <div
-          className="absolute inset-0 page-banner-bg bg-[#111]"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/about-office.png)` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16 flex flex-col justify-center" style={{ minHeight: "340px" }}>
-          <FadeIn>
-            <p className="text-[#2F80ED] font-semibold tracking-widest uppercase text-xs mb-2">Company Profile</p>
-            <h1 className="text-base md:text-lg lg:text-xl font-semibold mb-3 text-white leading-tight">
-              About Arliven Medizyne
-            </h1>
-            <p className="text-sm lg:text-base text-gray-200 max-w-lg leading-relaxed">
-              A trusted name in pharmaceutical exports, driven by quality and an unwavering commitment to global health.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+      <PageBanner
+        image={`${import.meta.env.BASE_URL}images/about-office.png`}
+        eyebrow="Company Profile"
+        title="About Arliven Medizyne"
+        subtitle="A trusted name in pharmaceutical exports, driven by quality and an unwavering commitment to global health."
+      />
 
       {/* Company Story */}
       <section className="py-20 bg-white">
