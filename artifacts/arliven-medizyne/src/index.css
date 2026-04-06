@@ -54,6 +54,7 @@
   }
 
   html {
+    scroll-behavior: smooth;
     overscroll-behavior-y: none;
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
