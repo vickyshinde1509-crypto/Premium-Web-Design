@@ -165,6 +165,11 @@
       background-size: contain;
       background-position: center center;
     }
+    /* Slide 3 is slightly taller/narrower — zoom it to fill on mobile   */
+    .hero-slide-zoom-mobile {
+      background-size: cover !important;
+      background-position: center center !important;
+    }
     .hero-section-mobile {
       height: clamp(180px, 50.76vw, 380px) !important;
       min-height: unset !important;

@@ -9,18 +9,21 @@ const slides = [
     eyebrow: "Arliven Medizyne Pvt Ltd",
     title: "Empowering Global & Domestic\nHealthcare Solutions",
     image: "hero-slide1-new.png",
+    zoomMobile: false,
   },
   {
     id: 2,
     eyebrow: "Arliven Medizyne Pvt Ltd",
     title: "Domestic Pharmaceutical\nSupply",
     image: "hero-slide2-new.jpg",
+    zoomMobile: false,
   },
   {
     id: 3,
     eyebrow: "Arliven Medizyne Pvt Ltd",
     title: "International Pharmaceutical\nMerchant Export Solutions",
     image: "hero-slide3-new.png",
+    zoomMobile: true,
   },
 ];
 
@@ -59,7 +62,7 @@ export function HeroSlider() {
             className="absolute inset-0"
           >
             <div
-              className="absolute inset-0 hero-slide-bg bg-[#111]"
+              className={`absolute inset-0 hero-slide-bg bg-[#111]${slide.zoomMobile ? " hero-slide-zoom-mobile" : ""}`}
               style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/${slide.image})` }}
             />
           </motion.div>
