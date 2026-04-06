@@ -8,19 +8,19 @@ const slides = [
     id: 1,
     eyebrow: "Arliven Medizyne Pvt Ltd",
     title: "Empowering Global & Domestic\nHealthcare Solutions",
-    image: "transport-mix1-new.jpg",
+    image: "hero-slide1-new.png",
   },
   {
     id: 2,
     eyebrow: "Arliven Medizyne Pvt Ltd",
     title: "Domestic Pharmaceutical\nSupply",
-    image: "transport-mix2.png",
+    image: "hero-slide2-new.jpg",
   },
   {
     id: 3,
     eyebrow: "Arliven Medizyne Pvt Ltd",
     title: "International Pharmaceutical\nMerchant Export Solutions",
-    image: "hero-slide3-export.png",
+    image: "hero-slide3-new.png",
   },
 ];
 
