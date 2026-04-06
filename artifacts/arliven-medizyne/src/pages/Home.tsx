@@ -70,9 +70,9 @@ const services = [
 ];
 
 const stats = [
-  { target: 500, suffix: "+", label: "Products Exported" },
-  { target: 20,  suffix: "+", label: "Countries Served" },
-  { target: 10,  suffix: "+", label: "Years Experience" },
+  { target: 50,  suffix: "+", label: "Products Exported" },
+  { target: 10,  suffix: "+", label: "Countries Served" },
+  { target: 2,   suffix: "+", label: "Years Experience" },
   { target: 100, suffix: "%", label: "Quality Assurance" },
 ];
 
