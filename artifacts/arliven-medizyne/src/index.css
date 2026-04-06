@@ -144,36 +144,26 @@
     will-change: transform;
   }
 
-  /* ─── Responsive hero / banner background ─────────────────────────── */
-  /* Desktop: cover (fills the frame for a cinematic look)              */
+  /* ─── Hero / banner background ────────────────────────────────────── */
+  /* Hero: contain everywhere — padding-top on the section makes the     */
+  /* container the exact same ratio as the images so no gaps appear.     */
   .hero-slide-bg {
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
   }
 
+  /* Page banners: cover on desktop (cinematic fill), contain on mobile  */
   .page-banner-bg {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
 
-  /* Tablet & mobile: contain (full image always visible, no crop)      */
   @media (max-width: 1023px) {
-    .hero-slide-bg {
-      background-size: contain;
-      background-position: center center;
-    }
-
     .page-banner-bg {
       background-size: contain;
       background-position: center center;
-    }
-
-    /* Shrink hero height on mobile so it hugs the contained image        */
-    .hero-section {
-      height: clamp(200px, 56.25vw, 420px) !important;
-      min-height: unset !important;
     }
   }
   /* ─────────────────────────────────────────────────────────────────── */
