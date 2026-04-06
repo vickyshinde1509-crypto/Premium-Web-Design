@@ -138,3 +138,9 @@ id = "wY33BCBFHgc_dwzhF2Sod"
 uri = "file://artifacts/arliven-medizyne/public/images/banner-connect.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "uU0ZvQUZvB3kmqs7X5DFo"
+uri = "file://artifacts/arliven-medizyne/public/images/banner-connect-gen.png"
+type = "image"
+title = "pharma logistics banner"

@@ -314,18 +314,18 @@ export default function Home() {
 
       {/* Banner 2 — parallax */}
       <ParallaxBanner
-        src={`${import.meta.env.BASE_URL}images/banner-connect-new.png`}
+        src={`${import.meta.env.BASE_URL}images/banner-connect-gen.png`}
         alt="Pharmaceutical supply chain connect"
         height="h-auto"
       >
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/35" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-14 lg:py-18">
           <FadeIn direction="up">
-            <p className="text-xs font-semibold tracking-widest text-[#2F80ED] uppercase mb-3">GET STARTED</p>
+            <p className="text-xs font-semibold tracking-widest text-[#60aaff] uppercase mb-3">GET STARTED</p>
             <h2 className="text-lg lg:text-xl font-bold text-white mb-3 leading-snug">
               Connect With Us For Export Inquiry<br className="hidden lg:block" /> &amp; Achieve Reliable Supply Chain
             </h2>
-            <p className="text-gray-300 text-base mb-6 max-w-xl">Arliven Medizyne offers quality pharmaceutical solutions for your global healthcare supply chain.</p>
+            <p className="text-gray-200 text-base mb-6 max-w-xl">Arliven Medizyne offers quality pharmaceutical solutions for your global healthcare supply chain.</p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3 bg-[#2F80ED] text-white font-semibold text-sm rounded-xl hover:bg-blue-600 transition-all duration-300 shadow-lg"
