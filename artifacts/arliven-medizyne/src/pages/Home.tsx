@@ -314,7 +314,7 @@ export default function Home() {
 
       {/* Banner 2 — parallax */}
       <ParallaxBanner
-        src={`${import.meta.env.BASE_URL}images/banner-connect.png`}
+        src={`${import.meta.env.BASE_URL}images/banner-connect-new.png`}
         alt="Pharmaceutical supply chain connect"
         height="h-auto"
       >
