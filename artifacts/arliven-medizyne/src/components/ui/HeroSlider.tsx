@@ -45,10 +45,8 @@ export function HeroSlider() {
 
   return (
     <>
-      {/* HERO — starts below the header bar. padding-top sets height as 50.76% of width
-           (= 1/1.969 ratio) so the container matches the images exactly → contain fills
-           edge-to-edge with no zoom, crop, or empty space on any screen. */}
-      <section className="relative w-full overflow-hidden mt-20" style={{ paddingTop: "50.76%" }}>
+      {/* HERO — starts below the header bar */}
+      <section className="relative w-full overflow-hidden mt-20 hero-section-mobile" style={{ height: "65vh", minHeight: "400px", maxHeight: "680px" }}>
 
         {/* Background Images */}
         <AnimatePresence mode="sync">
@@ -72,7 +70,7 @@ export function HeroSlider() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 z-10" />
 
         {/* ONLY: eyebrow + heading */}
-        <div className="absolute inset-0 z-20 flex items-center">
+        <div className="relative z-20 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
             <div className="max-w-2xl">
               <AnimatePresence mode="wait">

@@ -145,22 +145,31 @@
   }
 
   /* ─── Hero / banner background ────────────────────────────────────── */
-  /* Hero: contain everywhere — padding-top on the section makes the     */
-  /* container the exact same ratio as the images so no gaps appear.     */
+  /* Desktop: cover fills the frame for a premium cinematic look         */
   .hero-slide-bg {
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
 
-  /* Page banners: cover on desktop (cinematic fill), contain on mobile  */
+  /* Page banners: cover on desktop, contain on mobile                  */
   .page-banner-bg {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
 
+  /* Mobile/tablet: contain so full image is visible, adaptive height   */
   @media (max-width: 1023px) {
+    .hero-slide-bg {
+      background-size: contain;
+      background-position: center center;
+    }
+    .hero-section-mobile {
+      height: clamp(180px, 50.76vw, 380px) !important;
+      min-height: unset !important;
+      max-height: unset !important;
+    }
     .page-banner-bg {
       background-size: contain;
       background-position: center center;
