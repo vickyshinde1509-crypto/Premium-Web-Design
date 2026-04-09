@@ -63,7 +63,7 @@ const productsPreview = [
 ];
 
 const services = [
-  { image: "service-export.png",         title: "Domestic Pharmaceutical Supply",    desc: "Reliable supply of quality pharmaceutical products to hospitals, distributors, and institutions across India." },
+  { image: "service-domestic-supply.png", title: "Domestic Pharmaceutical Supply",    desc: "Reliable supply of quality pharmaceutical products to hospitals, distributors, and institutions across India." },
   { image: "service-manufacturing.png",  title: "Bulk & Institutional Supply",       desc: "Large-volume pharmaceutical supply tailored for institutions, government bodies, and bulk buyers." },
   { image: "service-intl-export.png",    title: "International Pharmaceutical Export", desc: "Seamless export of generic and branded pharmaceutical products to global markets with full compliance." },
   { image: "service-merchant-export.png", title: "Our Core Values", desc: "The principles that guide every decision, partnership, and delivery we make.", values: ["Integrity", "Quality", "Transparency", "Commitment", "Customer Satisfaction"] },
@@ -86,10 +86,8 @@ const tickerImages = [
   "hero-slide3-new.png",
   "pharma-surgical.png",
   "pharma-factory.png",
-  "service-export.png",
-  "pharma-air-cargo.png",
+  "service-domestic-supply.png",
   "service-intl-export.png",
-  "transport-mix1-new.jpg",
   "parallax-pharma-global.png",
 ];
 
