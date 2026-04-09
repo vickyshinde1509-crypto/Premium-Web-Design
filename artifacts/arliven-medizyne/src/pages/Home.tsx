@@ -550,9 +550,9 @@ export default function Home() {
       <section className="relative py-28 overflow-hidden">
         {/* Background image */}
         <img
-          src="/images/cta-cargo-crane.png"
-          alt="Cargo transport"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+          src={`${import.meta.env.BASE_URL}images/banner-ready-to-work.png`}
+          alt="Arliven Medizyne pharmaceutical cargo export"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         {/* 50% overlay so text stays clearly readable */}
         <div className="absolute inset-0 bg-black/50" />

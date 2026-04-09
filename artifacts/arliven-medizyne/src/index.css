@@ -160,13 +160,12 @@
     background-repeat: no-repeat;
   }
 
-  /* Mobile/tablet: contain so full image is visible, adaptive height   */
-  @media (max-width: 1023px) {
+  /* Phone (<768px): contain — full image visible at natural proportions */
+  @media (max-width: 767px) {
     .hero-slide-bg {
       background-size: contain;
       background-position: center center;
     }
-    /* Slide 3 is slightly taller/narrower — zoom it to fill on mobile   */
     .hero-slide-zoom-mobile {
       background-size: cover !important;
       background-position: center center !important;
@@ -178,6 +177,23 @@
     }
     .page-banner-bg {
       background-size: contain;
+      background-position: center center;
+    }
+  }
+
+  /* Tablet (768px–1023px): cover — fills frame edge-to-edge, no gaps  */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-slide-bg {
+      background-size: cover !important;
+      background-position: center center;
+    }
+    .hero-section-mobile {
+      height: 55vh !important;
+      min-height: 360px !important;
+      max-height: 520px !important;
+    }
+    .page-banner-bg {
+      background-size: cover;
       background-position: center center;
     }
   }
