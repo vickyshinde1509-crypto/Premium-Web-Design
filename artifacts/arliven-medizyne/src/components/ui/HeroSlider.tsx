@@ -55,15 +55,19 @@ export function HeroSlider() {
         <AnimatePresence mode="sync">
           <motion.div
             key={current}
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
+            transition={{ duration: 0.9, ease: "easeInOut" }}
             className="absolute inset-0"
+            style={{ willChange: "opacity" }}
           >
             <div
               className={`absolute inset-0 hero-slide-bg bg-[#111]${slide.zoomMobile ? " hero-slide-zoom-mobile" : ""}`}
-              style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/${slide.image})` }}
+              style={{
+                backgroundImage: `url(${import.meta.env.BASE_URL}images/${slide.image})`,
+                transform: "translateZ(0)",
+              }}
             />
           </motion.div>
         </AnimatePresence>
@@ -104,12 +108,12 @@ export function HeroSlider() {
                     {slide.title}
                   </motion.h1>
 
-                  {/* Blue accent line */}
+                  {/* Blue accent line — hidden on mobile, visible md+ */}
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "64px" }}
                     transition={{ duration: 0.55, delay: 0.4 }}
-                    className="h-1 bg-[#2F80ED] mt-6"
+                    className="hidden md:block h-1 bg-[#2F80ED] mt-6"
                   />
                 </motion.div>
               </AnimatePresence>

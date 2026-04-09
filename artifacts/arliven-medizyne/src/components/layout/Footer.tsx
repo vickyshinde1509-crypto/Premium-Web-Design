@@ -127,7 +127,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-gray-500">
-          <p>© {new Date().getFullYear()} Arliven Medizyne Pvt Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Arliven Medizyne Pvt Ltd. All rights reserved. &nbsp;·&nbsp; Designed by Webcraft Studio</p>
           <div className="flex gap-6">
             <Link href="/contact" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Terms of Service</Link>
