@@ -70,9 +70,9 @@ const services = [
 ];
 
 const stats = [
-  { target: 50,  suffix: "+", label: "Products Exported" },
-  { target: 10,  suffix: "+", label: "Countries Served" },
-  { target: 2,   suffix: "+", label: "Years Experience" },
+  { target: 50,  suffix: "+", label: "Pharma Product" },
+  { target: 24,  suffix: "/7", label: "Customer Support" },
+  { target: 2,   suffix: "+", label: "Business Segments" },
   { target: 100, suffix: "%", label: "Quality Assurance" },
 ];
 
@@ -321,7 +321,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         {/* Full-width image — natural proportions, no zoom */}
         <img
-          src={`${import.meta.env.BASE_URL}images/banner-export-inquiry.png`}
+          src={`${import.meta.env.BASE_URL}images/banner-export-inquiry-new.png`}
           alt="Pharmaceutical export supply chain"
           className="w-full h-auto block"
           loading="lazy"
