@@ -14,18 +14,6 @@ type = "image"
 title = "hero slide 1 cargo ship"
 
 [[generated]]
-id = "xfjoMATIuaEwBXHw95Dt5"
-uri = "file://artifacts/arliven-medizyne/public/images/transport-mix2.png"
-type = "image"
-title = "hero slide 2 air cargo pharma"
-
-[[generated]]
-id = "w9AUX9mxWk8EIvLgaUANg"
-uri = "file://artifacts/arliven-medizyne/public/images/transport-mix3.png"
-type = "image"
-title = "hero slide 3 global pharma bridge"
-
-[[generated]]
 id = "2IMl6-7ckLkATRVv7DMMJ"
 uri = "file://artifacts/arliven-medizyne/public/images/about-office.png"
 type = "image"
@@ -36,12 +24,6 @@ id = "MTlSIapCDRyaVv0gE2jDK"
 uri = "file://artifacts/arliven-medizyne/public/images/contact-banner.png"
 type = "image"
 title = "contact page handshake partnership"
-
-[[generated]]
-id = "nvDakIfSxJpdwmyofXlpE"
-uri = "file://artifacts/arliven-medizyne/public/images/pharma-hero-cinematic.png"
-type = "image"
-title = "products page pharma flatlay"
 
 [[generated]]
 id = "wzjjpop41ms_doAaNUBkq"
@@ -76,18 +58,6 @@ title = "generated_image"
 [[generated]]
 id = "5mJz10ByUiTcSNJ0aa1-H"
 uri = "file://artifacts/arliven-medizyne/public/images/service-merchant-export.png"
-type = "image"
-title = "generated_image"
-
-[[generated]]
-id = "aRMEWK7TmjC3V-6qJcbc9"
-uri = "file://artifacts/arliven-medizyne/public/images/cta-cargo-crane.png"
-type = "image"
-title = "generated_image"
-
-[[generated]]
-id = "xgBa7UEo3e47ygr-nOP79"
-uri = "file://artifacts/arliven-medizyne/public/images/hero-slide3-export.png"
 type = "image"
 title = "generated_image"
 
@@ -130,12 +100,6 @@ title = "generated_image"
 [[generated]]
 id = "muh6Dscx7BgE0321p-ukl"
 uri = "file://artifacts/arliven-medizyne/public/images/parallax-pharma-global.png"
-type = "image"
-title = "generated_image"
-
-[[generated]]
-id = "wY33BCBFHgc_dwzhF2Sod"
-uri = "file://artifacts/arliven-medizyne/public/images/banner-connect.png"
 type = "image"
 title = "generated_image"
 
