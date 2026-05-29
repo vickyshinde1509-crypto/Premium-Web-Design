@@ -463,10 +463,10 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
               { img: "industry-hospitals.jpg",    label: "Hospitals",               contain: false },
-              { img: "industry-distributors.jpg", label: "Distributors",            contain: false },
+              { img: "distributors.png",          label: "Distributors",                     contain: false },
               { img: "industry-pharmacies.jpg",   label: "Pharmacies",              contain: false },
               { img: "industry-healthcare.jpg",   label: "Healthcare Institutions", contain: false },
-              { img: "industry-globalbuyers.jpg", label: "Global Buyers",           contain: false },
+              { img: "global .png",                label: "Global Buyers",                   contain: false },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="bg-[#EEF4FF] rounded-2xl p-7 border border-[#2F80ED]/10 text-center shadow-[0_2px_12px_rgba(47,128,237,0.07)] lift-card">
@@ -521,73 +521,73 @@ export default function Home() {
                   </button>
 
                   <AnimatePresence initial={false}>
-                    {openFaq === i && (
-                      <motion.div
-                        key="answer"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-7 pb-6 pl-16">
-                          <div className="w-full h-px bg-[#2F80ED]/10 mb-4" />
-                          <p className="text-[#6E6E73] text-sm leading-relaxed">{faq.a}</p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+                                      {openFaq === i && (
+                                        <motion.div
+                                          key="answer"
+                                          initial={{ height: 0, opacity: 0 }}
+                                          animate={{ height: "auto", opacity: 1 }}
+                                          exit={{ height: 0, opacity: 0 }}
+                                          transition={{ duration: 0.35, ease: "easeInOut" }}
+                                          className="overflow-hidden"
+                                        >
+                                          <div className="px-7 pb-6 pl-16">
+                                            <div className="w-full h-px bg-[#2F80ED]/10 mb-4" />
+                                            <p className="text-[#6E6E73] text-sm leading-relaxed">{faq.a}</p>
+                                          </div>
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
+                                </FadeIn>
+                              ))}
+                            </div>
+                          </div>
+                        </section>
 
-      {/* CTA Banner */}
-      <section className="relative py-28 overflow-hidden">
-        {/* Background image */}
-        <img
-          src={`${import.meta.env.BASE_URL}images/banner-ready-to-work.png`}
-          alt="Arliven Medizyne pharmaceutical cargo export"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        {/* 50% overlay so text stays clearly readable */}
-        <div className="absolute inset-0 bg-black/50" />
+                        {/* CTA Banner */}
+                        <section className="relative py-28 overflow-hidden">
+                          {/* Background image */}
+                          <img
+                            src={`${import.meta.env.BASE_URL}images/banner-ready-to-work.png`}
+                            alt="Arliven Medizyne pharmaceutical cargo export"
+                            className="absolute inset-0 w-full h-full object-cover object-center"
+                          />
+                          {/* 50% overlay so text stays clearly readable */}
+                          <div className="absolute inset-0 bg-black/50" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <FadeIn>
-            <h2 className="text-xl lg:text-2xl font-bold text-white mb-5 leading-tight drop-shadow-lg">
-              Ready to Work With<br />Arliven Medizyne?
-            </h2>
-            <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
-              Contact us today for domestic pharmaceutical supply and international export inquiries.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact"
-                className="px-8 py-3 bg-white text-[#2F80ED] font-bold text-sm rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-lg"
-              >
-                Get Quote
-              </Link>
-              <a
-                href="https://wa.me/919049175132"
-                target="_blank"
-                rel="noreferrer"
-                className="px-8 py-3 border-2 border-white/50 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all duration-200"
-              >
-                WhatsApp Inquiry
-              </a>
-              <Link
-                href="/products"
-                className="px-8 py-3 border-2 border-white/50 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all duration-200"
-              >
-                View Products
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-    </main>
-  );
-}
+                          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+                            <FadeIn>
+                              <h2 className="text-xl lg:text-2xl font-bold text-white mb-5 leading-tight drop-shadow-lg">
+                                Ready to Work With<br />Arliven Medizyne?
+                              </h2>
+                              <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
+                                Contact us today for domestic pharmaceutical supply and international export inquiries.
+                              </p>
+                              <div className="flex flex-wrap justify-center gap-4">
+                                <Link
+                                  href="/contact"
+                                  className="px-8 py-3 bg-white text-[#2F80ED] font-bold text-sm rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-lg"
+                                >
+                                  Get Quote
+                                </Link>
+                                <a
+                                  href="https://wa.me/919049175132"
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="px-8 py-3 border-2 border-white/50 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all duration-200"
+                                >
+                                  WhatsApp Inquiry
+                                </a>
+                                <Link
+                                  href="/products"
+                                  className="px-8 py-3 border-2 border-white/50 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all duration-200"
+                                >
+                                  View Products
+                                </Link>
+                              </div>
+                            </FadeIn>
+                          </div>
+                        </section>
+                      </main>
+                    );
+                  }

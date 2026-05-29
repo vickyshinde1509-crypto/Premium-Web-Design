@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, ArrowRight, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Linkedin, Twitter, Instagram } from "lucide-react";
 
 const MAPS_LINK = "https://maps.app.goo.gl/deb5VwkttGy3S7eH9";
 
@@ -41,18 +41,21 @@ export function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed">
               Empowering Global &amp; Domestic Healthcare Solutions
             </p>
-            <p className="text-gray-500 text-xs leading-relaxed">
+            <p className="text-gray-500 text-xs leading-relaxed mb-3">
               Domestic Supply | International Export
             </p>
-            <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#2F80ED] transition-all duration-200">
+            <p className="text-gray-500 text-xs leading-relaxed mb-6 font-mono tracking-wide">
+              Corporate Identification Number (CIN): U21001MH2024PTC434427
+            </p>
+            <div className="flex gap-3 mt-2">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center                        justify-center text-white hover:bg-[#2F80ED] transition-all duration-200">
                 <Linkedin className="w-4 h-4" />
               </a>
               <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#2F80ED] transition-all duration-200">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#2F80ED] transition-all duration-200">
-                <Facebook className="w-4 h-4" />
+              <a href="https://www.instagram.com/arliven_medizyne" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#E1306C] transition-all duration-200">
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>

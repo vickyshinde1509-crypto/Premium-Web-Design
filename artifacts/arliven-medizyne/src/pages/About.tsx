@@ -111,17 +111,42 @@ export default function About() {
 
           <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
-              { initials: "GK", name: "Ganesh A Kute", role: "Founder & CEO", bio: "Ganesh A Kute leads Arliven Medizyne Pvt Ltd with a vision to build a strong pharmaceutical supply and export company connecting Indian manufacturers with domestic and global markets. Committed to delivering reliable healthcare products through professionalism, trust, and long-term business relationships." },
-              { initials: "NC", name: "Nitin B Choure", role: "Director", bio: "Nitin B Choure supports the company's operations and business development by strengthening domestic supply and international business coordination. He focuses on building strong partnerships and ensuring smooth pharmaceutical supply operations." },
+              {
+                image: "/ganesh.jpg.jpeg",
+                name: "Ganesh A Kute",
+                role: "Founder & CEO",
+                bio: "Ganesh A Kute leads Arliven Medizyne Pvt Ltd with a vision to build a strong pharmaceutical supply and export company connecting Indian manufacturers with domestic and global markets. Committed to delivering reliable healthcare products through professionalism, trust, and long-term business relationships."
+              },
+              {
+                image: "/nitin.jpg.jpeg",
+                name: "Nitin B Choure",
+                role: "Director",
+                bio: "Nitin B Choure supports the company's operations and business development by strengthening domestic supply and international business coordination. He focuses on building strong partnerships and ensuring smooth pharmaceutical supply operations."
+              }
             ].map((person, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-[#EEF4FF] p-8 rounded-2xl text-center border border-[#2F80ED]/10 cursor-default lift-card">
-                  <div className="w-24 h-24 rounded-full bg-[#2F80ED] mx-auto mb-6 flex items-center justify-center text-white border-4 border-white shadow-lg">
-                    <span className="text-xl font-bold">{person.initials}</span>
+                <div className="bg-[#EEF4FF] rounded-2xl border border-[#2F80ED]/10 cursor-default lift-card overflow-hidden flex flex-col h-full w-full">
+
+                  <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden flex-shrink-0">
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold mb-1 text-[#1D1D1F]">{person.name}</h3>
-                  <p className="text-[#2F80ED] font-semibold text-sm mb-4">{person.role}</p>
-                  <p className="text-[#6E6E73] text-sm leading-relaxed">{person.bio}</p>
+
+                  <div className="p-6 sm:p-8 flex flex-col flex-grow text-left">
+                    <h3 className="text-xl font-bold text-[#1D1D1F] mb-1">
+                      {person.name}
+                    </h3>
+                    <p className="text-[#2F80ED] font-semibold text-sm mb-4">
+                      {person.role}
+                    </p>
+                    <p className="text-[#6E6E73] text-sm leading-relaxed text-justify">
+                      {person.bio}
+                    </p>
+                  </div>
+
                 </div>
               </FadeIn>
             ))}

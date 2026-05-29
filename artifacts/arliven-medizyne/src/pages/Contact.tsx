@@ -180,14 +180,15 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-3 bg-[#2F80ED] text-white font-bold text-sm rounded-xl hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-blue-200"
+                  <a 
+                    href="mailto:info@://arlivenmedizyne.com Web Inquiry&body=Dear Arliven Medizyne Team,%0D%0A%0D%0AI would like to make an inquiry.%0D%0A%0D%0APlease specify requirements here:"
+                    className="w-full py-3 bg-[#2F80ED] text-white font-bold text-sm rounded-xl hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 shadow-lg cursor-pointer"
                   >
-                    {isSubmitting ? "Sending…" : "Submit Inquiry"}
-                    {!isSubmitting && <Send className="w-4 h-4" />}
-                  </button>
+                    Submit Inquiry
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
                 </form>
               </div>
             </FadeIn>
