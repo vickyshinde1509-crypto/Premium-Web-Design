@@ -114,14 +114,14 @@ export default function About() {
               {
                 image: "/ganesh.jpg.jpeg",
                 name: "Ganesh A Kute",
-                role: "Founder & CEO",
-                bio: "Ganesh A Kute leads Arliven Medizyne Pvt Ltd with a vision to build a strong pharmaceutical supply and export company connecting Indian manufacturers with domestic and global markets. Committed to delivering reliable healthcare products through professionalism, trust, and long-term business relationships."
+                role: "Co-Founder & Director",
+                bio: "Co-Founder of Arliven Medizyne Pvt. Ltd., leading strategic growth in pharmaceutical supply and global export markets. He focuses on building trusted international partnerships and strengthening the company’s global sourcing network from India."
               },
               {
                 image: "/nitin.jpg.jpeg",
                 name: "Nitin B Choure",
-                role: "Director",
-                bio: "Nitin B Choure supports the company's operations and business development by strengthening domestic supply and international business coordination. He focuses on building strong partnerships and ensuring smooth pharmaceutical supply operations."
+                role: "Co-Founder & Director",
+                bio: "Co-Founder of Arliven Medizyne Pvt. Ltd., overseeing pharmaceutical operations and global supply chain management. He ensures seamless execution, regulatory-aligned processes, and reliable distribution across domestic and international markets."
               }
             ].map((person, i) => (
               <FadeIn key={i} delay={i * 0.1}>
